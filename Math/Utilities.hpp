@@ -11,7 +11,7 @@ namespace Math {
            (near == far) ||
            (near < 0.0) ||
            (far < 0.0)){
-            return Matrix4x4<GLfloat>();
+            return Matrix4x4<T>();
         }
         
         Vector4<T> r1((2 * near) / (right * left),0.0,(right + left) / (right - left), 0);

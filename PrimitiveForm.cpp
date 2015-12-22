@@ -30,7 +30,7 @@ GLuint PrimitiveForm::storeDataInVAO(int attributeNr , int size, std::vector<GLf
 }
 
 void PrimitiveForm::render(){
-    glBindVertexArray(this->vao);
+    glBindVertexArray(this->resourceData);
     glEnableVertexAttribArray(0);
     glDrawArrays(GL_TRIANGLES,0,this->dataSize / 3);
     glDisableVertexAttribArray(0);
@@ -38,8 +38,8 @@ void PrimitiveForm::render(){
 }
 
 void PrimitiveForm::destroy(){
-    glDisableVertexAttribArray(0);
-    glDeleteVertexArrays(1, &this->vao);
-    glDeleteBuffers(1,&this->resourceData);
-    glDeleteBuffers(1,&this->uv);
+
+    glDeleteVertexArrays(1, &this->resourceData);
+    glDeleteBuffers(1,&this->vboVertex);
+    glDeleteBuffers(1,&this->vboUV);
 }

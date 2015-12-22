@@ -112,8 +112,6 @@
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification{
-    self->app->onClose();//give an close call.. The deconstructor might be good to but an clang-4 bug causes the deconstructor not being called :-(
-    
     [self release]; //Object suicide.. it's no longer needed
 }
 
@@ -122,7 +120,7 @@
         delete self->app;//Delete the app
         self->app = nullptr;
     }
-    
+   // NSLog(@"test");
     if(glView != nil){
         [glView clearGLContext];
         [glView release];

@@ -3,6 +3,7 @@
 #include "MainMenu.hpp"
 #include <ctime>
 #include "Renderer.hpp"
+#include <iostream>
 
 Application::Application(unsigned short width, unsigned short height){
     glEnable(GL_CULL_FACE);
@@ -13,36 +14,25 @@ Application::Application(unsigned short width, unsigned short height){
     this->height = height;
     this->currentScene = std::unique_ptr<Scene>(new MainMenu());
     this->timeLastFrame = 0;
-    this->shouldStop = false;
-    this->mainThread = std::unique_ptr<std::thread>(new std::thread(&Application::gameLoop, this));
      std::cout << glGetString(GL_VERSION) << "\n";
 }
 
 void Application::gameLoop(){
-    for(;;){
-        if(shouldStop){
-            break;
-        }
-        
-        //Get the time per frame
-        clock_t timer;
-        timer = clock();
-        this->currentScene->update(this->timeLastFrame);
-        this->timeLastFrame = 0.001f * (clock() - timer);
-    }
+    clock_t timer;
+    timer = clock();
+    this->currentScene->update(this->timeLastFrame);
+    this->timeLastFrame = 0.001f * (clock() - timer);
     
 }
 
 void Application::drawLoop(){
-    
-
-//https://software.intel.com/en-us/articles/dynamic-resolution-rendering-on-opengl-es-2
-    
+    //Do game logic first
+    this->gameLoop();
     
     //Give a common background to start with
     static const GLfloat background[] = { 0.0f, 0.25f, 0.0f, 1.0f };
     static const GLfloat depth = 1.0f;
-      glViewport(0, 0, this->width, this->height);
+    glViewport(0, 0, this->width, this->height);
     glClearBufferfv(GL_COLOR, 0, background);
     glClearBufferfv(GL_DEPTH, 0, &depth);
     
@@ -80,10 +70,10 @@ void Application::keyDown(unsigned short keycode){
     this->currentScene->keyDown(keycode);
 }
 
-void Application::onClose(){
-    this->shouldStop = true;
-    this->mainThread->join();
-    this->mainThread.reset();
+
+Application::~Application(){
     this->currentScene->onSceneClose();//Destroy all the stuff in the scene
     this->currentScene.reset();
+    std::cout << "closing \n";
+   
 }

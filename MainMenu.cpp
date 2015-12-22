@@ -5,7 +5,7 @@
 MainMenu::MainMenu(){
     this->assetManager = std::shared_ptr<AssetManager>(new AssetManager());
     this->addGameObject(std::shared_ptr<Background>(new Background(this->assetManager)));
-    this->addGameObject(std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager)));
+    this->addGameObject(std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager, 3, Vector3f(0,0,-2))));
     
     
 }
@@ -25,7 +25,7 @@ void MainMenu::keyDown(unsigned short keycode){
 }
 
 void MainMenu::onSceneClose(){
-  
+    this->destroyAllGameObjects();
     this->assetManager->destroy();
     this->assetManager.reset();
     

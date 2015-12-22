@@ -25,20 +25,22 @@ int AssetManager::loadQuad(){
 void AssetManager::bindTexture(int reference){
     for(auto it : this->textures){
         if(it->getUniqueNumber() == reference){
-            
             glActiveTexture(GL_TEXTURE0);
             glBindTexture(GL_TEXTURE_2D, it->resourceData);
+            return;
         }
     }
+    throw AssetNotFoundException("The reference does not point to a valid Texture");
 }
 
 void AssetManager::renderPrimitive(int reference){
     for(auto it : this->primitives){
         if(it->getUniqueNumber() == reference){
             it->render();
-            
+            return;
         }
     }
+    throw AssetNotFoundException("The reference does not point to a valid Texture");
 }
 
 int AssetManager::loadTexture(std::string path){
