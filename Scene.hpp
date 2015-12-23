@@ -15,10 +15,12 @@ protected:
     void updateGameObjects(float);
     void destroyAllGameObjects();
     void drawGameObjects(float);
+    void onKeyDownObjects(unsigned short keycode);
     virtual void update(float) = 0;
     virtual void draw(float) = 0;
     virtual void keyDown(unsigned short) = 0;
     virtual void onSceneClose() = 0;
+    
 };
 
 

@@ -59,6 +59,8 @@ protected:
      */
     virtual void onDestroy();
     
+    virtual void onKeyDown(unsigned short keycode);
+    
     /*! This method calls the game logic of the specified gameobject
      *  @param tpf Time per frame,
      */

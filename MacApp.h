@@ -13,6 +13,7 @@ NSApplication* application;
 @property (nonatomic, retain) NSOpenGLView* glView;
 //-(void) mainLoop:(NSTimer*)timer;
 -(void) drawLoop:(NSTimer*) timer;
+-(void) stopMacApp;
 @end
 
 #endif

@@ -133,7 +133,6 @@ GLint AssetManager::getUniformLocation(int uniqueNumber, std::string var){
 
 
 void AssetManager::destroy(){
-    
     this->destroyAssets<std::vector<std::shared_ptr<ShaderAsset>>>(this->shaders);
     this->destroyAssets<std::vector<std::shared_ptr<ProgramAsset>>>(this->programs);
     this->destroyAssets<std::vector<std::shared_ptr<PrimitiveForm>>>(this->primitives);

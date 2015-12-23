@@ -65,7 +65,9 @@ private:
     template<typename T>
     void destroyAssets(T& obj){
         for(auto it : obj){
-            it->destroy();
+            if(it != nullptr){
+                it->destroy();
+            }
             it.reset();
         }
         obj.clear();

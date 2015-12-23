@@ -28,10 +28,14 @@
 #include "GameObject.hpp"
 #include "AssetManager.hpp"
 #include <memory>
+
+class SnakeHead;
+
 /*! The body of the snake
  *  @author Heiko van der Heijden
  */
 class SnakeBody : public GameObject{
+    friend SnakeHead;
 private:
     /*! The body is recursive..
      */
@@ -46,6 +50,7 @@ protected:
     virtual void onDestroy() override;
     virtual void draw(float) override;
 public:
+    void move(Vector3f pos);
     SnakeBody(std::shared_ptr<AssetManager>, unsigned short, Vector3f);
     
 };

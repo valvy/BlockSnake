@@ -12,16 +12,16 @@ Application::Application(unsigned short width, unsigned short height){
     glFrontFace(GL_CW);
     this->width =width;
     this->height = height;
-    this->currentScene = std::unique_ptr<Scene>(new MainMenu());
+    this->currentScene = std::unique_ptr<Scene>(new MainMenu(this));
     this->timeLastFrame = 0;
-     std::cout << glGetString(GL_VERSION) << "\n";
+    std::cout << glGetString(GL_VERSION) << "\n";
 }
 
 void Application::gameLoop(){
     clock_t timer;
     timer = clock();
     this->currentScene->update(this->timeLastFrame);
-    this->timeLastFrame = 0.001f * (clock() - timer);
+    this->timeLastFrame = 0.00001f * (clock() - timer);
     
 }
 
@@ -70,6 +70,13 @@ void Application::keyDown(unsigned short keycode){
     this->currentScene->keyDown(keycode);
 }
 
+
+void Application::loadScene(Scene* scene){
+    this->currentScene->onSceneClose();
+    this->currentScene.reset();
+    this->currentScene = std::unique_ptr<Scene>(scene);
+    
+}
 
 Application::~Application(){
     this->currentScene->onSceneClose();//Destroy all the stuff in the scene

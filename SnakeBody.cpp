@@ -1,5 +1,5 @@
 #include "SnakeBody.hpp"
-
+#include <iostream>
 SnakeBody::SnakeBody(std::shared_ptr<AssetManager> assetManager, unsigned short next,Vector3f position){
     
     this->assetManager = assetManager;
@@ -7,12 +7,11 @@ SnakeBody::SnakeBody(std::shared_ptr<AssetManager> assetManager, unsigned short 
     this->snakeBodyProgram = this->assetManager->loadProgram("./Assets/Shaders/cubeV.glsl", "./Assets/Shaders/CubeF.glsl");
     this->mv_location = this->assetManager->getUniformLocation(this->snakeBodyProgram, "mv_matrix");
     
-    this->scale = Vector3f(0.1f,0.1f,0.1f);
+    this->scale = Vector3f(0.05f,0.05f,0.05f);
     this->rotation = Vector3f(90,0,0);
     this->position = position;
-    
     if(next > 0){
-        this->nextBody = std::shared_ptr<SnakeBody>(new SnakeBody(assetManager, next -1, Vector3f( position.x + 0.15f, position.y, position.z)));
+        this->nextBody = std::shared_ptr<SnakeBody>(new SnakeBody(assetManager, (next - 1), Vector3f( position.x + 0.15f, position.y, position.z)));
     }
     
 }
@@ -21,6 +20,18 @@ void SnakeBody::update(float tpf){
     if(this->nextBody != nullptr){
         this->nextBody->update(tpf);
     }
+}
+
+void SnakeBody::move(Vector3f position){
+    
+    if(this->nextBody != nullptr){
+        this->nextBody->move(this->position);
+        this->position = position;
+    }
+    
+
+    
+    this->position = position;
 }
 
 void SnakeBody::draw(float aspect){

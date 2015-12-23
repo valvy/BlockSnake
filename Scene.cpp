@@ -12,6 +12,12 @@ void Scene::updateGameObjects(float fps){
     }
 }
 
+void Scene::onKeyDownObjects(unsigned short keycode){
+    for(auto it : this->gameObjects){
+        it->onKeyDown(keycode);
+    }
+}
+
 void Scene::destroyAllGameObjects(){
     for(auto it : this->gameObjects){
         it->onDestroy();

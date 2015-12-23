@@ -57,19 +57,22 @@
 -(void)keyDown:(NSEvent*) event{
 
  //   std::cout << [event keyCode] << "\n";
-    if([event keyCode] == 53){
-        [self close];
-    }
-    else{
+    //if([event keyCode] == 53){
+      //  [self close];
+   // }
+    //else{
         //Pass the key down event to the app
         self->app->keyDown([event keyCode]);
-    }
+    //}
 }
 
 -(BOOL)canBecomeKeyWindow {
     //this is required to receive input..
     return YES;
 }
+
+
+
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification{
     //setup the menubar
@@ -94,11 +97,17 @@
 }
 
 -(void) drawLoop:(NSTimer*) timer{
-    self->app->drawLoop();
-    [glView update];
-     [[glView openGLContext] flushBuffer];
+    if([self isVisible]){
+        self->app->drawLoop();
+        [glView update];
+        [[glView openGLContext] flushBuffer];
+    }
+
 }
 
+-(void) stopMacApp{
+    [self close];
+}
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
@@ -132,12 +141,18 @@
 
 @end
 
+MacApp* app;
+
+void Application::quitApplication(){
+    [app stopMacApp];
+}
+
 int main(){
 
     NSRect mainDisplayRect = [[NSScreen mainScreen] frame];
     application = [NSApplication sharedApplication];
     [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
-    MacApp* app =  [[MacApp alloc]initWithContentRect: mainDisplayRect styleMask:NSBorderlessWindowMask backing:
+    app =  [[MacApp alloc]initWithContentRect: mainDisplayRect styleMask:NSBorderlessWindowMask backing:
                     NSBackingStoreBuffered defer:YES];
     [application setDelegate:app];
     [application run];

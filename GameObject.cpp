@@ -6,6 +6,10 @@ void GameObject::onDestroy(){
     
 }
 
+void GameObject::onKeyDown(unsigned short keycode){
+    
+}
+
 Matrix4x4<float> GameObject::getCurrentMat(float aspect){
     Matrix4x4<float> result;
     result.scale(this->scale);

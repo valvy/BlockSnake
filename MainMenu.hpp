@@ -28,14 +28,19 @@
 #include "Scene.hpp"
 #include "AssetManager.hpp"
 #include <memory>
+
+class Application;
+
 /*! The first screen you see. Says hi to the player
  *  @author Heiko van der Heijden
  */
 class MainMenu : public Scene{
 private:
+    //Do not delete this pointer..
+    Application* application;
     std::shared_ptr<AssetManager> assetManager;
 public:
-    MainMenu();
+    MainMenu(Application* app);
 protected:
     virtual void update(float) override;
     virtual void draw(float) override;

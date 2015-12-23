@@ -1,18 +1,17 @@
 #include "SnakeScene.hpp"
 #include "Renderer.hpp"
-#include "SnakeBody.hpp"
-#include "Math/Matrix4x4.hpp"
-#include "Math/Utilities.hpp"
-#include <iostream>
+//#include "SnakeBody.hpp"
+#include "Background.hpp"
+#include "KeyCodes.hpp"
+#include "SnakeHead.hpp"
+#include "Application.hpp"
+#include "MainMenu.hpp"
 
-int testProgram = 0;
-GLint           mv_location;
-SnakeScene::SnakeScene(){
-/*    this->addGameObject(std::shared_ptr<GameObject>(new SnakeBody()));
+SnakeScene::SnakeScene(Application* application){
+    this->application = application;
     this->assetManager = std::shared_ptr<AssetManager>(new AssetManager());
-    this->assetManager->loadCube();
-    testProgram = this->assetManager->loadProgram("./Assets/Shaders/cubeV.glsl", "./Assets/Shaders/CubeF.glsl");
-    mv_location = this->assetManager->getUniformLocation(testProgram, "mv_matrix");*/
+    this->addGameObject(std::shared_ptr<Background>(new Background(this->assetManager)));
+    this->addGameObject(std::shared_ptr<SnakeHead>(new SnakeHead(this->assetManager, Vector3f(-1,0,-2))));
 }
 
 void SnakeScene::update(float tpf){
@@ -20,31 +19,19 @@ void SnakeScene::update(float tpf){
 }
 
 void SnakeScene::draw(float aspect){
-   /* Vector3<GLfloat> position(0,0,-4);
-    Vector3<GLfloat> scale(0.9f,0.9f,0.9f);
-    
-    this->assetManager->useProgram(testProgram);
-    Matrix4x4<GLfloat> cubeMatrix;
-    cubeMatrix.scale(Vector3<GLfloat>(scale.x,scale.y,scale.z)); //Scaling works fine
-    
 
-    cubeMatrix.setPosition(Vector3<GLfloat>(position.x,position.y,position.z));
-    
-    
-    cubeMatrix = cubeMatrix.transpose();//You have to transpose the matrix
-    
-    cubeMatrix *= Math::perspective<GLfloat>(50, aspect , 0.1f, 100000.0f);
-    
-    glUniformMatrix4fv(mv_location, 1, GL_FALSE, &cubeMatrix.getRawData()[0]);
-    
-    glDrawArrays(GL_TRIANGLES, 0, 36);
-    
-    */
     this->drawGameObjects(aspect);
 }
 
 void SnakeScene::keyDown(unsigned short keycode){
     
+    if(keycode == KeyCodes::ESCAPE_KEY){
+        this->application->loadScene(new MainMenu(this->application));
+        
+        return;
+    }
+    
+    this->onKeyDownObjects(keycode);
 }
 
 void SnakeScene::onSceneClose(){
