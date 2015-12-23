@@ -6,6 +6,7 @@
 #include <iostream>
 
 Application::Application(unsigned short width, unsigned short height){
+    this->path = path;
     glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LEQUAL);
@@ -64,6 +65,8 @@ void Application::drawLoop(){
     float aspect = 1 * this->width / this->height;
     this->currentScene->draw(aspect);
 }
+
+
 
 void Application::keyDown(unsigned short keycode){
     //just give the keys back without doing anything

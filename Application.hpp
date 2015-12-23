@@ -28,6 +28,7 @@
 #pragma once
 #include "Scene.hpp"
 #include <memory>
+#include <string>
 /*! This class Handles the different loops and scenes
  *  @author Heiko van der Heijden
  */
@@ -37,6 +38,7 @@ private:
      *  The current scene wrapped in a pointer
      */
     std::unique_ptr<Scene> currentScene;
+    std::string path;
     /*!
      *  The amount of time it took last time to update all gameobjects
      */
@@ -51,6 +53,8 @@ public:
      *  @param height the height of the window
      */
     Application(unsigned short width,unsigned short height);
+    
+    std::string getAppPath();
     
     void quitApplication();
     

@@ -9,7 +9,7 @@ SnakeHead::SnakeHead(std::shared_ptr<AssetManager> assetManager, Vector3f startP
     this->timer = std::chrono::steady_clock::now();
     this->direction = Direction::Left;
     this->scale = Vector3f(0.1f,0.1f,0.1f);
-       this->body = std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager, 3, Vector3f( position.x + 0.15f, position.y, position.z)));
+       this->body = std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager, 10, Vector3f( position.x + 0.15f, position.y, position.z)));
 }
 
 void SnakeHead::update(float tpf){

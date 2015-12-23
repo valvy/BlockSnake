@@ -9,7 +9,7 @@
 
 SnakeScene::SnakeScene(Application* application){
     this->application = application;
-    this->assetManager = std::shared_ptr<AssetManager>(new AssetManager());
+    this->assetManager = std::shared_ptr<AssetManager>(new AssetManager(application->getAppPath()));
     this->addGameObject(std::shared_ptr<Background>(new Background(this->assetManager)));
     this->addGameObject(std::shared_ptr<SnakeHead>(new SnakeHead(this->assetManager, Vector3f(-1,0,-2))));
 }

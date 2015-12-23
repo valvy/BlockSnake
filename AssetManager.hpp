@@ -38,6 +38,7 @@
  */
 class AssetManager{
 private:
+    std::string path;
     
     /*! All the shaders that are currently in use
      */
@@ -74,7 +75,7 @@ private:
     }
     
 public:
-    AssetManager();
+    AssetManager(std::string path);
     
     /*! Loads an default cube into memory
      *  @return an reference that can be used to use the cube

@@ -6,7 +6,7 @@
 #include "SnakeScene.hpp"
 #include "KeyCodes.hpp"
 MainMenu::MainMenu(Application* app){
-    this->assetManager = std::shared_ptr<AssetManager>(new AssetManager());
+    this->assetManager = std::shared_ptr<AssetManager>(new AssetManager(app->getAppPath()));
     this->addGameObject(std::shared_ptr<Background>(new Background(this->assetManager)));
     this->addGameObject(std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager, 3, Vector3f(0,0,-2))));
     this->application = app;

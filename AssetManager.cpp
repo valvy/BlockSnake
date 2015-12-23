@@ -4,8 +4,9 @@
 #include "PrimitiveCube.hpp"
 #include "PrimitiveQuad.hpp"
 
-AssetManager::AssetManager(){
+AssetManager::AssetManager(std::string path){
     this->uniqueNumber = 1;
+    this->path = path;
 }
 
 int AssetManager::loadCube(){
@@ -44,6 +45,7 @@ void AssetManager::renderPrimitive(int reference){
 }
 
 int AssetManager::loadTexture(std::string path){
+    path = this->path + "/" + path;
     for(auto it : this->textures){
         if(it->getPath() == path){
             return it->getUniqueNumber();
@@ -57,6 +59,8 @@ int AssetManager::loadTexture(std::string path){
 }
 
 int AssetManager::loadProgram(std::string vertexShader, std::string fragmentShader){
+    vertexShader = path  + "/" + vertexShader;
+    fragmentShader = path + "/" + fragmentShader;
     
     //Check if program already exists
     for(auto it : this->programs){

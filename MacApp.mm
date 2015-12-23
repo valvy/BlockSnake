@@ -147,6 +147,10 @@ void Application::quitApplication(){
     [app stopMacApp];
 }
 
+std::string Application::getAppPath(){
+    return [[[NSBundle mainBundle]resourcePath]UTF8String];
+}
+
 int main(){
 
     NSRect mainDisplayRect = [[NSScreen mainScreen] frame];
