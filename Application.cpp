@@ -7,6 +7,7 @@
 
 Application::Application(unsigned short width, unsigned short height){
     this->path = path;
+    this->assetManager = std::shared_ptr<AssetManager>(new AssetManager(this->getAppPath()));
     glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LEQUAL);
@@ -15,6 +16,7 @@ Application::Application(unsigned short width, unsigned short height){
     this->height = height;
     this->currentScene = std::unique_ptr<Scene>(new MainMenu(this));
     this->timeLastFrame = 0;
+    
     std::cout << glGetString(GL_VERSION) << "\n";
 }
 
@@ -67,6 +69,9 @@ void Application::drawLoop(){
 }
 
 
+std::shared_ptr<AssetManager> Application::getAssetManager(){
+    return this->assetManager;
+}
 
 void Application::keyDown(unsigned short keycode){
     //just give the keys back without doing anything
@@ -84,6 +89,8 @@ void Application::loadScene(Scene* scene){
 Application::~Application(){
     this->currentScene->onSceneClose();//Destroy all the stuff in the scene
     this->currentScene.reset();
+    this->assetManager->destroy();
+    this->assetManager.reset();
     std::cout << "closing \n";
    
 }

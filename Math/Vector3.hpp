@@ -59,6 +59,13 @@ struct Vector3{
         
     }
     
+    bool operator==(Vector3<T> other){
+        return(this->x == other.x
+               && this->y == other.y
+               && this->z == other.z);
+    }
+    
+    
     T dotProduct(Vector3<T> other){
         return (this->x * other.x + this->y * other.y + this->z * other.z);
     }

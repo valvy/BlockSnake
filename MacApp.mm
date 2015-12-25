@@ -26,6 +26,8 @@
             0
         };
         
+        //remove mouse
+        [NSCursor hide];
         
         NSOpenGLPixelFormat* format = [[NSOpenGLPixelFormat alloc]initWithAttributes:pixelFormatAttributes];
         
@@ -152,15 +154,19 @@ std::string Application::getAppPath(){
 }
 
 int main(){
-
+/*
     NSRect mainDisplayRect = [[NSScreen mainScreen] frame];
     application = [NSApplication sharedApplication];
     [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
     app =  [[MacApp alloc]initWithContentRect: mainDisplayRect styleMask:NSBorderlessWindowMask backing:
                     NSBackingStoreBuffered defer:YES];
     [application setDelegate:app];
+    [application run];*/
+    application = [NSApplication sharedApplication];
+    [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
+    app = [[MacApp alloc] initWithContentRect:NSMakeRect(0, 0, 600, 600) styleMask:NSTitledWindowMask | NSClosableWindowMask |  NSMiniaturizableWindowMask   backing:NSBackingStoreBuffered defer:YES];
+    [application setDelegate:app];
     [application run];
-    
     
 }
 

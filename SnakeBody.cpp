@@ -34,6 +34,20 @@ void SnakeBody::move(Vector3f position){
     this->position = position;
 }
 
+bool SnakeBody::doesCollideWithBody(Vector3f pos){
+    
+    if(pos == this->position){
+        return true;
+    }
+    else if(this->nextBody != nullptr){
+        return this->nextBody->doesCollideWithBody(pos);
+    }else{
+        return false;
+    }
+ 
+    
+}
+
 void SnakeBody::draw(float aspect){
     
     

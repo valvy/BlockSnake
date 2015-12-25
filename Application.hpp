@@ -29,6 +29,7 @@
 #include "Scene.hpp"
 #include <memory>
 #include <string>
+#include "AssetManager.hpp"
 /*! This class Handles the different loops and scenes
  *  @author Heiko van der Heijden
  */
@@ -39,6 +40,7 @@ private:
      */
     std::unique_ptr<Scene> currentScene;
     std::string path;
+    std::shared_ptr<AssetManager> assetManager;
     /*!
      *  The amount of time it took last time to update all gameobjects
      */
@@ -54,6 +56,8 @@ public:
      */
     Application(unsigned short width,unsigned short height);
     
+    
+    std::shared_ptr<AssetManager> getAssetManager();
     std::string getAppPath();
     
     void quitApplication();

@@ -7,6 +7,11 @@
 #include <chrono>
 class SnakeHead : public GameObject{
 private:
+    float distance = 0.15f;
+    GLint mv_location;
+    int snakeHeadProgram;
+    int texture;
+    int primitive;
     enum class Direction{
         Left,
         Right,

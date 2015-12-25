@@ -7,11 +7,9 @@
 #include "Application.hpp"
 #include "MainMenu.hpp"
 
-SnakeScene::SnakeScene(Application* application){
-    this->application = application;
-    this->assetManager = std::shared_ptr<AssetManager>(new AssetManager(application->getAppPath()));
-    this->addGameObject(std::shared_ptr<Background>(new Background(this->assetManager)));
-    this->addGameObject(std::shared_ptr<SnakeHead>(new SnakeHead(this->assetManager, Vector3f(-1,0,-2))));
+SnakeScene::SnakeScene(Application* app) : Scene(app){
+    this->addGameObject(std::shared_ptr<Background>(new Background(this->app->getAssetManager())));
+    this->addGameObject(std::shared_ptr<SnakeHead>(new SnakeHead(this->app->getAssetManager(), Vector3f(-1,0,-2))));
 }
 
 void SnakeScene::update(float tpf){
@@ -26,7 +24,7 @@ void SnakeScene::draw(float aspect){
 void SnakeScene::keyDown(unsigned short keycode){
     
     if(keycode == KeyCodes::ESCAPE_KEY){
-        this->application->loadScene(new MainMenu(this->application));
+        this->app->loadScene(new MainMenu(this->app));
         
         return;
     }
@@ -36,7 +34,5 @@ void SnakeScene::keyDown(unsigned short keycode){
 
 void SnakeScene::onSceneClose(){
 
-    this->assetManager->destroy();
-    this->assetManager.reset();
     this->destroyAllGameObjects();
 }

@@ -5,11 +5,9 @@
 #include "Application.hpp"
 #include "SnakeScene.hpp"
 #include "KeyCodes.hpp"
-MainMenu::MainMenu(Application* app){
-    this->assetManager = std::shared_ptr<AssetManager>(new AssetManager(app->getAppPath()));
-    this->addGameObject(std::shared_ptr<Background>(new Background(this->assetManager)));
-    this->addGameObject(std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager, 3, Vector3f(0,0,-2))));
-    this->application = app;
+MainMenu::MainMenu(Application* app) : Scene(app){
+    this->addGameObject(std::shared_ptr<Background>(new Background(app->getAssetManager())));
+    this->addGameObject(std::shared_ptr<SnakeBody>(new SnakeBody(app->getAssetManager(), 3, Vector3f(0,0,-2))));
     
 }
 
@@ -26,10 +24,10 @@ void MainMenu::draw(float aspect){
 void MainMenu::keyDown(unsigned short keycode){
     switch (keycode) {
         case KeyCodes::SPACE_BAR:
-            this->application->loadScene(new SnakeScene(this->application));
+            this->app->loadScene(new SnakeScene(this->app));
             break;
         case KeyCodes::ESCAPE_KEY:
-            application->quitApplication();
+            app->quitApplication();
             return;
         default:
             break;
@@ -41,7 +39,4 @@ void MainMenu::keyDown(unsigned short keycode){
 
 void MainMenu::onSceneClose(){
     this->destroyAllGameObjects();
-    this->assetManager->destroy();
-    this->assetManager.reset();
-    
 }

@@ -5,14 +5,20 @@
 
 SnakeHead::SnakeHead(std::shared_ptr<AssetManager> assetManager, Vector3f startPosition){
     this->assetManager = assetManager;
+    this->primitive = this->assetManager->loadCube();
+    this->snakeHeadProgram = this->assetManager->loadProgram("./Assets/Shaders/cubeV.glsl", "./Assets/Shaders/CubeF.glsl");
+    this->mv_location = this->assetManager->getUniformLocation(this->snakeHeadProgram, "mv_matrix");
     this->position = startPosition;
     this->timer = std::chrono::steady_clock::now();
     this->direction = Direction::Left;
-    this->scale = Vector3f(0.1f,0.1f,0.1f);
-       this->body = std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager, 10, Vector3f( position.x + 0.15f, position.y, position.z)));
+    this->scale = Vector3f(0.05f,0.05f,0.05f);
+       this->body = std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager, 9, Vector3f( position.x + distance, position.y, position.z)));
 }
 
 void SnakeHead::update(float tpf){
+
+    
+    
     if(this->body != nullptr){
         auto difference = std::chrono::steady_clock::now();
         auto time_span = std::chrono::duration_cast<std::chrono::duration<double>>(difference - timer);
@@ -23,19 +29,19 @@ void SnakeHead::update(float tpf){
             switch(direction){
                 case Direction::Right:
                     this->position.x -= jumpSpeed;
-                    this->body->move(Vector3f(position.x, position.y, position.z));
+                    this->body->move(Vector3f(position.x + distance, position.y, position.z));
                     break;
                 case Direction::Left:
                     this->position.x += jumpSpeed;
-                    this->body->move(Vector3f(position.x, position.y, position.z));
+                    this->body->move(Vector3f(position.x - distance, position.y, position.z));
                     break;
                 case Direction::Up:
                     this->position.y += jumpSpeed;
-                    this->body->move(Vector3f(position.x, position.y, position.z));
+                    this->body->move(Vector3f(position.x, position.y - distance, position.z));
                     break;
                 case Direction::Down:
                     this->position.y -= jumpSpeed;
-                    this->body->move(Vector3f(position.x, position.y, position.z));
+                    this->body->move(Vector3f(position.x, position.y + distance, position.z));
                     break;
                     
                 default:
@@ -43,6 +49,11 @@ void SnakeHead::update(float tpf){
             }
         }
         this->body->update(tpf);
+        if(this->body->doesCollideWithBody(this->position)){
+            std::cout << "Collision!!! \n";
+        }else{
+            std::cout << "no collision :-(\n";
+        }
     }
 }
 
@@ -54,6 +65,9 @@ void SnakeHead::onDestroy(){
 }
 
 void SnakeHead::draw(float aspect){
+    this->assetManager->useProgram(this->snakeHeadProgram);
+    glUniformMatrix4fv(this->mv_location, 1, GL_FALSE, &this->getCurrentMat(aspect).getRawData()[0]);
+    this->assetManager->renderPrimitive(this->primitive);
     if(this->body != nullptr){
         
         this->body->draw(aspect);

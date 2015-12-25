@@ -26,7 +26,7 @@
 #ifndef MAIN_MENU_HPP
 #define MAIN_MENU_HPP
 #include "Scene.hpp"
-#include "AssetManager.hpp"
+//#include "AssetManager.hpp"
 #include <memory>
 
 class Application;
@@ -35,10 +35,6 @@ class Application;
  *  @author Heiko van der Heijden
  */
 class MainMenu : public Scene{
-private:
-    //Do not delete this pointer..
-    Application* application;
-    std::shared_ptr<AssetManager> assetManager;
 public:
     MainMenu(Application* app);
 protected:
