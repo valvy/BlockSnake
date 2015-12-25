@@ -16,13 +16,14 @@ GLuint PrimitiveForm::generateVAO(){
 
 GLuint PrimitiveForm::storeDataInVAO(int attributeNr , int size, std::vector<GLfloat> data){
     GLuint vboID;
-    
+
     glGenBuffers(1, &vboID);
+        glBindVertexArray(this->resourceData);
     glBindBuffer(GL_ARRAY_BUFFER, vboID);
     
+    glEnableVertexAttribArray(attributeNr);
     glBufferData(GL_ARRAY_BUFFER, data.size() * 3 * sizeof(GLfloat), &data[0], GL_STATIC_DRAW);
     glVertexAttribPointer(attributeNr, size, GL_FLOAT, GL_FALSE, 0, nullptr);
-    
     glBindVertexArray(0);
 
     
