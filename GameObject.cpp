@@ -38,3 +38,11 @@ Matrix4x4<float> GameObject::getCurrentMat(float aspect){
     return result;
     
 }
+
+Vector3f GameObject::getPosition(){
+    return this->position;
+}
+
+bool GameObject::canCollide(){
+    return this->doesCollide;
+}

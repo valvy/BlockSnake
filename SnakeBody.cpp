@@ -61,6 +61,14 @@ void SnakeBody::draw(float aspect){
     
 }
 
+void SnakeBody::addBody(){
+    if(this->nextBody != nullptr){
+        this->nextBody->addBody();
+    }else{
+        this->nextBody = std::shared_ptr<SnakeBody>(new SnakeBody(assetManager, 0, Vector3f( position.x + 0.15f, position.y, position.z)));
+    }
+}
+
 void SnakeBody::onDestroy(){
     if(this->nextBody != nullptr){
         this->nextBody->onDestroy();

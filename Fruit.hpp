@@ -14,6 +14,8 @@ protected:
     virtual void update(float tpf) override;
     virtual void onDestroy() override;
     virtual void draw (float aspect) override;
+    virtual void onCollision(GameObject* col) override;
+    virtual void findRandomPlace();
 public:
     Fruit(std::shared_ptr<AssetManager>,Vector3f position);
     

@@ -31,6 +31,7 @@ protected:
     virtual void onDestroy() override;
     virtual void draw(float aspect) override;
     virtual void onKeyDown(unsigned short keycode) override;
+    virtual void onCollision(GameObject* col) override;
 public:
     
     SnakeHead(std::shared_ptr<AssetManager> assetManager, Vector3f startPos, SnakeScene* scene);

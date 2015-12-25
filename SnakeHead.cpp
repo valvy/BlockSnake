@@ -7,6 +7,7 @@
 SnakeHead::SnakeHead(std::shared_ptr<AssetManager> assetManager, Vector3f startPosition, SnakeScene* scene){
     this->assetManager = assetManager;
     this->scene = scene;
+    this->doesCollide = true;
     this->primitive = this->assetManager->loadCube();
     this->snakeHeadProgram = this->assetManager->loadProgram("./Assets/Shaders/cubeV.glsl", "./Assets/Shaders/CubeF.glsl");
     this->mv_location = this->assetManager->getUniformLocation(this->snakeHeadProgram, "mv_matrix");
@@ -14,7 +15,13 @@ SnakeHead::SnakeHead(std::shared_ptr<AssetManager> assetManager, Vector3f startP
     this->timer = std::chrono::steady_clock::now();
     this->direction = Direction::Right;
     this->scale = Vector3f(0.05f,0.05f,0.05f);
-       this->body = std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager, 9, Vector3f( position.x + distance, position.y, position.z)));
+       this->body = std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager, 0, Vector3f( position.x + distance, position.y, position.z)));
+}
+
+void SnakeHead::onCollision(GameObject* col){
+    if(this->body != nullptr){
+        this->body->addBody();
+    }
 }
 
 void SnakeHead::update(float tpf){
@@ -54,7 +61,6 @@ void SnakeHead::update(float tpf){
         
         //Go to the gameover scene when you hit the body
         if(this->body->doesCollideWithBody(this->position)){
-         //   this->app->loadScene(new GameOverScene(this->app));
             this->scene->goToGameOver();
         }
         

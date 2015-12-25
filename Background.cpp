@@ -5,7 +5,7 @@
 Background::Background(std::shared_ptr<AssetManager> assetManager){
     this->assetManager = assetManager;
     this->texture = assetManager->loadTexture("./Assets/Textures/Clouds.bmp");
-    
+    this->doesCollide = false;
     this->primitive = this->assetManager->loadQuad();
     this->backGroundProgram = this->assetManager->loadProgram("./Assets/Shaders/BackgroundV.glsl", "./Assets/Shaders/BackgroundF.glsl");
     

@@ -22,12 +22,11 @@ void SnakeScene::update(float tpf){
     if(this->dead){
         this->app->loadScene(new GameOverScene(this->app));
     }
+    this->checkCollision();
 }
 
 void SnakeScene::draw(float aspect){
-
     this->drawGameObjects(aspect);
-
 }
 
 

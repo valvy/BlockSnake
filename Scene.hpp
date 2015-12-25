@@ -15,6 +15,7 @@ protected:
     void addGameObject(std::shared_ptr<GameObject>);
     void updateGameObjects(float);
     void destroyAllGameObjects();
+    void checkCollision();
     void drawGameObjects(float);
     void onKeyDownObjects(unsigned short keycode);
     virtual void update(float) = 0;

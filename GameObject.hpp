@@ -41,6 +41,8 @@ protected:
      */
     Vector3f position;
     
+    bool doesCollide;
+    
     /*! The current scale of the object
      */
     Vector3f scale;
@@ -70,7 +72,10 @@ protected:
      *  @param aspect The aspect of the screen
      */
     virtual void draw(float aspect) = 0;
-    
+    virtual void onCollision(GameObject* col){}
+public:
+    Vector3f getPosition();
+    bool canCollide();
 };
 
 #endif
