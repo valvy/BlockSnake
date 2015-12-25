@@ -8,16 +8,15 @@
 //class Application;
 
 class SnakeScene : public Scene{
-//private:
-//    Application* application;
-
- 
+private:
+    bool dead;
 protected:
     virtual void update(float) override;
     virtual void draw(float) override;
     virtual void keyDown(unsigned short) override;
     virtual void onSceneClose() override;
 public:
+    void goToGameOver();
     SnakeScene(Application* app);
 };
 

@@ -5,8 +5,11 @@
 #include <memory>
 #include "SnakeBody.hpp"
 #include <chrono>
+
+class SnakeScene;
 class SnakeHead : public GameObject{
 private:
+    SnakeScene* scene;
     float distance = 0.15f;
     GLint mv_location;
     int snakeHeadProgram;
@@ -30,7 +33,7 @@ protected:
     virtual void onKeyDown(unsigned short keycode) override;
 public:
     
-    SnakeHead(std::shared_ptr<AssetManager> assetManager, Vector3f startPos);
+    SnakeHead(std::shared_ptr<AssetManager> assetManager, Vector3f startPos, SnakeScene* scene);
 };
 
 

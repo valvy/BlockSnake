@@ -57,15 +57,7 @@
 }
 
 -(void)keyDown:(NSEvent*) event{
-
- //   std::cout << [event keyCode] << "\n";
-    //if([event keyCode] == 53){
-      //  [self close];
-   // }
-    //else{
-        //Pass the key down event to the app
-        self->app->keyDown([event keyCode]);
-    //}
+    self->app->keyDown([event keyCode]);
 }
 
 -(BOOL)canBecomeKeyWindow {
@@ -153,21 +145,30 @@ std::string Application::getAppPath(){
     return [[[NSBundle mainBundle]resourcePath]UTF8String];
 }
 
-int main(){
-/*
-    NSRect mainDisplayRect = [[NSScreen mainScreen] frame];
+int main(int argc, char** argv){
     application = [NSApplication sharedApplication];
     [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
-    app =  [[MacApp alloc]initWithContentRect: mainDisplayRect styleMask:NSBorderlessWindowMask backing:
-                    NSBackingStoreBuffered defer:YES];
-    [application setDelegate:app];
-    [application run];*/
-    application = [NSApplication sharedApplication];
-    [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
-    app = [[MacApp alloc] initWithContentRect:NSMakeRect(0, 0, 600, 600) styleMask:NSTitledWindowMask | NSClosableWindowMask |  NSMiniaturizableWindowMask   backing:NSBackingStoreBuffered defer:YES];
+    
+    if(argc >= 2){
+        std::string cmd = std::string(argv[1]);
+        if(cmd == "win"){
+            app = [[MacApp alloc] initWithContentRect:NSMakeRect(0, 0, 600, 600) styleMask:NSTitledWindowMask | NSClosableWindowMask |  NSMiniaturizableWindowMask   backing:NSBackingStoreBuffered defer:YES];
+        }
+        else{
+            std::cout << "invalid commmand \n";
+            exit(EXIT_FAILURE);
+        }
+    }else{
+        NSRect mainDisplayRect = [[NSScreen mainScreen] frame];
+        app =  [[MacApp alloc]initWithContentRect: mainDisplayRect styleMask:NSBorderlessWindowMask backing:
+                NSBackingStoreBuffered defer:YES];
+
+    }
+  
     [application setDelegate:app];
     [application run];
     
+
 }
 
 

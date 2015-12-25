@@ -29,6 +29,7 @@
 #include "AssetManager.hpp"
 #include <memory>
 
+class Application;
 class SnakeHead;
 
 /*! The body of the snake

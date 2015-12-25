@@ -1,16 +1,18 @@
 #include "SnakeHead.hpp"
 #include "KeyCodes.hpp"
 #include <iostream>
+#include "GameOverScene.hpp"
+#include "SnakeScene.hpp"
 
-
-SnakeHead::SnakeHead(std::shared_ptr<AssetManager> assetManager, Vector3f startPosition){
+SnakeHead::SnakeHead(std::shared_ptr<AssetManager> assetManager, Vector3f startPosition, SnakeScene* scene){
     this->assetManager = assetManager;
+    this->scene = scene;
     this->primitive = this->assetManager->loadCube();
     this->snakeHeadProgram = this->assetManager->loadProgram("./Assets/Shaders/cubeV.glsl", "./Assets/Shaders/CubeF.glsl");
     this->mv_location = this->assetManager->getUniformLocation(this->snakeHeadProgram, "mv_matrix");
     this->position = startPosition;
     this->timer = std::chrono::steady_clock::now();
-    this->direction = Direction::Left;
+    this->direction = Direction::Right;
     this->scale = Vector3f(0.05f,0.05f,0.05f);
        this->body = std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager, 9, Vector3f( position.x + distance, position.y, position.z)));
 }
@@ -49,11 +51,26 @@ void SnakeHead::update(float tpf){
             }
         }
         this->body->update(tpf);
+        
+        //Go to the gameover scene when you hit the body
         if(this->body->doesCollideWithBody(this->position)){
-            std::cout << "Collision!!! \n";
-        }else{
-            std::cout << "no collision :-(\n";
+         //   this->app->loadScene(new GameOverScene(this->app));
+            this->scene->goToGameOver();
         }
+        
+        if(this->position.x > 1){
+            this->position.x = -1;
+        }else if(this->position.x < -1){
+            this->position.x = 1;
+        }
+        
+        if(this->position.y > 1){
+            this->position.y = -1;
+        }
+        else if(this->position.y < -1){
+            this->position.y = 1;
+        }
+        
     }
 }
 
