@@ -67,10 +67,7 @@ public:
     /*! Updates the Game logic
      */
     void gameLoop();
-    
-    /*! Draws the Game
-     */
-    void drawLoop();
+
     
     /*! Passes an key down to the game logic
      *  @param keycode of the key that has been pressed.

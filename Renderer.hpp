@@ -30,9 +30,15 @@
 #ifdef __APPLE__
 #include <OpenGl/gl3.h>
 #include <OpenGL/gl3ext.h>
-#elif __WIN32
-..
-
 #endif
+
+#ifdef _WIN32
+#include "GL/glew.h"
+#include <gl/glu.h>
+#include <gl/gl.h>
+#endif
+
+
+
 
 #endif

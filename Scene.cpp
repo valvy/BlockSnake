@@ -13,7 +13,7 @@ void Scene::updateGameObjects(float fps){
 }
 
 void Scene::checkCollision(){
-    const float range = 0.1f;
+    const float range = 0.12f;
     for(auto collider : this->gameObjects){
         if(!collider->canCollide()){
             continue;

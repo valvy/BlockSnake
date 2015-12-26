@@ -50,7 +50,7 @@ protected:
     virtual void update(float tpf) override;
     virtual void draw(float aspect) override;
 public:
-    Background(std::shared_ptr<AssetManager> assetManager);
+    Background(std::shared_ptr<AssetManager> assetManager,std::string texture);
 };
 
 

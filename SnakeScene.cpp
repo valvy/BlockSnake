@@ -10,7 +10,7 @@
 
 SnakeScene::SnakeScene(Application* app) : Scene(app){
  
-    this->addGameObject(std::shared_ptr<Background>(new Background(this->app->getAssetManager())));
+    this->addGameObject(std::shared_ptr<Background>(new Background(this->app->getAssetManager(),"Clouds.bmp")));
     this->addGameObject(std::shared_ptr<SnakeHead>(new SnakeHead(this->app->getAssetManager(), Vector3f(1,0,-2),this)));
    
     this->addGameObject(std::shared_ptr<Fruit>(new Fruit(this->app->getAssetManager(), Vector3f(-0.9f,0,-2))));

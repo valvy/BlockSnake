@@ -20,18 +20,13 @@ Application::Application(unsigned short width, unsigned short height){
     std::cout << glGetString(GL_VERSION) << "\n";
 }
 
+
+
 void Application::gameLoop(){
     clock_t timer;
     timer = clock();
     this->currentScene->update(this->timeLastFrame);
-    this->timeLastFrame = 0.00001f * (clock() - timer);
-    
-}
-
-void Application::drawLoop(){
-    //Do game logic first
-    this->gameLoop();
-    
+   
     //Give a common background to start with
     static const GLfloat background[] = { 0.0f, 0.25f, 0.0f, 1.0f };
     static const GLfloat depth = 1.0f;
@@ -66,6 +61,7 @@ void Application::drawLoop(){
     
     float aspect = 1 * this->width / this->height;
     this->currentScene->draw(aspect);
+    this->timeLastFrame = 0.00001f * (clock() - timer);
 }
 
 

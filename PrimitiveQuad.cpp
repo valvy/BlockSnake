@@ -4,7 +4,6 @@
 PrimitiveQuad::PrimitiveQuad(int uniqueNumber) : PrimitiveForm(uniqueNumber, "Quad"){
 
     std::vector<GLfloat> vertexVBO{
-    
         0.999999f, 1.000000f, 1.000001f,
         -1.000000f, 1.000000f, 1.000000f,
         -1.000000f, -1.000000f, 1.000000f,
@@ -16,7 +15,13 @@ PrimitiveQuad::PrimitiveQuad(int uniqueNumber) : PrimitiveForm(uniqueNumber, "Qu
     
 
     std::vector<GLfloat> uvVBO{
-        0.000000f, 0.000000f, -1.000000f,
+        0.999900f, 0.999900f,
+        0.000100f, 0.999900f,
+        0.000100f, 0.000100f,
+        
+        0.999900f, 0.000100f,
+        0.999900f, 0.999900f,
+        0.000100f, 0.000100f,
     };
     this->dataSize = vertexVBO.size();
     this->resourceData = this->generateVAO();

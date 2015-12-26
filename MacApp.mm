@@ -92,7 +92,7 @@
 
 -(void) drawLoop:(NSTimer*) timer{
     if([self isVisible]){
-        self->app->drawLoop();
+        self->app->gameLoop();
         [glView update];
         [[glView openGLContext] flushBuffer];
     }

@@ -31,7 +31,7 @@ void SnakeHead::update(float tpf){
     if(this->body != nullptr){
         auto difference = std::chrono::steady_clock::now();
         auto time_span = std::chrono::duration_cast<std::chrono::duration<double>>(difference - timer);
-        if(time_span.count() > 0.3f){
+        if(time_span.count() > 0.05f){
             
             this->timer = std::chrono::steady_clock::now();
             auto jumpSpeed = 0.15f;
