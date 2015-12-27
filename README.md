@@ -1,6 +1,6 @@
 # BlockSnake
 A project to test my skills in game engine programming. 
-Instead of using a lot of third party libraries I decided to program everything within reason myself.
+Instead of using a lot of third party libraries I decided to program everything within reason myself. (such as the math library and load bmp textures)
 
 It's written in Opengl c++11 and for windows the winapi, and for apple cocoa.
 
