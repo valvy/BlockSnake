@@ -41,6 +41,8 @@ protected:
      */
     Vector3f position;
     
+    /*! Can the object collide?
+     */
     bool doesCollide;
     
     /*! The current scale of the object
@@ -61,6 +63,9 @@ protected:
      */
     virtual void onDestroy();
     
+    /*! Called when an key is pressed
+     *  @param keycode  The key that is pressed
+     */
     virtual void onKeyDown(unsigned short keycode);
     
     /*! This method calls the game logic of the specified gameobject
@@ -72,9 +77,21 @@ protected:
      *  @param aspect The aspect of the screen
      */
     virtual void draw(float aspect) = 0;
+    
+    /*! Called when the object collides with a other gameobject
+     *  @param col  The other gameobject that it collides with
+     */
     virtual void onCollision(GameObject* col){}
 public:
+    
+    /*! Gets the position of the gameObject
+     *  @return position
+     */
     Vector3f getPosition() const;
+    
+    /*! Checks if the object can collide
+     *  @return collidable
+     */
     bool canCollide() const;
 };
 

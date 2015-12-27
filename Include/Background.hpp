@@ -47,9 +47,18 @@ private:
     int primitive;
     GLint mv_location;
 protected:
+    /*! @inheritDoc
+     */
     virtual void update(float tpf) override;
+    /*! @inheritDoc
+     */
     virtual void draw(float aspect) override;
 public:
+    
+    /*! Creates an background
+     *  @param assetManager the assetManager to get resources from
+     *  @param texture Which texture the background should use
+     */
     Background(std::shared_ptr<AssetManager> assetManager,std::string texture);
 };
 

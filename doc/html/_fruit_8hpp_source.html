@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>“BlockSnake”: Include/Fruit.hpp Source File</title>
+<title>BlockSnake: Include/Fruit.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">“BlockSnake”
+   <div id="projectname">BlockSnake
    </div>
   </td>
  </tr>
@@ -89,49 +89,81 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Fruit.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_fruit_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FRUIT_HPP</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FRUIT_HPP</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_object_8hpp.html">GameObject.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_renderer_8hpp.html">Renderer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_asset_manager_8hpp.html">AssetManager.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_fruit.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_fruit.html">Fruit</a> : <span class="keyword">public</span> <a class="code" href="class_game_object.html">GameObject</a>{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_fruit.html#a6bf9e2ee4c7124abbaed3bb9f46e565a">    8</a></span>&#160;    std::shared_ptr&lt;AssetManager&gt; <a class="code" href="class_fruit.html#a6bf9e2ee4c7124abbaed3bb9f46e565a">assetManager</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_fruit.html#abdd3eb472b7e986a15c86c4ea71fb408">    9</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_fruit.html#abdd3eb472b7e986a15c86c4ea71fb408">fruitProgram</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_fruit.html#a7b83e10e31ca0372b7b35777f6028908">   10</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_fruit.html#a7b83e10e31ca0372b7b35777f6028908">texture</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_fruit.html#a721162c683f2692adab0a0712e05f2d9">   11</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_fruit.html#a721162c683f2692adab0a0712e05f2d9">primitive</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_fruit.html#afaf468809cd0051583fb68af85b0dca9">   12</a></span>&#160;    GLint <a class="code" href="class_fruit.html#afaf468809cd0051583fb68af85b0dca9">mv_location</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_fruit.html#a2f4580417c4f0c7a85da3fcfadef8307">update</a>(<span class="keywordtype">float</span> tpf) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_fruit.html#a3bfd45aa9c1e1be429a7fe7bb78fbb2d">onDestroy</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_fruit.html#a09a7cad64d9d1ccd64a77bd37a0298be">draw</a> (<span class="keywordtype">float</span> aspect) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_fruit.html#aba24feb3cc3c080a2fcbc20df2b84a03">onCollision</a>(<a class="code" href="class_game_object.html">GameObject</a>* col) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_fruit.html#aaba110ce851e71ffb2974a9df868f83b">findRandomPlace</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_fruit.html#aba47824a880b99ef5e67c742606891a6">Fruit</a>(std::shared_ptr&lt;AssetManager&gt;,<a class="code" href="struct_vector3.html">Vector3f</a> <a class="code" href="class_game_object.html#aa7f989d9c65e41878aa8d71b184039a1">position</a>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="_fruit_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2015, Heiko van der Heijden</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * All rights reserved.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * modification, are permitted provided that the following conditions are met:</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * * Redistributions of source code must retain the above copyright notice, this</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *   list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * * Redistributions in binary form must reproduce the above copyright notice,</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   this list of conditions and the following disclaimer in the documentation</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *   and/or other materials provided with the distribution.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef FRUIT_HPP</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define FRUIT_HPP</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_object_8hpp.html">GameObject.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_renderer_8hpp.html">Renderer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_asset_manager_8hpp.html">AssetManager.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_fruit.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_fruit.html">Fruit</a> : <span class="keyword">public</span> <a class="code" href="class_game_object.html">GameObject</a>{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_fruit.html#a6bf9e2ee4c7124abbaed3bb9f46e565a">   33</a></span>&#160;    std::shared_ptr&lt;AssetManager&gt; <a class="code" href="class_fruit.html#a6bf9e2ee4c7124abbaed3bb9f46e565a">assetManager</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_fruit.html#abdd3eb472b7e986a15c86c4ea71fb408">   37</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_fruit.html#abdd3eb472b7e986a15c86c4ea71fb408">fruitProgram</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_fruit.html#a7b83e10e31ca0372b7b35777f6028908">   40</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_fruit.html#a7b83e10e31ca0372b7b35777f6028908">texture</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_fruit.html#a721162c683f2692adab0a0712e05f2d9">   44</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_fruit.html#a721162c683f2692adab0a0712e05f2d9">primitive</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_fruit.html#afaf468809cd0051583fb68af85b0dca9">   45</a></span>&#160;    GLint <a class="code" href="class_fruit.html#afaf468809cd0051583fb68af85b0dca9">mv_location</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_fruit.html#a2f4580417c4f0c7a85da3fcfadef8307">update</a>(<span class="keywordtype">float</span> tpf) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_fruit.html#a3bfd45aa9c1e1be429a7fe7bb78fbb2d">onDestroy</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_fruit.html#a09a7cad64d9d1ccd64a77bd37a0298be">draw</a> (<span class="keywordtype">float</span> aspect) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_fruit.html#aba24feb3cc3c080a2fcbc20df2b84a03">onCollision</a>(<a class="code" href="class_game_object.html">GameObject</a>* col) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_fruit.html#aaba110ce851e71ffb2974a9df868f83b">findRandomPlace</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="class_fruit.html#a3e37abd3a0e538570b49568ea3da9ddc">Fruit</a>(std::shared_ptr&lt;AssetManager&gt; assetManager,<a class="code" href="struct_vector3.html">Vector3f</a> <a class="code" href="class_game_object.html#aa7f989d9c65e41878aa8d71b184039a1">position</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_fruit_html_a09a7cad64d9d1ccd64a77bd37a0298be"><div class="ttname"><a href="class_fruit.html#a09a7cad64d9d1ccd64a77bd37a0298be">Fruit::draw</a></div><div class="ttdeci">virtual void draw(float aspect) override</div><div class="ttdef"><b>Definition:</b> Fruit.cpp:20</div></div>
-<div class="ttc" id="class_fruit_html_abdd3eb472b7e986a15c86c4ea71fb408"><div class="ttname"><a href="class_fruit.html#abdd3eb472b7e986a15c86c4ea71fb408">Fruit::fruitProgram</a></div><div class="ttdeci">int fruitProgram</div><div class="ttdef"><b>Definition:</b> Fruit.hpp:9</div></div>
-<div class="ttc" id="class_fruit_html_a6bf9e2ee4c7124abbaed3bb9f46e565a"><div class="ttname"><a href="class_fruit.html#a6bf9e2ee4c7124abbaed3bb9f46e565a">Fruit::assetManager</a></div><div class="ttdeci">std::shared_ptr&lt; AssetManager &gt; assetManager</div><div class="ttdef"><b>Definition:</b> Fruit.hpp:8</div></div>
+<div class="ttc" id="class_fruit_html_abdd3eb472b7e986a15c86c4ea71fb408"><div class="ttname"><a href="class_fruit.html#abdd3eb472b7e986a15c86c4ea71fb408">Fruit::fruitProgram</a></div><div class="ttdeci">int fruitProgram</div><div class="ttdef"><b>Definition:</b> Fruit.hpp:37</div></div>
+<div class="ttc" id="class_fruit_html_a6bf9e2ee4c7124abbaed3bb9f46e565a"><div class="ttname"><a href="class_fruit.html#a6bf9e2ee4c7124abbaed3bb9f46e565a">Fruit::assetManager</a></div><div class="ttdeci">std::shared_ptr&lt; AssetManager &gt; assetManager</div><div class="ttdef"><b>Definition:</b> Fruit.hpp:33</div></div>
+<div class="ttc" id="class_fruit_html_a3e37abd3a0e538570b49568ea3da9ddc"><div class="ttname"><a href="class_fruit.html#a3e37abd3a0e538570b49568ea3da9ddc">Fruit::Fruit</a></div><div class="ttdeci">Fruit(std::shared_ptr&lt; AssetManager &gt; assetManager, Vector3f position)</div><div class="ttdef"><b>Definition:</b> Fruit.cpp:5</div></div>
 <div class="ttc" id="class_game_object_html_aa7f989d9c65e41878aa8d71b184039a1"><div class="ttname"><a href="class_game_object.html#aa7f989d9c65e41878aa8d71b184039a1">GameObject::position</a></div><div class="ttdeci">Vector3f position</div><div class="ttdef"><b>Definition:</b> GameObject.hpp:42</div></div>
-<div class="ttc" id="class_fruit_html_aba47824a880b99ef5e67c742606891a6"><div class="ttname"><a href="class_fruit.html#aba47824a880b99ef5e67c742606891a6">Fruit::Fruit</a></div><div class="ttdeci">Fruit(std::shared_ptr&lt; AssetManager &gt;, Vector3f position)</div><div class="ttdef"><b>Definition:</b> Fruit.cpp:5</div></div>
 <div class="ttc" id="struct_vector3_html"><div class="ttname"><a href="struct_vector3.html">Vector3&lt; float &gt;</a></div></div>
 <div class="ttc" id="_asset_manager_8hpp_html"><div class="ttname"><a href="_asset_manager_8hpp.html">AssetManager.hpp</a></div></div>
 <div class="ttc" id="_renderer_8hpp_html"><div class="ttname"><a href="_renderer_8hpp.html">Renderer.hpp</a></div></div>
 <div class="ttc" id="class_game_object_html"><div class="ttname"><a href="class_game_object.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> GameObject.hpp:37</div></div>
 <div class="ttc" id="_game_object_8hpp_html"><div class="ttname"><a href="_game_object_8hpp.html">GameObject.hpp</a></div></div>
 <div class="ttc" id="class_fruit_html_aaba110ce851e71ffb2974a9df868f83b"><div class="ttname"><a href="class_fruit.html#aaba110ce851e71ffb2974a9df868f83b">Fruit::findRandomPlace</a></div><div class="ttdeci">virtual void findRandomPlace()</div><div class="ttdef"><b>Definition:</b> Fruit.cpp:30</div></div>
-<div class="ttc" id="class_fruit_html_afaf468809cd0051583fb68af85b0dca9"><div class="ttname"><a href="class_fruit.html#afaf468809cd0051583fb68af85b0dca9">Fruit::mv_location</a></div><div class="ttdeci">GLint mv_location</div><div class="ttdef"><b>Definition:</b> Fruit.hpp:12</div></div>
+<div class="ttc" id="class_fruit_html_afaf468809cd0051583fb68af85b0dca9"><div class="ttname"><a href="class_fruit.html#afaf468809cd0051583fb68af85b0dca9">Fruit::mv_location</a></div><div class="ttdeci">GLint mv_location</div><div class="ttdef"><b>Definition:</b> Fruit.hpp:45</div></div>
 <div class="ttc" id="class_fruit_html_a3bfd45aa9c1e1be429a7fe7bb78fbb2d"><div class="ttname"><a href="class_fruit.html#a3bfd45aa9c1e1be429a7fe7bb78fbb2d">Fruit::onDestroy</a></div><div class="ttdeci">virtual void onDestroy() override</div><div class="ttdef"><b>Definition:</b> Fruit.cpp:53</div></div>
 <div class="ttc" id="class_fruit_html_a2f4580417c4f0c7a85da3fcfadef8307"><div class="ttname"><a href="class_fruit.html#a2f4580417c4f0c7a85da3fcfadef8307">Fruit::update</a></div><div class="ttdeci">virtual void update(float tpf) override</div><div class="ttdef"><b>Definition:</b> Fruit.cpp:16</div></div>
 <div class="ttc" id="class_fruit_html_aba24feb3cc3c080a2fcbc20df2b84a03"><div class="ttname"><a href="class_fruit.html#aba24feb3cc3c080a2fcbc20df2b84a03">Fruit::onCollision</a></div><div class="ttdeci">virtual void onCollision(GameObject *col) override</div><div class="ttdef"><b>Definition:</b> Fruit.cpp:36</div></div>
-<div class="ttc" id="class_fruit_html"><div class="ttname"><a href="class_fruit.html">Fruit</a></div><div class="ttdef"><b>Definition:</b> Fruit.hpp:6</div></div>
-<div class="ttc" id="class_fruit_html_a7b83e10e31ca0372b7b35777f6028908"><div class="ttname"><a href="class_fruit.html#a7b83e10e31ca0372b7b35777f6028908">Fruit::texture</a></div><div class="ttdeci">int texture</div><div class="ttdef"><b>Definition:</b> Fruit.hpp:10</div></div>
-<div class="ttc" id="class_fruit_html_a721162c683f2692adab0a0712e05f2d9"><div class="ttname"><a href="class_fruit.html#a721162c683f2692adab0a0712e05f2d9">Fruit::primitive</a></div><div class="ttdeci">int primitive</div><div class="ttdef"><b>Definition:</b> Fruit.hpp:11</div></div>
+<div class="ttc" id="class_fruit_html"><div class="ttname"><a href="class_fruit.html">Fruit</a></div><div class="ttdef"><b>Definition:</b> Fruit.hpp:31</div></div>
+<div class="ttc" id="class_fruit_html_a7b83e10e31ca0372b7b35777f6028908"><div class="ttname"><a href="class_fruit.html#a7b83e10e31ca0372b7b35777f6028908">Fruit::texture</a></div><div class="ttdeci">int texture</div><div class="ttdef"><b>Definition:</b> Fruit.hpp:40</div></div>
+<div class="ttc" id="class_fruit_html_a721162c683f2692adab0a0712e05f2d9"><div class="ttname"><a href="class_fruit.html#a721162c683f2692adab0a0712e05f2d9">Fruit::primitive</a></div><div class="ttdeci">int primitive</div><div class="ttdef"><b>Definition:</b> Fruit.hpp:44</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

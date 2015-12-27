@@ -25,10 +25,20 @@ private:
     std::shared_ptr<SnakeBody> body;
     Direction direction;
 protected:
+    /*! @inheritDoc
+     */
     virtual void update(float tpf) override;
+    /*! @inheritDoc
+     */
     virtual void onDestroy() override;
+    /*! @inheritDoc
+     */
     virtual void draw(float aspect) override;
+    /*! @inheritDoc
+     */
     virtual void onKeyDown(unsigned short keycode) override;
+    /*! @inheritDoc
+     */
     virtual void onCollision(GameObject* col) override;
 public:
     

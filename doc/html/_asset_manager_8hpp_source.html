@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>“BlockSnake”: Include/AssetManager.hpp Source File</title>
+<title>BlockSnake: Include/AssetManager.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">“BlockSnake”
+   <div id="projectname">BlockSnake
    </div>
   </td>
  </tr>
@@ -126,77 +126,77 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_asset_manager.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_asset_manager.html">AssetManager</a>{</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_asset_manager.html#aceab53cff282558ccc1dc61911d32eb1">   41</a></span>&#160;    std::string <a class="code" href="class_asset_manager.html#aceab53cff282558ccc1dc61911d32eb1">path</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_asset_manager.html#a8c7d65775e4ee475803f809dbe4cfc80">   45</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;ShaderAsset&gt;&gt; <a class="code" href="class_asset_manager.html#a8c7d65775e4ee475803f809dbe4cfc80">shaders</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_asset_manager.html#a41cf5ad30205e55847291ae14a04e68e">   49</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;ProgramAsset&gt;&gt; <a class="code" href="class_asset_manager.html#a41cf5ad30205e55847291ae14a04e68e">programs</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_asset_manager.html#ab63142a3745bbb81a26d8bc279ec9ca8">   53</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;TextureAsset&gt;&gt; <a class="code" href="class_asset_manager.html#ab63142a3745bbb81a26d8bc279ec9ca8">textures</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_asset_manager.html#ae40783b5b7829004555faa00ee243f05">   57</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;PrimitiveForm&gt;&gt; <a class="code" href="class_asset_manager.html#ae40783b5b7829004555faa00ee243f05">primitives</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_asset_manager.html#a4198c871bed5580561b016521a002f01">   61</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_asset_manager.html#a4198c871bed5580561b016521a002f01">uniqueNumber</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_asset_manager.html#a2f4268e09d28cf64b1e6757e7bc34a3e">   67</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_asset_manager.html#a2f4268e09d28cf64b1e6757e7bc34a3e">destroyAssets</a>(T&amp; obj){</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> it : obj){</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span>(it != <span class="keyword">nullptr</span>){</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                it-&gt;destroy();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            it.reset();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        obj.clear();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="class_asset_manager.html#a27bff96b432a1b180d20d0aeadffa9ec">AssetManager</a>(std::string path);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_asset_manager.html#ac3257906ef28ac9fe4fac1fedbe10c05">loadCube</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_asset_manager.html#aceab53cff282558ccc1dc61911d32eb1">   43</a></span>&#160;    std::string <a class="code" href="class_asset_manager.html#aceab53cff282558ccc1dc61911d32eb1">path</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_asset_manager.html#a8c7d65775e4ee475803f809dbe4cfc80">   47</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;ShaderAsset&gt;&gt; <a class="code" href="class_asset_manager.html#a8c7d65775e4ee475803f809dbe4cfc80">shaders</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_asset_manager.html#a41cf5ad30205e55847291ae14a04e68e">   51</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;ProgramAsset&gt;&gt; <a class="code" href="class_asset_manager.html#a41cf5ad30205e55847291ae14a04e68e">programs</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_asset_manager.html#ab63142a3745bbb81a26d8bc279ec9ca8">   55</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;TextureAsset&gt;&gt; <a class="code" href="class_asset_manager.html#ab63142a3745bbb81a26d8bc279ec9ca8">textures</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_asset_manager.html#ae40783b5b7829004555faa00ee243f05">   59</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;PrimitiveForm&gt;&gt; <a class="code" href="class_asset_manager.html#ae40783b5b7829004555faa00ee243f05">primitives</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_asset_manager.html#a4198c871bed5580561b016521a002f01">   63</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_asset_manager.html#a4198c871bed5580561b016521a002f01">uniqueNumber</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_asset_manager.html#a2f4268e09d28cf64b1e6757e7bc34a3e">   69</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_asset_manager.html#a2f4268e09d28cf64b1e6757e7bc34a3e">destroyAssets</a>(T&amp; obj){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> it : obj){</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">if</span>(it != <span class="keyword">nullptr</span>){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                it-&gt;destroy();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            it.reset();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        obj.clear();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="class_asset_manager.html#a27bff96b432a1b180d20d0aeadffa9ec">AssetManager</a>(std::string path);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_asset_manager.html#a786fd0df854231695b8e1d042fd269e4">loadQuad</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_asset_manager.html#ac3257906ef28ac9fe4fac1fedbe10c05">loadCube</a>();</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_asset_manager.html#a8d35fd517df07d989ac4c9acc21f887f">bindTexture</a>(<span class="keywordtype">int</span> reference);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_asset_manager.html#a6cb0a445484f64bf221f6e4e62c0977d">loadTexture</a>(std::string path);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_asset_manager.html#a01d88c16be572f1bef7565e59a337e82">loadProgram</a>(std::string vertexShader, std::string fragmentShader);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_asset_manager.html#aa83f5b5028ad6560c0004e235d177d09">renderPrimitive</a>(<span class="keywordtype">int</span> reference);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_asset_manager.html#aa42a60912939713700a2c5e2b65854cb">useProgram</a>(<span class="keywordtype">int</span> reference);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    GLint <a class="code" href="class_asset_manager.html#a1216fe840fef779ff5fa9b0e2814da16">getUniformLocation</a>(<span class="keywordtype">int</span> reference,std::string var);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_asset_manager.html#a1ed3ed8b8696accc786e5a44c0d7f09b">destroy</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_asset_manager.html#a786fd0df854231695b8e1d042fd269e4">loadQuad</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_asset_manager.html#a8d35fd517df07d989ac4c9acc21f887f">bindTexture</a>(<span class="keywordtype">int</span> reference);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_asset_manager.html#a6cb0a445484f64bf221f6e4e62c0977d">loadTexture</a>(std::string path);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_asset_manager.html#a01d88c16be572f1bef7565e59a337e82">loadProgram</a>(std::string vertexShader, std::string fragmentShader);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_asset_manager.html#a08f0602082269562e5c3bd9c266caa39">renderPrimitive</a>(<span class="keywordtype">int</span> reference) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_asset_manager.html#a39ae5adb3e4ea16b7670af55f03a38b4">useProgram</a>(<span class="keywordtype">int</span> reference) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    GLint <a class="code" href="class_asset_manager.html#ab85aa3c33a581dc530b5d84c0e2ce677">getUniformLocation</a>(<span class="keywordtype">int</span> reference,std::string var) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="class_asset_manager.html#a9c89817cbf3516f1451c116e89f47d30">~AssetManager</a>();</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;};</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_asset_manager_html_a41cf5ad30205e55847291ae14a04e68e"><div class="ttname"><a href="class_asset_manager.html#a41cf5ad30205e55847291ae14a04e68e">AssetManager::programs</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; ProgramAsset &gt; &gt; programs</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:49</div></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_asset_manager.html#a1ed3ed8b8696accc786e5a44c0d7f09b">destroy</a>();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="class_asset_manager.html#a9c89817cbf3516f1451c116e89f47d30">~AssetManager</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;};</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_asset_manager_html_a41cf5ad30205e55847291ae14a04e68e"><div class="ttname"><a href="class_asset_manager.html#a41cf5ad30205e55847291ae14a04e68e">AssetManager::programs</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; ProgramAsset &gt; &gt; programs</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:51</div></div>
 <div class="ttc" id="_program_asset_8hpp_html"><div class="ttname"><a href="_program_asset_8hpp.html">ProgramAsset.hpp</a></div></div>
 <div class="ttc" id="class_asset_manager_html_ac3257906ef28ac9fe4fac1fedbe10c05"><div class="ttname"><a href="class_asset_manager.html#ac3257906ef28ac9fe4fac1fedbe10c05">AssetManager::loadCube</a></div><div class="ttdeci">int loadCube()</div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:12</div></div>
-<div class="ttc" id="class_asset_manager_html_a2f4268e09d28cf64b1e6757e7bc34a3e"><div class="ttname"><a href="class_asset_manager.html#a2f4268e09d28cf64b1e6757e7bc34a3e">AssetManager::destroyAssets</a></div><div class="ttdeci">void destroyAssets(T &amp;obj)</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:67</div></div>
-<div class="ttc" id="class_asset_manager_html_a1216fe840fef779ff5fa9b0e2814da16"><div class="ttname"><a href="class_asset_manager.html#a1216fe840fef779ff5fa9b0e2814da16">AssetManager::getUniformLocation</a></div><div class="ttdeci">GLint getUniformLocation(int reference, std::string var)</div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:129</div></div>
-<div class="ttc" id="class_asset_manager_html_aa42a60912939713700a2c5e2b65854cb"><div class="ttname"><a href="class_asset_manager.html#aa42a60912939713700a2c5e2b65854cb">AssetManager::useProgram</a></div><div class="ttdeci">void useProgram(int reference)</div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:119</div></div>
-<div class="ttc" id="class_asset_manager_html_aa83f5b5028ad6560c0004e235d177d09"><div class="ttname"><a href="class_asset_manager.html#aa83f5b5028ad6560c0004e235d177d09">AssetManager::renderPrimitive</a></div><div class="ttdeci">void renderPrimitive(int reference)</div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:37</div></div>
-<div class="ttc" id="class_asset_manager_html_a4198c871bed5580561b016521a002f01"><div class="ttname"><a href="class_asset_manager.html#a4198c871bed5580561b016521a002f01">AssetManager::uniqueNumber</a></div><div class="ttdeci">int uniqueNumber</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:61</div></div>
-<div class="ttc" id="class_asset_manager_html_ab63142a3745bbb81a26d8bc279ec9ca8"><div class="ttname"><a href="class_asset_manager.html#ab63142a3745bbb81a26d8bc279ec9ca8">AssetManager::textures</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; TextureAsset &gt; &gt; textures</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:53</div></div>
+<div class="ttc" id="class_asset_manager_html_a2f4268e09d28cf64b1e6757e7bc34a3e"><div class="ttname"><a href="class_asset_manager.html#a2f4268e09d28cf64b1e6757e7bc34a3e">AssetManager::destroyAssets</a></div><div class="ttdeci">void destroyAssets(T &amp;obj)</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:69</div></div>
+<div class="ttc" id="class_asset_manager_html_a08f0602082269562e5c3bd9c266caa39"><div class="ttname"><a href="class_asset_manager.html#a08f0602082269562e5c3bd9c266caa39">AssetManager::renderPrimitive</a></div><div class="ttdeci">void renderPrimitive(int reference) const </div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:37</div></div>
+<div class="ttc" id="class_asset_manager_html_ab85aa3c33a581dc530b5d84c0e2ce677"><div class="ttname"><a href="class_asset_manager.html#ab85aa3c33a581dc530b5d84c0e2ce677">AssetManager::getUniformLocation</a></div><div class="ttdeci">GLint getUniformLocation(int reference, std::string var) const </div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:129</div></div>
+<div class="ttc" id="class_asset_manager_html_a4198c871bed5580561b016521a002f01"><div class="ttname"><a href="class_asset_manager.html#a4198c871bed5580561b016521a002f01">AssetManager::uniqueNumber</a></div><div class="ttdeci">int uniqueNumber</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:63</div></div>
+<div class="ttc" id="class_asset_manager_html_ab63142a3745bbb81a26d8bc279ec9ca8"><div class="ttname"><a href="class_asset_manager.html#ab63142a3745bbb81a26d8bc279ec9ca8">AssetManager::textures</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; TextureAsset &gt; &gt; textures</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:55</div></div>
 <div class="ttc" id="_primitive_form_8hpp_html"><div class="ttname"><a href="_primitive_form_8hpp.html">PrimitiveForm.hpp</a></div></div>
-<div class="ttc" id="class_asset_manager_html_aceab53cff282558ccc1dc61911d32eb1"><div class="ttname"><a href="class_asset_manager.html#aceab53cff282558ccc1dc61911d32eb1">AssetManager::path</a></div><div class="ttdeci">std::string path</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:41</div></div>
+<div class="ttc" id="class_asset_manager_html_aceab53cff282558ccc1dc61911d32eb1"><div class="ttname"><a href="class_asset_manager.html#aceab53cff282558ccc1dc61911d32eb1">AssetManager::path</a></div><div class="ttdeci">std::string path</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:43</div></div>
 <div class="ttc" id="class_asset_manager_html_a1ed3ed8b8696accc786e5a44c0d7f09b"><div class="ttname"><a href="class_asset_manager.html#a1ed3ed8b8696accc786e5a44c0d7f09b">AssetManager::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:139</div></div>
-<div class="ttc" id="class_asset_manager_html_ae40783b5b7829004555faa00ee243f05"><div class="ttname"><a href="class_asset_manager.html#ae40783b5b7829004555faa00ee243f05">AssetManager::primitives</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; PrimitiveForm &gt; &gt; primitives</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:57</div></div>
+<div class="ttc" id="class_asset_manager_html_ae40783b5b7829004555faa00ee243f05"><div class="ttname"><a href="class_asset_manager.html#ae40783b5b7829004555faa00ee243f05">AssetManager::primitives</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; PrimitiveForm &gt; &gt; primitives</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:59</div></div>
 <div class="ttc" id="class_asset_manager_html_a27bff96b432a1b180d20d0aeadffa9ec"><div class="ttname"><a href="class_asset_manager.html#a27bff96b432a1b180d20d0aeadffa9ec">AssetManager::AssetManager</a></div><div class="ttdeci">AssetManager(std::string path)</div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:7</div></div>
 <div class="ttc" id="_shader_asset_8hpp_html"><div class="ttname"><a href="_shader_asset_8hpp.html">ShaderAsset.hpp</a></div></div>
 <div class="ttc" id="class_asset_manager_html_a9c89817cbf3516f1451c116e89f47d30"><div class="ttname"><a href="class_asset_manager.html#a9c89817cbf3516f1451c116e89f47d30">AssetManager::~AssetManager</a></div><div class="ttdeci">~AssetManager()</div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:146</div></div>
 <div class="ttc" id="_texture_asset_8hpp_html"><div class="ttname"><a href="_texture_asset_8hpp.html">TextureAsset.hpp</a></div></div>
+<div class="ttc" id="class_asset_manager_html_a39ae5adb3e4ea16b7670af55f03a38b4"><div class="ttname"><a href="class_asset_manager.html#a39ae5adb3e4ea16b7670af55f03a38b4">AssetManager::useProgram</a></div><div class="ttdeci">void useProgram(int reference) const </div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:119</div></div>
 <div class="ttc" id="class_asset_manager_html_a01d88c16be572f1bef7565e59a337e82"><div class="ttname"><a href="class_asset_manager.html#a01d88c16be572f1bef7565e59a337e82">AssetManager::loadProgram</a></div><div class="ttdeci">int loadProgram(std::string vertexShader, std::string fragmentShader)</div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:61</div></div>
 <div class="ttc" id="class_asset_manager_html_a8d35fd517df07d989ac4c9acc21f887f"><div class="ttname"><a href="class_asset_manager.html#a8d35fd517df07d989ac4c9acc21f887f">AssetManager::bindTexture</a></div><div class="ttdeci">void bindTexture(int reference)</div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:26</div></div>
 <div class="ttc" id="class_asset_manager_html"><div class="ttname"><a href="class_asset_manager.html">AssetManager</a></div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:39</div></div>
-<div class="ttc" id="class_asset_manager_html_a8c7d65775e4ee475803f809dbe4cfc80"><div class="ttname"><a href="class_asset_manager.html#a8c7d65775e4ee475803f809dbe4cfc80">AssetManager::shaders</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; ShaderAsset &gt; &gt; shaders</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:45</div></div>
+<div class="ttc" id="class_asset_manager_html_a8c7d65775e4ee475803f809dbe4cfc80"><div class="ttname"><a href="class_asset_manager.html#a8c7d65775e4ee475803f809dbe4cfc80">AssetManager::shaders</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; ShaderAsset &gt; &gt; shaders</div><div class="ttdef"><b>Definition:</b> AssetManager.hpp:47</div></div>
 <div class="ttc" id="class_asset_manager_html_a786fd0df854231695b8e1d042fd269e4"><div class="ttname"><a href="class_asset_manager.html#a786fd0df854231695b8e1d042fd269e4">AssetManager::loadQuad</a></div><div class="ttdeci">int loadQuad()</div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:19</div></div>
 <div class="ttc" id="class_asset_manager_html_a6cb0a445484f64bf221f6e4e62c0977d"><div class="ttname"><a href="class_asset_manager.html#a6cb0a445484f64bf221f6e4e62c0977d">AssetManager::loadTexture</a></div><div class="ttdeci">int loadTexture(std::string path)</div><div class="ttdef"><b>Definition:</b> AssetManager.cpp:47</div></div>
 </div><!-- fragment --></div><!-- contents -->

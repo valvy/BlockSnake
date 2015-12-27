@@ -20,8 +20,5 @@ var searchData=
   ['snakescene',['SnakeScene',['../class_snake_scene.html',1,'SnakeScene'],['../class_snake_scene.html#a1e163dd517773f92ebf54cf9778b24b3',1,'SnakeScene::SnakeScene()']]],
   ['snakescene_2ecpp',['SnakeScene.cpp',['../_snake_scene_8cpp.html',1,'']]],
   ['snakescene_2ehpp',['SnakeScene.hpp',['../_snake_scene_8hpp.html',1,'']]],
-  ['speed',['speed',['../class_snake_head.html#ae0d0e6e34847125833da185b332ecfe4',1,'SnakeHead']]],
-  ['storedatainvao',['storeDataInVAO',['../class_primitive_form.html#aba35de1c3ae67cad574c70fb821b6ab1',1,'PrimitiveForm']]],
-  ['stringify',['STRINGIFY',['../_c_make_c_compiler_id_8c.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCXXCompilerId.cpp']]],
-  ['stringify_5fhelper',['STRINGIFY_HELPER',['../_c_make_c_compiler_id_8c.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCXXCompilerId.cpp']]]
+  ['storedatainvao',['storeDataInVAO',['../class_primitive_form.html#aba35de1c3ae67cad574c70fb821b6ab1',1,'PrimitiveForm']]]
 ];

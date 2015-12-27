@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>“BlockSnake”: Background Class Reference</title>
+<title>BlockSnake: Background Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">“BlockSnake”
+   <div id="projectname">BlockSnake
    </div>
   </td>
  </tr>
@@ -109,10 +109,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1a83d3aea970a2417a06f68049aa639d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_background.html#a1a83d3aea970a2417a06f68049aa639d">Background</a> (std::shared_ptr&lt; <a class="el" href="class_asset_manager.html">AssetManager</a> &gt; <a class="el" href="class_background.html#af6ef39d961ef4878d99f2e1cbe61e2a7">assetManager</a>, std::string <a class="el" href="class_background.html#a2b720376e981b2a3b40583a7013e1554">texture</a>)</td></tr>
 <tr class="separator:a1a83d3aea970a2417a06f68049aa639d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_game_object.html">GameObject</a></td></tr>
-<tr class="memitem:acd5401d914d70e366fc50b4c2f19827f inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_game_object_8hpp.html#af345ad77ba5e240c7ab72b4b2077e754">Vector3f</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#acd5401d914d70e366fc50b4c2f19827f">getPosition</a> ()</td></tr>
-<tr class="separator:acd5401d914d70e366fc50b4c2f19827f inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53a3198c8a563c34f18dbc871e6fb115 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a53a3198c8a563c34f18dbc871e6fb115">canCollide</a> ()</td></tr>
-<tr class="separator:a53a3198c8a563c34f18dbc871e6fb115 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aeeeae09bc1ffcb338a26c643de1ff0 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_game_object_8hpp.html#af345ad77ba5e240c7ab72b4b2077e754">Vector3f</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a4aeeeae09bc1ffcb338a26c643de1ff0">getPosition</a> () const </td></tr>
+<tr class="separator:a4aeeeae09bc1ffcb338a26c643de1ff0 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c4e7df92b4fb75bad673d7dbf79c48d inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a6c4e7df92b4fb75bad673d7dbf79c48d">canCollide</a> () const </td></tr>
+<tr class="separator:a6c4e7df92b4fb75bad673d7dbf79c48d inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -181,6 +181,13 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates an background </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assetManager</td><td>the assetManager to get resources from </td></tr>
+    <tr><td class="paramname">texture</td><td>Which texture the background should use </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -206,12 +213,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This method calls to draw the gameObject </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">aspect</td><td>The aspect of the screen </td></tr>
-  </table>
-  </dd>
-</dl>
 
 <p>Implements <a class="el" href="class_game_object.html#a2a31c4afa6fda6e897cfc88bf70e82da">GameObject</a>.</p>
 
@@ -238,12 +239,6 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This method calls the game logic of the specified gameobject </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">tpf</td><td>Time per frame, </td></tr>
-  </table>
-  </dd>
-</dl>
 
 <p>Implements <a class="el" href="class_game_object.html#a921e89ac665180fcf30757b5be422495">GameObject</a>.</p>
 

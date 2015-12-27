@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>“BlockSnake”: AssetManager Class Reference</title>
+<title>BlockSnake: AssetManager Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">“BlockSnake”
+   <div id="projectname">BlockSnake
    </div>
   </td>
  </tr>
@@ -109,12 +109,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6cb0a445484f64bf221f6e4e62c0977d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01d88c16be572f1bef7565e59a337e82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#a01d88c16be572f1bef7565e59a337e82">loadProgram</a> (std::string vertexShader, std::string fragmentShader)</td></tr>
 <tr class="separator:a01d88c16be572f1bef7565e59a337e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa83f5b5028ad6560c0004e235d177d09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#aa83f5b5028ad6560c0004e235d177d09">renderPrimitive</a> (int reference)</td></tr>
-<tr class="separator:aa83f5b5028ad6560c0004e235d177d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa42a60912939713700a2c5e2b65854cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#aa42a60912939713700a2c5e2b65854cb">useProgram</a> (int reference)</td></tr>
-<tr class="separator:aa42a60912939713700a2c5e2b65854cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1216fe840fef779ff5fa9b0e2814da16"><td class="memItemLeft" align="right" valign="top">GLint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#a1216fe840fef779ff5fa9b0e2814da16">getUniformLocation</a> (int reference, std::string var)</td></tr>
-<tr class="separator:a1216fe840fef779ff5fa9b0e2814da16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f0602082269562e5c3bd9c266caa39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#a08f0602082269562e5c3bd9c266caa39">renderPrimitive</a> (int reference) const </td></tr>
+<tr class="separator:a08f0602082269562e5c3bd9c266caa39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39ae5adb3e4ea16b7670af55f03a38b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#a39ae5adb3e4ea16b7670af55f03a38b4">useProgram</a> (int reference) const </td></tr>
+<tr class="separator:a39ae5adb3e4ea16b7670af55f03a38b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab85aa3c33a581dc530b5d84c0e2ce677"><td class="memItemLeft" align="right" valign="top">GLint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#ab85aa3c33a581dc530b5d84c0e2ce677">getUniformLocation</a> (int reference, std::string var) const </td></tr>
+<tr class="separator:ab85aa3c33a581dc530b5d84c0e2ce677"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ed3ed8b8696accc786e5a44c0d7f09b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#a1ed3ed8b8696accc786e5a44c0d7f09b">destroy</a> ()</td></tr>
 <tr class="separator:a1ed3ed8b8696accc786e5a44c0d7f09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c89817cbf3516f1451c116e89f47d30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#a9c89817cbf3516f1451c116e89f47d30">~AssetManager</a> ()</td></tr>
@@ -157,6 +157,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initializes the assetmanager. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>the place where the Assets folder is </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -252,7 +258,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a1216fe840fef779ff5fa9b0e2814da16"></a>
+<a class="anchor" id="ab85aa3c33a581dc530b5d84c0e2ce677"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -271,7 +277,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -391,7 +397,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aa83f5b5028ad6560c0004e235d177d09"></a>
+<a class="anchor" id="a08f0602082269562e5c3bd9c266caa39"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -400,7 +406,7 @@ template&lt;typename T &gt; </div>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>reference</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -419,7 +425,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aa42a60912939713700a2c5e2b65854cb"></a>
+<a class="anchor" id="a39ae5adb3e4ea16b7670af55f03a38b4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -428,7 +434,7 @@ template&lt;typename T &gt; </div>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>reference</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -465,6 +471,7 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Storage where the path is </p>
 
 </div>
 </div>

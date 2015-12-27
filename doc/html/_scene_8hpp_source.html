@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>“BlockSnake”: Include/Scene.hpp Source File</title>
+<title>BlockSnake: Include/Scene.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">“BlockSnake”
+   <div id="projectname">BlockSnake
    </div>
   </td>
  </tr>
@@ -89,54 +89,89 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Scene.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_scene_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SCENE_HPP</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SCENE_HPP</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_object_8hpp.html">GameObject.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span><a class="code" href="class_application.html">Application</a>;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_scene.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_scene.html">Scene</a>{</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_scene.html#a5bb2f061fa66bb22d687b61b1de99aaa">   10</a></span>&#160;    <span class="keyword">friend</span> <a class="code" href="class_scene.html#a5bb2f061fa66bb22d687b61b1de99aaa">Application</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_scene.html#aedd607a79ce72419e85cce5c97b0fc39">   12</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;GameObject&gt;&gt; <a class="code" href="class_scene.html#aedd607a79ce72419e85cce5c97b0fc39">gameObjects</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_scene.html#a0d12b100b1d69eca65bab68cbea31549">   14</a></span>&#160;    <a class="code" href="class_application.html">Application</a>* <a class="code" href="class_scene.html#a0d12b100b1d69eca65bab68cbea31549">app</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a01ad48ef180f7b683f2c2b1000dd76c9">addGameObject</a>(std::shared_ptr&lt;GameObject&gt;);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a3b1cf42c6ae1764fcc6271a3c9490a41">updateGameObjects</a>(<span class="keywordtype">float</span>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#ae31db41c4522546121e59676493b83d6">destroyAllGameObjects</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#acb5ee1b73f133e9bc1e6a243e20bd9a6">checkCollision</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#ac5ed6ccb9cbf485a244c9d99b1c46d62">drawGameObjects</a>(<span class="keywordtype">float</span>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a47f0ac179b3a6c28e59365470755ea66">onKeyDownObjects</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> keycode);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#aa8dc97907adbcedefa91bb1b95aed77d">update</a>(<span class="keywordtype">float</span>) = 0;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a304a4a90b78f9dfbca3e4fe5f630ef24">draw</a>(<span class="keywordtype">float</span>) = 0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a81db76da4133d3a3f5829b04519ad6c3">keyDown</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>) = 0;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a0640f2601db74d2c097aceefb4b15706">onSceneClose</a>() = 0;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_scene.html#a8ff4db3412ddc4f91d9fcc167f266bed">   26</a></span>&#160;    <a class="code" href="class_scene.html#a8ff4db3412ddc4f91d9fcc167f266bed">Scene</a>(<a class="code" href="class_application.html">Application</a>* app) : app(app){}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_scene_html_a3b1cf42c6ae1764fcc6271a3c9490a41"><div class="ttname"><a href="class_scene.html#a3b1cf42c6ae1764fcc6271a3c9490a41">Scene::updateGameObjects</a></div><div class="ttdeci">void updateGameObjects(float)</div><div class="ttdef"><b>Definition:</b> Scene.cpp:9</div></div>
+<a href="_scene_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2015, Heiko van der Heijden</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * All rights reserved.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * modification, are permitted provided that the following conditions are met:</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * * Redistributions of source code must retain the above copyright notice, this</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *   list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * * Redistributions in binary form must reproduce the above copyright notice,</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   this list of conditions and the following disclaimer in the documentation</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *   and/or other materials provided with the distribution.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef SCENE_HPP</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define SCENE_HPP</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_object_8hpp.html">GameObject.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">class </span><a class="code" href="class_application.html">Application</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_scene.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_scene.html">Scene</a>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_scene.html#a5bb2f061fa66bb22d687b61b1de99aaa">   38</a></span>&#160;    <span class="keyword">friend</span> <a class="code" href="class_scene.html#a5bb2f061fa66bb22d687b61b1de99aaa">Application</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_scene.html#aedd607a79ce72419e85cce5c97b0fc39">   42</a></span>&#160;    std::vector&lt;std::shared_ptr&lt;GameObject&gt;&gt; <a class="code" href="class_scene.html#aedd607a79ce72419e85cce5c97b0fc39">gameObjects</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_scene.html#a0d12b100b1d69eca65bab68cbea31549">   46</a></span>&#160;    <a class="code" href="class_application.html">Application</a>* <a class="code" href="class_scene.html#a0d12b100b1d69eca65bab68cbea31549">app</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a892fcfb88a5374f4aa3ceefa581fcf1f">addGameObject</a>(std::shared_ptr&lt;GameObject&gt; gameObject);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#adfdb30ec1cc9c5118ae5f660bdfd61ea">updateGameObjects</a>(<span class="keywordtype">float</span> tpf);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#ae31db41c4522546121e59676493b83d6">destroyAllGameObjects</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#acb5ee1b73f133e9bc1e6a243e20bd9a6">checkCollision</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#afb469e261258c655e0a9dbd849b62e76">drawGameObjects</a>(<span class="keywordtype">float</span> aspect);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a47f0ac179b3a6c28e59365470755ea66">onKeyDownObjects</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> keycode);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a7c33afb933934b1656a632180dee6a5b">update</a>(<span class="keywordtype">float</span> tpf) = 0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a542d85ae3c6cfb41b8960bc49ea7f8e4">draw</a>(<span class="keywordtype">float</span> aspect) = 0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a40966b2a7c11f07944729a6ef9630a58">keyDown</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> keycode) = 0;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_scene.html#a0640f2601db74d2c097aceefb4b15706">onSceneClose</a>() = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_scene.html#a8ff4db3412ddc4f91d9fcc167f266bed">   98</a></span>&#160;    <a class="code" href="class_scene.html#a8ff4db3412ddc4f91d9fcc167f266bed">Scene</a>(<a class="code" href="class_application.html">Application</a>* app) : app(app){}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_scene_html_a7c33afb933934b1656a632180dee6a5b"><div class="ttname"><a href="class_scene.html#a7c33afb933934b1656a632180dee6a5b">Scene::update</a></div><div class="ttdeci">virtual void update(float tpf)=0</div></div>
 <div class="ttc" id="class_scene_html_a47f0ac179b3a6c28e59365470755ea66"><div class="ttname"><a href="class_scene.html#a47f0ac179b3a6c28e59365470755ea66">Scene::onKeyDownObjects</a></div><div class="ttdeci">void onKeyDownObjects(unsigned short keycode)</div><div class="ttdef"><b>Definition:</b> Scene.cpp:40</div></div>
 <div class="ttc" id="class_scene_html_ae31db41c4522546121e59676493b83d6"><div class="ttname"><a href="class_scene.html#ae31db41c4522546121e59676493b83d6">Scene::destroyAllGameObjects</a></div><div class="ttdeci">void destroyAllGameObjects()</div><div class="ttdef"><b>Definition:</b> Scene.cpp:46</div></div>
-<div class="ttc" id="class_scene_html_a304a4a90b78f9dfbca3e4fe5f630ef24"><div class="ttname"><a href="class_scene.html#a304a4a90b78f9dfbca3e4fe5f630ef24">Scene::draw</a></div><div class="ttdeci">virtual void draw(float)=0</div></div>
-<div class="ttc" id="class_scene_html_a01ad48ef180f7b683f2c2b1000dd76c9"><div class="ttname"><a href="class_scene.html#a01ad48ef180f7b683f2c2b1000dd76c9">Scene::addGameObject</a></div><div class="ttdeci">void addGameObject(std::shared_ptr&lt; GameObject &gt;)</div><div class="ttdef"><b>Definition:</b> Scene.cpp:4</div></div>
+<div class="ttc" id="class_scene_html_adfdb30ec1cc9c5118ae5f660bdfd61ea"><div class="ttname"><a href="class_scene.html#adfdb30ec1cc9c5118ae5f660bdfd61ea">Scene::updateGameObjects</a></div><div class="ttdeci">void updateGameObjects(float tpf)</div><div class="ttdef"><b>Definition:</b> Scene.cpp:9</div></div>
+<div class="ttc" id="class_scene_html_a542d85ae3c6cfb41b8960bc49ea7f8e4"><div class="ttname"><a href="class_scene.html#a542d85ae3c6cfb41b8960bc49ea7f8e4">Scene::draw</a></div><div class="ttdeci">virtual void draw(float aspect)=0</div></div>
 <div class="ttc" id="class_scene_html_a0640f2601db74d2c097aceefb4b15706"><div class="ttname"><a href="class_scene.html#a0640f2601db74d2c097aceefb4b15706">Scene::onSceneClose</a></div><div class="ttdeci">virtual void onSceneClose()=0</div></div>
-<div class="ttc" id="class_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> Scene.hpp:9</div></div>
-<div class="ttc" id="class_scene_html_a0d12b100b1d69eca65bab68cbea31549"><div class="ttname"><a href="class_scene.html#a0d12b100b1d69eca65bab68cbea31549">Scene::app</a></div><div class="ttdeci">Application * app</div><div class="ttdef"><b>Definition:</b> Scene.hpp:14</div></div>
-<div class="ttc" id="class_scene_html_aedd607a79ce72419e85cce5c97b0fc39"><div class="ttname"><a href="class_scene.html#aedd607a79ce72419e85cce5c97b0fc39">Scene::gameObjects</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; GameObject &gt; &gt; gameObjects</div><div class="ttdef"><b>Definition:</b> Scene.hpp:12</div></div>
-<div class="ttc" id="class_scene_html_a8ff4db3412ddc4f91d9fcc167f266bed"><div class="ttname"><a href="class_scene.html#a8ff4db3412ddc4f91d9fcc167f266bed">Scene::Scene</a></div><div class="ttdeci">Scene(Application *app)</div><div class="ttdef"><b>Definition:</b> Scene.hpp:26</div></div>
+<div class="ttc" id="class_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> Scene.hpp:37</div></div>
+<div class="ttc" id="class_scene_html_a0d12b100b1d69eca65bab68cbea31549"><div class="ttname"><a href="class_scene.html#a0d12b100b1d69eca65bab68cbea31549">Scene::app</a></div><div class="ttdeci">Application * app</div><div class="ttdef"><b>Definition:</b> Scene.hpp:46</div></div>
+<div class="ttc" id="class_scene_html_aedd607a79ce72419e85cce5c97b0fc39"><div class="ttname"><a href="class_scene.html#aedd607a79ce72419e85cce5c97b0fc39">Scene::gameObjects</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; GameObject &gt; &gt; gameObjects</div><div class="ttdef"><b>Definition:</b> Scene.hpp:42</div></div>
+<div class="ttc" id="class_scene_html_a8ff4db3412ddc4f91d9fcc167f266bed"><div class="ttname"><a href="class_scene.html#a8ff4db3412ddc4f91d9fcc167f266bed">Scene::Scene</a></div><div class="ttdeci">Scene(Application *app)</div><div class="ttdef"><b>Definition:</b> Scene.hpp:98</div></div>
 <div class="ttc" id="_game_object_8hpp_html"><div class="ttname"><a href="_game_object_8hpp.html">GameObject.hpp</a></div></div>
-<div class="ttc" id="class_scene_html_a81db76da4133d3a3f5829b04519ad6c3"><div class="ttname"><a href="class_scene.html#a81db76da4133d3a3f5829b04519ad6c3">Scene::keyDown</a></div><div class="ttdeci">virtual void keyDown(unsigned short)=0</div></div>
+<div class="ttc" id="class_scene_html_a892fcfb88a5374f4aa3ceefa581fcf1f"><div class="ttname"><a href="class_scene.html#a892fcfb88a5374f4aa3ceefa581fcf1f">Scene::addGameObject</a></div><div class="ttdeci">void addGameObject(std::shared_ptr&lt; GameObject &gt; gameObject)</div><div class="ttdef"><b>Definition:</b> Scene.cpp:4</div></div>
 <div class="ttc" id="class_scene_html_acb5ee1b73f133e9bc1e6a243e20bd9a6"><div class="ttname"><a href="class_scene.html#acb5ee1b73f133e9bc1e6a243e20bd9a6">Scene::checkCollision</a></div><div class="ttdeci">void checkCollision()</div><div class="ttdef"><b>Definition:</b> Scene.cpp:15</div></div>
+<div class="ttc" id="class_scene_html_afb469e261258c655e0a9dbd849b62e76"><div class="ttname"><a href="class_scene.html#afb469e261258c655e0a9dbd849b62e76">Scene::drawGameObjects</a></div><div class="ttdeci">void drawGameObjects(float aspect)</div><div class="ttdef"><b>Definition:</b> Scene.cpp:54</div></div>
 <div class="ttc" id="class_application_html"><div class="ttname"><a href="class_application.html">Application</a></div><div class="ttdef"><b>Definition:</b> Application.hpp:36</div></div>
-<div class="ttc" id="class_scene_html_ac5ed6ccb9cbf485a244c9d99b1c46d62"><div class="ttname"><a href="class_scene.html#ac5ed6ccb9cbf485a244c9d99b1c46d62">Scene::drawGameObjects</a></div><div class="ttdeci">void drawGameObjects(float)</div><div class="ttdef"><b>Definition:</b> Scene.cpp:54</div></div>
-<div class="ttc" id="class_scene_html_a5bb2f061fa66bb22d687b61b1de99aaa"><div class="ttname"><a href="class_scene.html#a5bb2f061fa66bb22d687b61b1de99aaa">Scene::Application</a></div><div class="ttdeci">friend Application</div><div class="ttdef"><b>Definition:</b> Scene.hpp:10</div></div>
-<div class="ttc" id="class_scene_html_aa8dc97907adbcedefa91bb1b95aed77d"><div class="ttname"><a href="class_scene.html#aa8dc97907adbcedefa91bb1b95aed77d">Scene::update</a></div><div class="ttdeci">virtual void update(float)=0</div></div>
+<div class="ttc" id="class_scene_html_a40966b2a7c11f07944729a6ef9630a58"><div class="ttname"><a href="class_scene.html#a40966b2a7c11f07944729a6ef9630a58">Scene::keyDown</a></div><div class="ttdeci">virtual void keyDown(unsigned short keycode)=0</div></div>
+<div class="ttc" id="class_scene_html_a5bb2f061fa66bb22d687b61b1de99aaa"><div class="ttname"><a href="class_scene.html#a5bb2f061fa66bb22d687b61b1de99aaa">Scene::Application</a></div><div class="ttdeci">friend Application</div><div class="ttdef"><b>Definition:</b> Scene.hpp:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

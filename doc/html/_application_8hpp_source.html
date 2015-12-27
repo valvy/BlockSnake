@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>“BlockSnake”: Include/Application.hpp Source File</title>
+<title>BlockSnake: Include/Application.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">“BlockSnake”
+   <div id="projectname">BlockSnake
    </div>
   </td>
  </tr>
@@ -124,53 +124,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_application.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_application.html">Application</a>{</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_application.html#aa4ed49741b6bd813574ce37ffeac0efc">   41</a></span>&#160;    std::unique_ptr&lt;Scene&gt; <a class="code" href="class_application.html#aa4ed49741b6bd813574ce37ffeac0efc">currentScene</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_application.html#a1dfb75372b4a275bf79baab0b80ce794">   42</a></span>&#160;    std::string <a class="code" href="class_application.html#a1dfb75372b4a275bf79baab0b80ce794">path</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_application.html#aab1ef41901fa5246b4754e57a91a96f9">   43</a></span>&#160;    std::shared_ptr&lt;AssetManager&gt; <a class="code" href="class_application.html#aab1ef41901fa5246b4754e57a91a96f9">assetManager</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_application.html#a3bf1ba8b4b0848a3877f8d7782137c08">   47</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_application.html#a3bf1ba8b4b0848a3877f8d7782137c08">timeLastFrame</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     *  The width and height of the window</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_application.html#a9bbc2402382198504b4afd2f3c5e191a">   51</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="class_application.html#a9bbc2402382198504b4afd2f3c5e191a">width</a>, <a class="code" href="class_application.html#abe6a242b8df913779fba057292ac42a3">height</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="class_application.html#ab8725b464332e30e919b37986cf70cce">Application</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> width,<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> height);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::shared_ptr&lt;AssetManager&gt; <a class="code" href="class_application.html#ae10a6e8064fa3e23fa590016411d7014">getAssetManager</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::string <a class="code" href="class_application.html#a5795a2ae4ec607521f5017500fc86039">getAppPath</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_application.html#a6f8e8293fee5801feb43a88135a8f84b">quitApplication</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_application.html#aab1ef41901fa5246b4754e57a91a96f9">   45</a></span>&#160;    std::shared_ptr&lt;AssetManager&gt; <a class="code" href="class_application.html#aab1ef41901fa5246b4754e57a91a96f9">assetManager</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_application.html#a3bf1ba8b4b0848a3877f8d7782137c08">   49</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_application.html#a3bf1ba8b4b0848a3877f8d7782137c08">timeLastFrame</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_application.html#a9bbc2402382198504b4afd2f3c5e191a">   53</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="class_application.html#a9bbc2402382198504b4afd2f3c5e191a">width</a>,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="class_application.html#aec24f768664937509050258a33b2c215">height</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="class_application.html#ab8725b464332e30e919b37986cf70cce">Application</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> width,<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> height);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_application.html#acdf838fb1fb93edb5ded55597ac55cd6">loadScene</a>(<a class="code" href="class_scene.html">Scene</a>* scene);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_application.html#a4d3e2d87b877850a354a47a1f7480115">gameLoop</a>();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_application.html#a70c5fec26853256ca1ba0b0e1e143d2d">keyDown</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> keycode);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_application.html#a748bca84fefb9c12661cfaa2f623748d">~Application</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::shared_ptr&lt;AssetManager&gt; <a class="code" href="class_application.html#aa1bcdc8aa3e424d9f908d05137b3efe7">getAssetManager</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::string <a class="code" href="class_application.html#aaefdc7f892b5731c521abb36a65e0fd3">getAppPath</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_application.html#a6f8e8293fee5801feb43a88135a8f84b">quitApplication</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_application.html#acdf838fb1fb93edb5ded55597ac55cd6">loadScene</a>(<a class="code" href="class_scene.html">Scene</a>* scene);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_application.html#a4d3e2d87b877850a354a47a1f7480115">gameLoop</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_application.html#a70c5fec26853256ca1ba0b0e1e143d2d">keyDown</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> keycode);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="class_application.html#a748bca84fefb9c12661cfaa2f623748d">~Application</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_application_html_aa1bcdc8aa3e424d9f908d05137b3efe7"><div class="ttname"><a href="class_application.html#aa1bcdc8aa3e424d9f908d05137b3efe7">Application::getAssetManager</a></div><div class="ttdeci">std::shared_ptr&lt; AssetManager &gt; getAssetManager() const </div><div class="ttdef"><b>Definition:</b> Application.cpp:67</div></div>
+<div class="ttc" id="class_application_html_aec24f768664937509050258a33b2c215"><div class="ttname"><a href="class_application.html#aec24f768664937509050258a33b2c215">Application::height</a></div><div class="ttdeci">unsigned short unsigned short height</div><div class="ttdef"><b>Definition:</b> Application.hpp:53</div></div>
 <div class="ttc" id="class_application_html_ab8725b464332e30e919b37986cf70cce"><div class="ttname"><a href="class_application.html#ab8725b464332e30e919b37986cf70cce">Application::Application</a></div><div class="ttdeci">Application(unsigned short width, unsigned short height)</div><div class="ttdef"><b>Definition:</b> Application.cpp:8</div></div>
+<div class="ttc" id="class_application_html_aaefdc7f892b5731c521abb36a65e0fd3"><div class="ttname"><a href="class_application.html#aaefdc7f892b5731c521abb36a65e0fd3">Application::getAppPath</a></div><div class="ttdeci">std::string getAppPath() const </div></div>
 <div class="ttc" id="class_application_html_a6f8e8293fee5801feb43a88135a8f84b"><div class="ttname"><a href="class_application.html#a6f8e8293fee5801feb43a88135a8f84b">Application::quitApplication</a></div><div class="ttdeci">void quitApplication()</div></div>
 <div class="ttc" id="class_application_html_aa4ed49741b6bd813574ce37ffeac0efc"><div class="ttname"><a href="class_application.html#aa4ed49741b6bd813574ce37ffeac0efc">Application::currentScene</a></div><div class="ttdeci">std::unique_ptr&lt; Scene &gt; currentScene</div><div class="ttdef"><b>Definition:</b> Application.hpp:41</div></div>
-<div class="ttc" id="class_application_html_a1dfb75372b4a275bf79baab0b80ce794"><div class="ttname"><a href="class_application.html#a1dfb75372b4a275bf79baab0b80ce794">Application::path</a></div><div class="ttdeci">std::string path</div><div class="ttdef"><b>Definition:</b> Application.hpp:42</div></div>
-<div class="ttc" id="class_application_html_a9bbc2402382198504b4afd2f3c5e191a"><div class="ttname"><a href="class_application.html#a9bbc2402382198504b4afd2f3c5e191a">Application::width</a></div><div class="ttdeci">unsigned short width</div><div class="ttdef"><b>Definition:</b> Application.hpp:51</div></div>
-<div class="ttc" id="class_application_html_aab1ef41901fa5246b4754e57a91a96f9"><div class="ttname"><a href="class_application.html#aab1ef41901fa5246b4754e57a91a96f9">Application::assetManager</a></div><div class="ttdeci">std::shared_ptr&lt; AssetManager &gt; assetManager</div><div class="ttdef"><b>Definition:</b> Application.hpp:43</div></div>
-<div class="ttc" id="class_application_html_a748bca84fefb9c12661cfaa2f623748d"><div class="ttname"><a href="class_application.html#a748bca84fefb9c12661cfaa2f623748d">Application::~Application</a></div><div class="ttdeci">~Application()</div><div class="ttdef"><b>Definition:</b> Application.cpp:85</div></div>
-<div class="ttc" id="class_application_html_a4d3e2d87b877850a354a47a1f7480115"><div class="ttname"><a href="class_application.html#a4d3e2d87b877850a354a47a1f7480115">Application::gameLoop</a></div><div class="ttdeci">void gameLoop()</div><div class="ttdef"><b>Definition:</b> Application.cpp:25</div></div>
-<div class="ttc" id="class_application_html_a3bf1ba8b4b0848a3877f8d7782137c08"><div class="ttname"><a href="class_application.html#a3bf1ba8b4b0848a3877f8d7782137c08">Application::timeLastFrame</a></div><div class="ttdeci">float timeLastFrame</div><div class="ttdef"><b>Definition:</b> Application.hpp:47</div></div>
+<div class="ttc" id="class_application_html_a9bbc2402382198504b4afd2f3c5e191a"><div class="ttname"><a href="class_application.html#a9bbc2402382198504b4afd2f3c5e191a">Application::width</a></div><div class="ttdeci">unsigned short width</div><div class="ttdef"><b>Definition:</b> Application.hpp:53</div></div>
+<div class="ttc" id="class_application_html_aab1ef41901fa5246b4754e57a91a96f9"><div class="ttname"><a href="class_application.html#aab1ef41901fa5246b4754e57a91a96f9">Application::assetManager</a></div><div class="ttdeci">std::shared_ptr&lt; AssetManager &gt; assetManager</div><div class="ttdef"><b>Definition:</b> Application.hpp:45</div></div>
+<div class="ttc" id="class_application_html_a748bca84fefb9c12661cfaa2f623748d"><div class="ttname"><a href="class_application.html#a748bca84fefb9c12661cfaa2f623748d">Application::~Application</a></div><div class="ttdeci">~Application()</div><div class="ttdef"><b>Definition:</b> Application.cpp:84</div></div>
+<div class="ttc" id="class_application_html_a4d3e2d87b877850a354a47a1f7480115"><div class="ttname"><a href="class_application.html#a4d3e2d87b877850a354a47a1f7480115">Application::gameLoop</a></div><div class="ttdeci">void gameLoop()</div><div class="ttdef"><b>Definition:</b> Application.cpp:24</div></div>
+<div class="ttc" id="class_application_html_a3bf1ba8b4b0848a3877f8d7782137c08"><div class="ttname"><a href="class_application.html#a3bf1ba8b4b0848a3877f8d7782137c08">Application::timeLastFrame</a></div><div class="ttdeci">float timeLastFrame</div><div class="ttdef"><b>Definition:</b> Application.hpp:49</div></div>
 <div class="ttc" id="_asset_manager_8hpp_html"><div class="ttname"><a href="_asset_manager_8hpp.html">AssetManager.hpp</a></div></div>
-<div class="ttc" id="class_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> Scene.hpp:9</div></div>
-<div class="ttc" id="class_application_html_acdf838fb1fb93edb5ded55597ac55cd6"><div class="ttname"><a href="class_application.html#acdf838fb1fb93edb5ded55597ac55cd6">Application::loadScene</a></div><div class="ttdeci">void loadScene(Scene *scene)</div><div class="ttdef"><b>Definition:</b> Application.cpp:78</div></div>
-<div class="ttc" id="class_application_html_abe6a242b8df913779fba057292ac42a3"><div class="ttname"><a href="class_application.html#abe6a242b8df913779fba057292ac42a3">Application::height</a></div><div class="ttdeci">unsigned short height</div><div class="ttdef"><b>Definition:</b> Application.hpp:51</div></div>
-<div class="ttc" id="class_application_html_ae10a6e8064fa3e23fa590016411d7014"><div class="ttname"><a href="class_application.html#ae10a6e8064fa3e23fa590016411d7014">Application::getAssetManager</a></div><div class="ttdeci">std::shared_ptr&lt; AssetManager &gt; getAssetManager()</div><div class="ttdef"><b>Definition:</b> Application.cpp:68</div></div>
-<div class="ttc" id="class_application_html_a70c5fec26853256ca1ba0b0e1e143d2d"><div class="ttname"><a href="class_application.html#a70c5fec26853256ca1ba0b0e1e143d2d">Application::keyDown</a></div><div class="ttdeci">void keyDown(unsigned short keycode)</div><div class="ttdef"><b>Definition:</b> Application.cpp:72</div></div>
+<div class="ttc" id="class_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> Scene.hpp:37</div></div>
+<div class="ttc" id="class_application_html_acdf838fb1fb93edb5ded55597ac55cd6"><div class="ttname"><a href="class_application.html#acdf838fb1fb93edb5ded55597ac55cd6">Application::loadScene</a></div><div class="ttdeci">void loadScene(Scene *scene)</div><div class="ttdef"><b>Definition:</b> Application.cpp:77</div></div>
+<div class="ttc" id="class_application_html_a70c5fec26853256ca1ba0b0e1e143d2d"><div class="ttname"><a href="class_application.html#a70c5fec26853256ca1ba0b0e1e143d2d">Application::keyDown</a></div><div class="ttdeci">void keyDown(unsigned short keycode)</div><div class="ttdef"><b>Definition:</b> Application.cpp:71</div></div>
 <div class="ttc" id="class_application_html"><div class="ttname"><a href="class_application.html">Application</a></div><div class="ttdef"><b>Definition:</b> Application.hpp:36</div></div>
 <div class="ttc" id="_scene_8hpp_html"><div class="ttname"><a href="_scene_8hpp.html">Scene.hpp</a></div></div>
-<div class="ttc" id="class_application_html_a5795a2ae4ec607521f5017500fc86039"><div class="ttname"><a href="class_application.html#a5795a2ae4ec607521f5017500fc86039">Application::getAppPath</a></div><div class="ttdeci">std::string getAppPath()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

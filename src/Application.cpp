@@ -6,7 +6,6 @@
 #include <iostream>
 
 Application::Application(unsigned short width, unsigned short height){
-    this->path = path;
     this->assetManager = std::shared_ptr<AssetManager>(new AssetManager(this->getAppPath()));
     glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);

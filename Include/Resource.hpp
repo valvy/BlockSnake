@@ -65,6 +65,9 @@ public:
     int getUniqueNumber() const{
         return this->uniqueNumber;
     }
+    
+    /*! Destroys the resource and clears the memory
+     */
     virtual void destroy() = 0;
 };
 

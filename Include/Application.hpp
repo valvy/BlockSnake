@@ -39,16 +39,22 @@ private:
      *  The current scene wrapped in a pointer
      */
     std::unique_ptr<Scene> currentScene;
-    std::string path;
+
+    /*!The assetmanager that manages all the resources in the game
+     */
     std::shared_ptr<AssetManager> assetManager;
     /*!
      *  The amount of time it took last time to update all gameobjects
      */
     float timeLastFrame;
-    /*
-     *  The width and height of the window
+    
+    /*! The width of the window
      */
-    unsigned short width, height;
+    unsigned short width,
+    
+    /*! The height of the window
+     */
+    unsigned short height;
 public:
     /*! Starts the application with the given sizes
      *  @param width the width of the window
@@ -56,12 +62,23 @@ public:
      */
     Application(unsigned short width,unsigned short height);
     
-    
+    /*! Gets the current assetmanager
+     *  @return the assetmanager
+     */
     std::shared_ptr<AssetManager> getAssetManager() const;
+    
+    /*! Gets the current path where the Assets folder is located
+     *  @return the resource folder
+     */
     std::string getAppPath() const;
     
+    /*! Closes the application
+     */
     void quitApplication();
     
+    /*! Closes the scene and start a new scene
+     *  @param scene the new scene to be showed
+     */
     void loadScene(Scene* scene);
     
     /*! Updates the Game logic

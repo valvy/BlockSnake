@@ -38,6 +38,8 @@
  */
 class AssetManager{
 private:
+    /*! Storage where the path is
+     */
     std::string path;
     
     /*! All the shaders that are currently in use
@@ -75,6 +77,9 @@ private:
     }
     
 public:
+    /*! Initializes the assetmanager.
+     *  @param path the place where the Assets folder is
+     */
     AssetManager(std::string path);
     
     /*! Loads an default cube into memory
