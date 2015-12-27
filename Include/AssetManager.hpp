@@ -111,20 +111,20 @@ public:
      *  @param the reference received when you loaded the object
      *  @exception AssetNotFoundException When the reference does not point to a valid mesh
      */
-    void renderPrimitive(int reference);
+    void renderPrimitive(int reference) const;
     
     /*! Ask Opengl to use an program
      *  @param reference of the program you wish to use
      *  @exception AssetNotFoundException When the reference does not point to a valid program
      */
-    void useProgram(int reference);
+    void useProgram(int reference) const;
     
     /*! Gets the uniform location in a program
      *  @param reference that points to the program
      *  @param var The variable name in the shader
      *  @exception AssetNotFoundException When the reference does not point to a valid program
      */
-    GLint getUniformLocation(int reference,std::string var);
+    GLint getUniformLocation(int reference,std::string var) const;
     
     
     /*! Clears all the data..

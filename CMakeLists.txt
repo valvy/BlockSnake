@@ -8,7 +8,7 @@ AUX_SOURCE_DIRECTORY(src CPP_FILES)
 
 
 ADD_EXECUTABLE(BlockSnake ${CPP_FILES})
-ADD_DEFINITIONS( "-Wall -std=c++11 -O3" )
+ADD_DEFINITIONS( "-Wall -Werror -std=c++11 -O3" )
 
 
 if(APPLE)

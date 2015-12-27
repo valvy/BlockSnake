@@ -52,7 +52,7 @@ protected:
     virtual void draw(float) override;
 public:
     void addBody();
-    bool doesCollideWithBody(Vector3f pos);
+    bool doesCollideWithBody(Vector3f pos) const;
     void move(Vector3f pos);
     SnakeBody(std::shared_ptr<AssetManager>, unsigned short, Vector3f);
     

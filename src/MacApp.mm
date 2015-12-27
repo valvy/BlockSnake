@@ -141,7 +141,7 @@ void Application::quitApplication(){
     [app stopMacApp];
 }
 
-std::string Application::getAppPath(){
+std::string Application::getAppPath() const{
     return [[[NSBundle mainBundle]resourcePath]UTF8String];
 }
 

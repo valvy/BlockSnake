@@ -30,7 +30,7 @@ GLuint PrimitiveForm::storeDataInVAO(int attributeNr , int size, std::vector<GLf
     return vboID;
 }
 
-void PrimitiveForm::render(){
+void PrimitiveForm::render() const{
     glBindVertexArray(this->resourceData);
     glEnableVertexAttribArray(0);
     glDrawArrays(GL_TRIANGLES,0,this->dataSize / 3);

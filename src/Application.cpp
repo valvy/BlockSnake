@@ -65,7 +65,7 @@ void Application::gameLoop(){
 }
 
 
-std::shared_ptr<AssetManager> Application::getAssetManager(){
+std::shared_ptr<AssetManager> Application::getAssetManager() const{
     return this->assetManager;
 }
 

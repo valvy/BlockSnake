@@ -13,7 +13,6 @@ private:
     float distance = 0.15f;
     GLint mv_location;
     int snakeHeadProgram;
-    int texture;
     int primitive;
     enum class Direction{
         Left,
@@ -24,7 +23,6 @@ private:
     std::chrono::steady_clock::time_point timer;
     std::shared_ptr<AssetManager> assetManager;
     std::shared_ptr<SnakeBody> body;
-    const float speed = 2;
     Direction direction;
 protected:
     virtual void update(float tpf) override;

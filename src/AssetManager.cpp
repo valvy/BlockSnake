@@ -34,7 +34,7 @@ void AssetManager::bindTexture(int reference){
     throw AssetNotFoundException("The reference does not point to a valid Texture");
 }
 
-void AssetManager::renderPrimitive(int reference){
+void AssetManager::renderPrimitive(int reference) const{
     for(auto it : this->primitives){
         if(it->getUniqueNumber() == reference){
             it->render();
@@ -116,7 +116,7 @@ int AssetManager::loadProgram(std::string vertexShader, std::string fragmentShad
     
 }
 
-void AssetManager::useProgram(int uniqueNumber){
+void AssetManager::useProgram(int uniqueNumber) const{
     for(auto it : this->programs){
         if(it->getUniqueNumber() == uniqueNumber){
             glUseProgram(it->resourceData);
@@ -126,7 +126,7 @@ void AssetManager::useProgram(int uniqueNumber){
     throw AssetNotFoundException("The reference does not point to a valid program");
 }
 
-GLint AssetManager::getUniformLocation(int uniqueNumber, std::string var){
+GLint AssetManager::getUniformLocation(int uniqueNumber, std::string var) const{
     for(auto it : this->programs){
         if(it->getUniqueNumber() == uniqueNumber){
             return glGetUniformLocation(it->resourceData, var.c_str());

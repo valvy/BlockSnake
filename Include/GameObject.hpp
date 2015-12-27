@@ -74,8 +74,8 @@ protected:
     virtual void draw(float aspect) = 0;
     virtual void onCollision(GameObject* col){}
 public:
-    Vector3f getPosition();
-    bool canCollide();
+    Vector3f getPosition() const;
+    bool canCollide() const;
 };
 
 #endif

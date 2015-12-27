@@ -64,7 +64,7 @@ protected:
 public:
     PrimitiveForm(int, std::string);
     virtual void destroy();
-    void render();
+    void render() const;
 };
 
 

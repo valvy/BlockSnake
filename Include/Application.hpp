@@ -57,8 +57,8 @@ public:
     Application(unsigned short width,unsigned short height);
     
     
-    std::shared_ptr<AssetManager> getAssetManager();
-    std::string getAppPath();
+    std::shared_ptr<AssetManager> getAssetManager() const;
+    std::string getAppPath() const;
     
     void quitApplication();
     
