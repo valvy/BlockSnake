@@ -1,9 +1,20 @@
-# Compiled Object files
-*.slo
-*.lo
+
+
+#compiled c++ stuff
 *.o
-*.obj
+BlockSnake
+
+
+#apple specifics
 *.DS_STORE
+
+#annoying cmake files
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
 
 # Precompiled Headers
 *.gch
