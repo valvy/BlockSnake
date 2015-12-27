@@ -50,7 +50,7 @@ private:
     
     /*! The width of the window
      */
-    unsigned short width,
+    unsigned short width;
     
     /*! The height of the window
      */
