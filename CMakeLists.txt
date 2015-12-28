@@ -17,5 +17,16 @@ if(APPLE)
 	INCLUDE_DIRECTORIES(${OPENGL_INCLUDE_DIR})
 	TARGET_LINK_LIBRARIES(BlockSnake ${COCOA_LIBRARY} ${OPENGL_LIBRARIES})
 elseif(WIN32)
+include_directories(
+	external/glew-1.13.0/include/
+)
 
+
+find_package(OpenGL REQUIRED)
+find_library(GLEW_LIBRARY glew)
+
+set(WIN_OPENGL
+	${OPENGL_LIBRARY}
+	$(GLEW_LIBRARY)	
+)
 endif()
