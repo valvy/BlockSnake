@@ -1,4 +1,11 @@
 
+#Annoying windows stuff
+*.vcxproj
+*.opendb
+ZERO_CHECK
+*.sdf
+*.sln
+*.filters
 
 #compiled c++ stuff
 *.o
