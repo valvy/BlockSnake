@@ -1,4 +1,5 @@
 
+
 #Annoying windows stuff
 *.vcxproj
 *.opendb
@@ -6,6 +7,7 @@ ZERO_CHECK
 *.sdf
 *.sln
 *.filters
+BlockSnake.dir
 
 #compiled c++ stuff
 *.o
