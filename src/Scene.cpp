@@ -1,13 +1,13 @@
 #include "Scene.hpp"
 #include <iostream>
 
-void Scene::addGameObject(std::shared_ptr<GameObject> obj){
+void Scene::addGameObject(GameObject* obj){
     this->gameObjects.push_back(obj);
     
 }
 
 void Scene::updateGameObjects(float fps){
-    for(auto it : this->gameObjects){
+  for(auto it : this->gameObjects){
         it->update(fps);
     }
 }
@@ -28,13 +28,14 @@ void Scene::checkCollision(){
                    && collider->getPosition().y >= (other->getPosition().y - range)
                     && collider->getPosition().y <= (other->getPosition().y + range)){
                     
-                    other->onCollision(collider.get());
-                    collider->onCollision(other.get());
+                    other->onCollision(collider);
+                    collider->onCollision(other);
                 }
             }
         }
         
     }
+
 }
 
 void Scene::onKeyDownObjects(unsigned short keycode){
@@ -44,15 +45,18 @@ void Scene::onKeyDownObjects(unsigned short keycode){
 }
 
 void Scene::destroyAllGameObjects(){
-    for(auto it : this->gameObjects){
+  	for(auto it : this->gameObjects){
         it->onDestroy();
-        it.reset();
+        delete it;
     }
     this->gameObjects.clear();
+	
 }
+
 
 void Scene::drawGameObjects(float aspect){
     for(auto it : this->gameObjects){
         it->draw(aspect);
     }
+
 }

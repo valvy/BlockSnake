@@ -5,7 +5,7 @@
 #include "AssetManager.hpp"
 #include <memory>
 
-//class Application;
+class Application;
 
 class SnakeScene : public Scene{
 private:

@@ -47,7 +47,7 @@ protected:
     
     /*! The current scale of the object
      */
-    Vector3f scale;
+   Vector3f scale;
     
     /*! The current rotation of the object
      */
@@ -67,16 +67,16 @@ protected:
      *  @param keycode  The key that is pressed
      */
     virtual void onKeyDown(unsigned short keycode);
-    
+   
     /*! This method calls the game logic of the specified gameobject
      *  @param tpf Time per frame,
      */
-    virtual void update(float tpf) = 0;
+   virtual void update(float tpf) = 0;
     
     /*! This method calls to draw the gameObject
      *  @param aspect The aspect of the screen
      */
-    virtual void draw(float aspect) = 0;
+   virtual void draw(float aspect) = 0;
     
     /*! Called when the object collides with a other gameobject
      *  @param col  The other gameobject that it collides with
@@ -87,7 +87,7 @@ public:
     /*! Gets the position of the gameObject
      *  @return position
      */
-    Vector3f getPosition() const;
+   Vector3f getPosition() const;
     
     /*! Checks if the object can collide
      *  @return collidable

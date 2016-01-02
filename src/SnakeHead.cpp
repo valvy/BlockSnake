@@ -4,29 +4,28 @@
 #include "GameOverScene.hpp"
 #include "SnakeScene.hpp"
 
-SnakeHead::SnakeHead(std::shared_ptr<AssetManager> assetManager, Vector3f startPosition, SnakeScene* scene){
+SnakeHead::SnakeHead(AssetManager* assetManager, Vector3f startPosition, SnakeScene* scene){
     this->assetManager = assetManager;
     this->scene = scene;
     this->doesCollide = true;
     this->primitive = this->assetManager->loadCube();
-    this->snakeHeadProgram = this->assetManager->loadProgram("./Assets/Shaders/cubeV.glsl", "./Assets/Shaders/CubeF.glsl");
+    this->snakeHeadProgram = this->assetManager->loadProgram("./Assets/Shaders/cubeV.glsl", "./Assets/Shaders/cubeF.glsl");
+
     this->mv_location = this->assetManager->getUniformLocation(this->snakeHeadProgram, "mv_matrix");
     this->position = startPosition;
     this->timer = std::chrono::steady_clock::now();
     this->direction = Direction::Right;
     this->scale = Vector3f(0.05f,0.05f,0.05f);
-       this->body = std::shared_ptr<SnakeBody>(new SnakeBody(this->assetManager, 0, Vector3f( position.x + distance, position.y, position.z)));
+    this->body = new SnakeBody(this->assetManager, 0, Vector3f( position.x + distance, 	position.y, position.z));
 }
 
-void SnakeHead::onCollision(GameObject* col){
-    if(this->body != nullptr){
+void SnakeHead::onCollision(GameObject* col){    
+	if(this->body != nullptr){
         this->body->addBody();
     }
 }
 
 void SnakeHead::update(float tpf){
-
-    
     
     if(this->body != nullptr){
         auto difference = std::chrono::steady_clock::now();
@@ -82,8 +81,8 @@ void SnakeHead::update(float tpf){
 
 void SnakeHead::onDestroy(){
     if(this->body != nullptr){
-        this->body->onDestroy();
-        this->body.reset();
+		this->body->onDestroy();
+		delete this->body;
     }
 }
 

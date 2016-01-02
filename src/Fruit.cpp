@@ -1,8 +1,8 @@
 #include "Fruit.hpp"
 #include "stdlib.h"
 #include <ctime>
-
-Fruit::Fruit(std::shared_ptr<AssetManager> assetManager, Vector3f position){
+#include "Math/Utilities.hpp"
+Fruit::Fruit(AssetManager* assetManager, Vector3f position){
     this->assetManager = assetManager;
     this->doesCollide = true;
     this->primitive = this->assetManager->loadCube();
@@ -21,7 +21,8 @@ void Fruit::draw(float aspect){
     if(this->doesCollide){
         
         this->assetManager->useProgram(this->fruitProgram);
-        glUniformMatrix4fv(this->mv_location, 1, GL_FALSE, &this->getCurrentMat(aspect).getRawData()[0]);
+
+       glUniformMatrix4fv(this->mv_location, 1, GL_FALSE, &this->getCurrentMat(aspect).getRawData()[0]);
            this->assetManager->bindTexture(this->texture);
         this->assetManager->renderPrimitive(this->primitive);
     }

@@ -4,13 +4,24 @@
 #include <X11/Xlib.h>
 #include <iostream>
 #include "Renderer.hpp"
-
+#include <unistd.h>
 void Application::quitApplication(){
 
 }
 
+#define GetCurrentDir getcwd
 std::string Application::getAppPath() const{
-	return "test";
+    char cCurrentPath[FILENAME_MAX];
+    
+    if(!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath)))
+    {
+        return "Error";
+    }
+    
+    cCurrentPath[sizeof(cCurrentPath) - 1] = '\0';
+    
+    return cCurrentPath;
+    
 }
 
 int main(int argc, char** argv){
@@ -49,22 +60,35 @@ int main(int argc, char** argv){
     XStoreName(dpy, win, "BackMaze");
     glc = glXCreateContext(dpy, vi, nullptr, GL_TRUE);
     glXMakeCurrent(dpy, win, glc);
+	GLenum err = glewInit();
+	Application* app = new Application(800,600);	
 	
 	for(;;){
 		XNextEvent(dpy, &xev);
-		XGetWindowAttributes(dpy, win, &gwa);
-		
+	
 		if(xev.type == KeyPress) {
+			std::cout << xev.xkey.keycode << "\n";
             char buf[128] = {0};
             KeySym keysym;
             int len = XLookupString(&xev.xkey, buf, sizeof buf, &keysym, NULL);
-            break;   
+			if(xev.xkey.keycode == 9){            
+				break;   
+			}else{
+				app->keyDown(xev.xkey.keycode);
+			}
 		}	
+
+		XGetWindowAttributes(dpy, win, &gwa);
+		
+		app->gameLoop();		
+		glFlush();
+		glXSwapBuffers(dpy, win);
+
 
 	}
 
 
-
+	delete app;
 	glXMakeCurrent(dpy, None, NULL);
     glXDestroyContext(dpy, glc);
     XDestroyWindow(dpy, win);

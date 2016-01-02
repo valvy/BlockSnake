@@ -1,7 +1,7 @@
 #include "ProgramAsset.hpp"
 
 
-ProgramAsset::ProgramAsset(std::string files,GLuint data, int uniqueNumber) : Resource<GLuint>(files , uniqueNumber){
+ProgramAsset::ProgramAsset(std::string files,GLuint data, int uniqueNumber) : Resource(files , uniqueNumber){
     this->resourceData = data;
 }
 

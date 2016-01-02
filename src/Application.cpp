@@ -1,3 +1,4 @@
+
 #include "Application.hpp"
 #include "SnakeScene.hpp"
 #include "MainMenu.hpp"
@@ -6,7 +7,8 @@
 #include <iostream>
 
 Application::Application(unsigned short width, unsigned short height){
-    this->assetManager = std::shared_ptr<AssetManager>(new AssetManager(this->getAppPath()));
+  
+ 	this->assetManager = new AssetManager(this->getAppPath());
     glEnable(GL_CULL_FACE);
     glEnable(GL_DEPTH_TEST);
     glDepthFunc(GL_LEQUAL);
@@ -17,6 +19,7 @@ Application::Application(unsigned short width, unsigned short height){
     this->timeLastFrame = 0;
     
     std::cout << glGetString(GL_VERSION) << "\n";
+
 }
 
 
@@ -24,7 +27,7 @@ Application::Application(unsigned short width, unsigned short height){
 void Application::gameLoop(){
     clock_t timer;
     timer = clock();
-    this->currentScene->update(this->timeLastFrame);
+   	this->currentScene->update(this->timeLastFrame);
    
     //Give a common background to start with
     static const GLfloat background[] = { 0.0f, 0.25f, 0.0f, 1.0f };
@@ -61,16 +64,17 @@ void Application::gameLoop(){
     float aspect = 1 * this->width / this->height;
     this->currentScene->draw(aspect);
     this->timeLastFrame = 0.00001f * (clock() - timer);
+
 }
 
 
-std::shared_ptr<AssetManager> Application::getAssetManager() const{
+AssetManager* Application::getAssetManager() const{
     return this->assetManager;
 }
 
 void Application::keyDown(unsigned short keycode){
     //just give the keys back without doing anything
-    this->currentScene->keyDown(keycode);
+   this->currentScene->keyDown(keycode);
 }
 
 
@@ -84,8 +88,8 @@ void Application::loadScene(Scene* scene){
 Application::~Application(){
     this->currentScene->onSceneClose();//Destroy all the stuff in the scene
     this->currentScene.reset();
-    this->assetManager->destroy();
-    this->assetManager.reset();
+	this->assetManager->destroy();
+	delete this->assetManager;
     std::cout << "closing \n";
    
 }

@@ -5,9 +5,12 @@
 #include "Application.hpp"
 #include "SnakeScene.hpp"
 #include "KeyCodes.hpp"
+
+
 MainMenu::MainMenu(Application* app) : Scene(app){
-    this->addGameObject(std::shared_ptr<Background>(new Background(app->getAssetManager(), "mainMenu.bmp")));
-    this->addGameObject(std::shared_ptr<SnakeBody>(new SnakeBody(app->getAssetManager(), 3, Vector3f(0,0,-2))));
+	    
+this->addGameObject(new Background(app->getAssetManager(), "mainMenu.bmp"));
+//    this->addGameObject(std::shared_ptr<SnakeBody>(new SnakeBody(app->getAssetManager(), 3, Vector3f(0,0,-2))));
     
 }
 

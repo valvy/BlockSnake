@@ -28,12 +28,13 @@
 #include "Resource.hpp"
 #include "Renderer.hpp"
 #include <string>
+#include "ShaderAsset.hpp"
 #include <vector>
 
 /*! Managing vertex buffers / vao and uv's
  *  @author Heiko van der Heijden
  */
-class PrimitiveForm : public Resource<GLuint>{
+class PrimitiveForm : public Resource{
     friend AssetManager;
 protected:
     /*! Generates an Vertex Attribute object for use

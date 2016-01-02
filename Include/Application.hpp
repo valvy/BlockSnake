@@ -42,8 +42,9 @@ private:
 
     /*!The assetmanager that manages all the resources in the game
      */
-    std::shared_ptr<AssetManager> assetManager;
-    /*!
+	AssetManager* assetManager;    
+
+	/*!
      *  The amount of time it took last time to update all gameobjects
      */
     float timeLastFrame;
@@ -60,12 +61,12 @@ public:
      *  @param width the width of the window
      *  @param height the height of the window
      */
-    Application(unsigned short width,unsigned short height);
+   Application(unsigned short width,unsigned short height);
     
     /*! Gets the current assetmanager
      *  @return the assetmanager
      */
-    std::shared_ptr<AssetManager> getAssetManager() const;
+    AssetManager* getAssetManager() const;
     
     /*! Gets the current path where the Assets folder is located
      *  @return the resource folder
@@ -74,7 +75,7 @@ public:
     
     /*! Closes the application
      */
-    void quitApplication();
+   void quitApplication();
     
     /*! Closes the scene and start a new scene
      *  @param scene the new scene to be showed

@@ -5,7 +5,7 @@
 #include <memory>
 #include "SnakeBody.hpp"
 #include <chrono>
-
+#include "SnakeScene.hpp"
 class SnakeScene;
 class SnakeHead : public GameObject{
 private:
@@ -21,9 +21,10 @@ private:
         Down
     };
     std::chrono::steady_clock::time_point timer;
-    std::shared_ptr<AssetManager> assetManager;
-    std::shared_ptr<SnakeBody> body;
-    Direction direction;
+    AssetManager* assetManager;
+    //std::shared_ptr<SnakeBody> body;
+	SnakeBody* body;    
+	Direction direction;
 protected:
     /*! @inheritDoc
      */
@@ -33,16 +34,15 @@ protected:
     virtual void onDestroy() override;
     /*! @inheritDoc
      */
-    virtual void draw(float aspect) override;
+   virtual void draw(float aspect) override;
     /*! @inheritDoc
      */
     virtual void onKeyDown(unsigned short keycode) override;
     /*! @inheritDoc
      */
-    virtual void onCollision(GameObject* col) override;
-public:
-    
-    SnakeHead(std::shared_ptr<AssetManager> assetManager, Vector3f startPos, SnakeScene* scene);
+   virtual void onCollision(GameObject* col) override;
+public:    
+    SnakeHead(AssetManager* assetManager, Vector3f startPos, SnakeScene* scene);
 };
 
 

@@ -35,7 +35,7 @@ class Background : public GameObject{
 private:
     /*! The assetmanager it receives it resources from
      */
-    std::shared_ptr<AssetManager> assetManager;
+	AssetManager* assetManager;
     /*! The reference to the program
      */
     int backGroundProgram;
@@ -59,7 +59,7 @@ public:
      *  @param assetManager the assetManager to get resources from
      *  @param texture Which texture the background should use
      */
-    Background(std::shared_ptr<AssetManager> assetManager,std::string texture);
+    Background(AssetManager* assetManager,std::string texture);
 };
 
 

@@ -10,14 +10,14 @@ AssetManager::AssetManager(std::string path){
 }
 
 int AssetManager::loadCube(){
-    auto cube = std::shared_ptr<PrimitiveCube>(new PrimitiveCube(this->uniqueNumber));
+    PrimitiveCube* cube = new PrimitiveCube(this->uniqueNumber);
     this->uniqueNumber++;
     this->primitives.push_back(cube);
     return cube->uniqueNumber;
 }
 
 int AssetManager::loadQuad(){
-    auto quad = std::shared_ptr<PrimitiveQuad>(new PrimitiveQuad(this->uniqueNumber));
+   	PrimitiveQuad* quad =  new PrimitiveQuad(this->uniqueNumber);
     this->uniqueNumber++;
     this->primitives.push_back(quad);
     return quad->uniqueNumber;
@@ -35,6 +35,7 @@ void AssetManager::bindTexture(int reference){
 }
 
 void AssetManager::renderPrimitive(int reference) const{
+
     for(auto it : this->primitives){
         if(it->getUniqueNumber() == reference){
             it->render();
@@ -42,17 +43,18 @@ void AssetManager::renderPrimitive(int reference) const{
         }
     }
     throw AssetNotFoundException("The reference does not point to a valid Texture");
+
 }
 
 int AssetManager::loadTexture(std::string path){
-    path = this->path + "/" + path;
+   path = this->path + "/" + path;
     for(auto it : this->textures){
         if(it->getPath() == path){
             return it->getUniqueNumber();
         }
     }
     
-    auto tmp = std::shared_ptr<TextureAsset>(new TextureAsset(path, this->uniqueNumber));
+    auto tmp = new TextureAsset(path,this->uniqueNumber);
     this->textures.push_back(tmp);
     this->uniqueNumber++;
     return tmp->uniqueNumber;
@@ -70,9 +72,10 @@ int AssetManager::loadProgram(std::string vertexShader, std::string fragmentShad
     }
     
     //Create some temporary storage
-    std::shared_ptr<ShaderAsset> vShader(nullptr);
-    std::shared_ptr<ShaderAsset> fShader(nullptr);
-    
+	std::cout << vertexShader << " : " << fragmentShader << "\n";
+	ShaderAsset* vShader = nullptr;
+	ShaderAsset* fShader = nullptr;    
+	
     //Check if vertex shader already exists
     for(auto it : this->shaders){
         if(it->getPath() == vertexShader){
@@ -90,7 +93,7 @@ int AssetManager::loadProgram(std::string vertexShader, std::string fragmentShad
     //Create new one if the vertex shader didn't exist
     //And store it in the assets vector
     if(vShader == nullptr){
-        vShader = std::shared_ptr<ShaderAsset>(new ShaderAsset( vertexShader, GL_VERTEX_SHADER,this->uniqueNumber));
+        vShader = new ShaderAsset(vertexShader,GL_VERTEX_SHADER,this->uniqueNumber);
         this->uniqueNumber++;
         this->shaders.push_back(vShader);
     }
@@ -98,7 +101,7 @@ int AssetManager::loadProgram(std::string vertexShader, std::string fragmentShad
     //Create new vertex shader if it diddn't exist
     //And store it in the assets vector
     if(fShader == nullptr){
-        fShader = std::shared_ptr<ShaderAsset>(new ShaderAsset(fragmentShader, GL_FRAGMENT_SHADER,this->uniqueNumber));
+        fShader = new ShaderAsset(fragmentShader, GL_FRAGMENT_SHADER, this->uniqueNumber);//
         this->uniqueNumber++;
         this->shaders.push_back(fShader);
     }
@@ -108,12 +111,13 @@ int AssetManager::loadProgram(std::string vertexShader, std::string fragmentShad
     glAttachShader(tmp, vShader->resourceData);
     glAttachShader(tmp, fShader->resourceData);
     glLinkProgram(tmp);
-    std::shared_ptr<ProgramAsset> program(new ProgramAsset((vertexShader + fragmentShader),tmp,this->uniqueNumber));
-    this->uniqueNumber++;
+    
+	ProgramAsset* program = new ProgramAsset((vertexShader + fragmentShader),tmp,
+    this->uniqueNumber++);
     
     this->programs.push_back(program);
     return program->uniqueNumber;
-    
+   
 }
 
 void AssetManager::useProgram(int uniqueNumber) const{
@@ -124,10 +128,12 @@ void AssetManager::useProgram(int uniqueNumber) const{
         }
     }
     throw AssetNotFoundException("The reference does not point to a valid program");
+
 }
 
 GLint AssetManager::getUniformLocation(int uniqueNumber, std::string var) const{
-    for(auto it : this->programs){
+  
+  for(auto it : this->programs){
         if(it->getUniqueNumber() == uniqueNumber){
             return glGetUniformLocation(it->resourceData, var.c_str());
         }
@@ -136,11 +142,12 @@ GLint AssetManager::getUniformLocation(int uniqueNumber, std::string var) const{
 }
 
 
-void AssetManager::destroy(){
-    this->destroyAssets<std::vector<std::shared_ptr<ShaderAsset>>>(this->shaders);
-    this->destroyAssets<std::vector<std::shared_ptr<ProgramAsset>>>(this->programs);
-    this->destroyAssets<std::vector<std::shared_ptr<PrimitiveForm>>>(this->primitives);
 
+void AssetManager::destroy(){
+	this->destroyAssets<std::vector<ShaderAsset*>>(this->shaders);
+    this->destroyAssets<std::vector<ProgramAsset*>>(this->programs);
+    this->destroyAssets<std::vector<PrimitiveForm*>>(this->primitives);
+	this->destroyAssets<std::vector<TextureAsset*>>(this->textures);
 }
 
 AssetManager::~AssetManager(){

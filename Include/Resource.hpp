@@ -26,37 +26,36 @@
 #ifndef RESOURCE_HPP
 #define RESOURCE_HPP
 #include <string>
-
+#include "Renderer.hpp"
 class AssetManager;
 
 /*! The baseclass for all the resources
  *  @author Heiko van der Heijden
  */
-template<typename T>
 class Resource{
     friend AssetManager;
 private:
     /*! the amount of times it is referenced
      */
-    unsigned int amountReferences;
+   unsigned int amountReferences;
 protected:
     /*! The path the resource is in, to check if it already exists
      */
-    std::string path;
+   std::string path;
     
     /*! The actual data in the resource
      */
-    T resourceData;
+   GLuint resourceData;
     /*! The unique number that can be used to reference this resource
      */
-    int uniqueNumber;
+   int uniqueNumber;
 public:
     Resource(std::string path,int uniqueNumber) : path(path), uniqueNumber(uniqueNumber){}
     /*! Gets the path
      *  @return the path where this resource came from
      */
-    std::string getPath() const{
-        return this->path;
+   std::string getPath() const{
+       return this->path;
     }
     
     /*! Gets the unique reference
@@ -64,11 +63,11 @@ public:
      */
     int getUniqueNumber() const{
         return this->uniqueNumber;
-    }
+   	}
     
     /*! Destroys the resource and clears the memory
      */
-    virtual void destroy() = 0;
+   virtual void destroy() = 0;
 };
 
 

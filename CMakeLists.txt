@@ -7,7 +7,7 @@ INCLUDE_DIRECTORIES(./Include)
 AUX_SOURCE_DIRECTORY(src CPP_FILES)
 ADD_EXECUTABLE(BlockSnake ${CPP_FILES})
 
-ADD_DEFINITIONS( "-g -Wall  -std=c++11  -O0" )
+ADD_DEFINITIONS( "-g -Wall -pthread -std=c++11  -O0" )
 
 
 if(APPLE)

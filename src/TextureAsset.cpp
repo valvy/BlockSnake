@@ -2,7 +2,7 @@
 #include <fstream>
 #include "AssetNotFoundException.hpp"
 #include <iostream>
-TextureAsset::TextureAsset(std::string path, int uniqueNumber) : Resource<GLuint>(path,uniqueNumber){
+TextureAsset::TextureAsset(std::string path, int uniqueNumber) : Resource(path,uniqueNumber){
    
     std::fstream str(path, std::ios::in | std::ios::binary | std::ios::ate);
     //Only read the image if it can be read..
