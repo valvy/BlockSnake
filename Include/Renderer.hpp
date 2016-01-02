@@ -38,6 +38,10 @@
 #include <gl/gl.h>
 #endif
 
+#ifdef __linux__
+#include <GL/glew.h>
+#include <GL/glx.h>
+#endif
 
 
 
