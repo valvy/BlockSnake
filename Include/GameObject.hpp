@@ -37,6 +37,8 @@ class Scene;
 class GameObject{
 friend Scene;
 protected:
+  
+    
     /*! The current position of the object
      */
     Vector3f position;

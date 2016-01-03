@@ -3,6 +3,9 @@
 #include <iostream>
 #include "GameOverScene.hpp"
 #include "SnakeScene.hpp"
+#include "Globals.hpp"
+
+using namespace Globals;
 
 SnakeHead::SnakeHead(AssetManager* assetManager, Vector3f startPosition, SnakeScene* scene){
     this->assetManager = assetManager;
@@ -15,7 +18,7 @@ SnakeHead::SnakeHead(AssetManager* assetManager, Vector3f startPosition, SnakeSc
     this->position = startPosition;
     this->timer = std::chrono::steady_clock::now();
     this->direction = Direction::Right;
-    this->scale = Vector3f(0.03f,0.03f,0.03f);
+    this->scale = Vector3f(SNAKE_SCALE,SNAKE_SCALE,SNAKE_SCALE);
     this->body = new SnakeBody(this->assetManager, 0, Vector3f( position.x + distance, 	position.y, position.z));
 }
 
@@ -30,25 +33,24 @@ void SnakeHead::update(float tpf){
     if(this->body != nullptr){
         auto difference = std::chrono::steady_clock::now();
         auto time_span = std::chrono::duration_cast<std::chrono::duration<double>>(difference - timer);
-        if(time_span.count() > 0.05f){
+        if(time_span.count() > TIMER){
             
             this->timer = std::chrono::steady_clock::now();
-            auto jumpSpeed = 0.1f;
             switch(direction){
                 case Direction::Right:
-                    this->position.x -= jumpSpeed;
+                    this->position.x -= JUMP_SPEED;
                     this->body->move(Vector3f(position.x + distance, position.y, position.z));
                     break;
                 case Direction::Left:
-                    this->position.x += jumpSpeed;
+                    this->position.x += JUMP_SPEED;
                     this->body->move(Vector3f(position.x - distance, position.y, position.z));
                     break;
                 case Direction::Up:
-                    this->position.y += jumpSpeed;
+                    this->position.y += JUMP_SPEED;
                     this->body->move(Vector3f(position.x, position.y - distance, position.z));
                     break;
                 case Direction::Down:
-                    this->position.y -= jumpSpeed;
+                    this->position.y -= JUMP_SPEED;
                     this->body->move(Vector3f(position.x, position.y + distance, position.z));
                     break;
                     
@@ -62,18 +64,18 @@ void SnakeHead::update(float tpf){
         if(this->body->doesCollideWithBody(this->position)){
             this->scene->goToGameOver();
         }
-        
-        if(this->position.x > 1){
-            this->position.x = -1;
-        }else if(this->position.x < -1){
-            this->position.x = 1;
+
+        if(this->position.x > BORDER){
+            this->position.x = -BORDER;
+        }else if(this->position.x < -BORDER){
+            this->position.x = BORDER;
         }
         
-        if(this->position.y > 1){
-            this->position.y = -1;
+        if(this->position.y > BORDER){
+            this->position.y = -BORDER;
         }
-        else if(this->position.y < -1){
-            this->position.y = 1;
+        else if(this->position.y < -BORDER){
+            this->position.y = BORDER;
         }
         
     }
