@@ -39,7 +39,9 @@ class Scene{
 private:
     /*! The gameobjects in the scene
      */
-    std::vector<std::shared_ptr<GameObject>> gameObjects;
+ //   std::vector<std::shared_ptr<GameObject>> gameObjects;
+	std::vector<GameObject*> gameObjects;
+	
 protected:
     /*! The variabel that can be used to load new scenes or stop the program
      */
@@ -48,7 +50,7 @@ protected:
     /*! Adds a new gameobject to the scene
      *  @param gameObject   gameObject to be added
      */
-    void addGameObject(std::shared_ptr<GameObject> gameObject);
+    void addGameObject(GameObject* gameObject);
     
     /*! Call the update method for each gameobject
      *  @param tpf  time per frame

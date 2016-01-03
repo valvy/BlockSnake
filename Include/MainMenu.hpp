@@ -26,7 +26,7 @@
 #ifndef MAIN_MENU_HPP
 #define MAIN_MENU_HPP
 #include "Scene.hpp"
-//#include "AssetManager.hpp"
+#include "AssetManager.hpp"
 #include <memory>
 
 class Application;
@@ -34,6 +34,7 @@ class Application;
 /*! The first screen you see. Says hi to the player
  *  @author Heiko van der Heijden
  */
+
 class MainMenu : public Scene{
 public:
     MainMenu(Application* app);

@@ -31,11 +31,10 @@
 /*! Storage for an opengl Program
  *  @author Heiko van der Heijden
  */
-class ProgramAsset : public Resource<GLuint>{
+class ProgramAsset : public Resource{
 public:
     ProgramAsset(std::string,GLuint, int);
-    virtual void destroy() override;
-    
+    virtual ~ProgramAsset();
 };
 
 

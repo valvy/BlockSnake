@@ -1,7 +1,7 @@
 #include "PrimitiveForm.hpp"
 #include <iostream>
 
-PrimitiveForm::PrimitiveForm(int uniqueNumber, std::string type) : Resource<GLuint>(type,uniqueNumber){
+PrimitiveForm::PrimitiveForm(int uniqueNumber, std::string type) : Resource(type,uniqueNumber){
     
 }
 
@@ -18,7 +18,7 @@ GLuint PrimitiveForm::storeDataInVAO(int attributeNr , int size, std::vector<GLf
     GLuint vboID;
 
     glGenBuffers(1, &vboID);
-        glBindVertexArray(this->resourceData);
+    glBindVertexArray(this->resourceData);
     glBindBuffer(GL_ARRAY_BUFFER, vboID);
     
     glEnableVertexAttribArray(attributeNr);
@@ -38,7 +38,7 @@ void PrimitiveForm::render() const{
     glBindVertexArray(0);
 }
 
-void PrimitiveForm::destroy(){
+PrimitiveForm::~PrimitiveForm(){
 
     glDeleteVertexArrays(1, &this->resourceData);
     glDeleteBuffers(1,&this->vboVertex);

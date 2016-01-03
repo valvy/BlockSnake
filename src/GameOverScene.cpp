@@ -2,8 +2,9 @@
 #include "MainMenu.hpp"
 #include "Application.hpp"
 #include "Background.hpp"
+
 GameOverScene::GameOverScene(Application* app) : Scene(app){
-    this->addGameObject(std::shared_ptr<Background>(new Background(app->getAssetManager(), "GameOver.bmp")));
+    this->addGameObject(new Background(app->getAssetManager(), "GameOver.bmp"));
 }
 
 void GameOverScene::update(float tpf){

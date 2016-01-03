@@ -1,13 +1,11 @@
 #ifndef TEXTURE_ASSET_HPP
 #define TEXTURE_ASSET_HPP
 #include "Resource.hpp"
-#include "Renderer.hpp"
 
-class TextureAsset : public Resource<GLuint>{
+class TextureAsset : public Resource{
 public:
     TextureAsset(std::string,int);
-    virtual void destroy() override;
-    ~TextureAsset();
+    virtual ~TextureAsset();
 };
 
 

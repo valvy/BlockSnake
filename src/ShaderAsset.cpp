@@ -2,7 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include "AssetNotFoundException.hpp"
-ShaderAsset::ShaderAsset(std::string path,GLenum shaderType, int uniqueNumber) : Resource<GLuint>(path,uniqueNumber){
+ShaderAsset::ShaderAsset(std::string path,GLenum shaderType, int uniqueNumber) : Resource(path,uniqueNumber){
     std::fstream str(path, std::ios::in);
     if(str.good()){
         std::string line;
@@ -44,10 +44,7 @@ ShaderAsset::ShaderAsset(std::string path,GLenum shaderType, int uniqueNumber) :
     }
 }
 
-void ShaderAsset::destroy(){
-    glDeleteShader(this->resourceData);
-}
 
 ShaderAsset::~ShaderAsset(){
-    
+       glDeleteShader(this->resourceData);
 }

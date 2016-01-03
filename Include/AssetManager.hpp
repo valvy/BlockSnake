@@ -44,20 +44,18 @@ private:
     
     /*! All the shaders that are currently in use
      */
-    std::vector<std::shared_ptr<ShaderAsset>> shaders;
-    
+    //std::vector<std::shared_ptr<ShaderAsset>> shaders;
+    std::vector<ShaderAsset*> shaders;
     /*! All the opengl programs currently in use
      */
-    std::vector<std::shared_ptr<ProgramAsset>> programs;
-    
+    std::vector<ProgramAsset*> programs;
     /*! All the Textures currently in use.
      */
-    std::vector<std::shared_ptr<TextureAsset>> textures;
-    
+    std::vector<TextureAsset*> textures;
     /*! All the 3d meshes currently in use
      */
-    std::vector<std::shared_ptr<PrimitiveForm>> primitives;
-    
+  //  std::vector<std::shared_ptr<PrimitiveForm>> primitives;
+      std::vector<PrimitiveForm*> primitives;
     /*! An unique number to identify an resource with
      */
     int uniqueNumber;
@@ -69,9 +67,9 @@ private:
     void destroyAssets(T& obj){
         for(auto it : obj){
             if(it != nullptr){
-                it->destroy();
+				delete it;
+
             }
-            it.reset();
         }
         obj.clear();
     }
@@ -81,7 +79,8 @@ public:
      *  @param path the place where the Assets folder is
      */
     AssetManager(std::string path);
-    
+
+
     /*! Loads an default cube into memory
      *  @return an reference that can be used to use the cube
      */
@@ -110,7 +109,7 @@ public:
      *  @exception AssetNotFoundException When either the vertex or fragmentshader points to an invalid location
      *  @return The reference to use the program
      */
-    int loadProgram(std::string vertexShader, std::string fragmentShader);
+   int loadProgram(std::string vertexShader, std::string fragmentShader);
     
     /*! Renders the 3d mesh in opengl
      *  @param the reference received when you loaded the object

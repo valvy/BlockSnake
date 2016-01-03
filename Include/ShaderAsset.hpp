@@ -31,12 +31,11 @@
 /*! Storage for the shaders
  *  @author Heiko van der Heijden
  */
-class ShaderAsset : public Resource<GLuint>{
+class ShaderAsset : public Resource{
     
 public:
     ShaderAsset(std::string, GLenum,int);
-    virtual void destroy() override;
-    ~ShaderAsset();
+    virtual ~ShaderAsset();
 };
 
 

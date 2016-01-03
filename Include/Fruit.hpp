@@ -30,7 +30,7 @@
 #include "AssetManager.hpp"
 class Fruit : public GameObject{
 private:
-    std::shared_ptr<AssetManager> assetManager;
+    AssetManager* assetManager;
     
     /*! The opengl program
      */
@@ -69,7 +69,7 @@ public:
      *  @param assetManager The assetManager where the resources are handled.
      *  @param position The starting position
      */
-    Fruit(std::shared_ptr<AssetManager> assetManager,Vector3f position);
+    Fruit(AssetManager* assetManager,Vector3f position);
     
 };
 

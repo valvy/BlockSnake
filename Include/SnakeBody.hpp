@@ -40,21 +40,21 @@ class SnakeBody : public GameObject{
 private:
     /*! The body is recursive..
      */
-    std::shared_ptr<SnakeBody> nextBody;
-    std::shared_ptr<AssetManager> assetManager;
+    SnakeBody* nextBody;
+  	AssetManager* assetManager;
     int snakeBodyProgram;
     int texture;
-    int primitive;
+ 	int primitive;
     GLint mv_location;
 protected:
     virtual void update(float) override;
     virtual void onDestroy() override;
     virtual void draw(float) override;
 public:
-    void addBody();
-    bool doesCollideWithBody(Vector3f pos) const;
-    void move(Vector3f pos);
-    SnakeBody(std::shared_ptr<AssetManager>, unsigned short, Vector3f);
+   void addBody();
+   bool doesCollideWithBody(Vector3f pos) const;
+   void move(Vector3f pos);
+    SnakeBody(AssetManager*, unsigned short, Vector3f);
     
 };
 
