@@ -130,14 +130,14 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aceab53cff282558ccc1dc61911d32eb1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#aceab53cff282558ccc1dc61911d32eb1">path</a></td></tr>
 <tr class="separator:aceab53cff282558ccc1dc61911d32eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c7d65775e4ee475803f809dbe4cfc80"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_shader_asset.html">ShaderAsset</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#a8c7d65775e4ee475803f809dbe4cfc80">shaders</a></td></tr>
-<tr class="separator:a8c7d65775e4ee475803f809dbe4cfc80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41cf5ad30205e55847291ae14a04e68e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_program_asset.html">ProgramAsset</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#a41cf5ad30205e55847291ae14a04e68e">programs</a></td></tr>
-<tr class="separator:a41cf5ad30205e55847291ae14a04e68e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab63142a3745bbb81a26d8bc279ec9ca8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_texture_asset.html">TextureAsset</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#ab63142a3745bbb81a26d8bc279ec9ca8">textures</a></td></tr>
-<tr class="separator:ab63142a3745bbb81a26d8bc279ec9ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae40783b5b7829004555faa00ee243f05"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="class_primitive_form.html">PrimitiveForm</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#ae40783b5b7829004555faa00ee243f05">primitives</a></td></tr>
-<tr class="separator:ae40783b5b7829004555faa00ee243f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae5d2233b0f384185f6a3084c64ec245"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_shader_asset.html">ShaderAsset</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#aae5d2233b0f384185f6a3084c64ec245">shaders</a></td></tr>
+<tr class="separator:aae5d2233b0f384185f6a3084c64ec245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab5095635f9dc32d48fd44a478405777"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_program_asset.html">ProgramAsset</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#aab5095635f9dc32d48fd44a478405777">programs</a></td></tr>
+<tr class="separator:aab5095635f9dc32d48fd44a478405777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa78d18ba2a2d3958b884180343c5dec9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_texture_asset.html">TextureAsset</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#aa78d18ba2a2d3958b884180343c5dec9">textures</a></td></tr>
+<tr class="separator:aa78d18ba2a2d3958b884180343c5dec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64609099bb3bda0232c2459399f95fb1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_primitive_form.html">PrimitiveForm</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#a64609099bb3bda0232c2459399f95fb1">primitives</a></td></tr>
+<tr class="separator:a64609099bb3bda0232c2459399f95fb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4198c871bed5580561b016521a002f01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_asset_manager.html#a4198c871bed5580561b016521a002f01">uniqueNumber</a></td></tr>
 <tr class="separator:a4198c871bed5580561b016521a002f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -475,7 +475,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ae40783b5b7829004555faa00ee243f05"></a>
+<a class="anchor" id="a64609099bb3bda0232c2459399f95fb1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -483,7 +483,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::shared_ptr&lt;<a class="el" href="class_primitive_form.html">PrimitiveForm</a>&gt; &gt; AssetManager::primitives</td>
+          <td class="memname">std::vector&lt;<a class="el" href="class_primitive_form.html">PrimitiveForm</a>*&gt; AssetManager::primitives</td>
         </tr>
       </table>
   </td>
@@ -496,7 +496,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a41cf5ad30205e55847291ae14a04e68e"></a>
+<a class="anchor" id="aab5095635f9dc32d48fd44a478405777"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -504,7 +504,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::shared_ptr&lt;<a class="el" href="class_program_asset.html">ProgramAsset</a>&gt; &gt; AssetManager::programs</td>
+          <td class="memname">std::vector&lt;<a class="el" href="class_program_asset.html">ProgramAsset</a>*&gt; AssetManager::programs</td>
         </tr>
       </table>
   </td>
@@ -517,7 +517,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a8c7d65775e4ee475803f809dbe4cfc80"></a>
+<a class="anchor" id="aae5d2233b0f384185f6a3084c64ec245"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -525,7 +525,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::shared_ptr&lt;<a class="el" href="class_shader_asset.html">ShaderAsset</a>&gt; &gt; AssetManager::shaders</td>
+          <td class="memname">std::vector&lt;<a class="el" href="class_shader_asset.html">ShaderAsset</a>*&gt; AssetManager::shaders</td>
         </tr>
       </table>
   </td>
@@ -538,7 +538,7 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ab63142a3745bbb81a26d8bc279ec9ca8"></a>
+<a class="anchor" id="aa78d18ba2a2d3958b884180343c5dec9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -546,7 +546,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::shared_ptr&lt;<a class="el" href="class_texture_asset.html">TextureAsset</a>&gt; &gt; AssetManager::textures</td>
+          <td class="memname">std::vector&lt;<a class="el" href="class_texture_asset.html">TextureAsset</a>*&gt; AssetManager::textures</td>
         </tr>
       </table>
   </td>

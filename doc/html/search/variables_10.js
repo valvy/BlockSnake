@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x',['x',['../struct_vector2.html#a78fa1f2ed5e261c7fbeb8f3536a1ee34',1,'Vector2::x()'],['../struct_vector3.html#a1a0f7e168c71ca798099f0ba8a444244',1,'Vector3::x()'],['../struct_vector4.html#a2cedf20d2f695a4f0254681b13311ac9',1,'Vector4::x()']]]
+  ['w',['w',['../struct_vector4.html#a83daff43fa2b88b4e76474f4b9a45276',1,'Vector4']]],
+  ['width',['width',['../class_application.html#a9bbc2402382198504b4afd2f3c5e191a',1,'Application']]]
 ];

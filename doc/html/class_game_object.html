@@ -114,6 +114,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4aeeeae09bc1ffcb338a26c643de1ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c4e7df92b4fb75bad673d7dbf79c48d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a6c4e7df92b4fb75bad673d7dbf79c48d">canCollide</a> () const </td></tr>
 <tr class="separator:a6c4e7df92b4fb75bad673d7dbf79c48d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab82dfdb656f9051c0587e6593b2dda97"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ab82dfdb656f9051c0587e6593b2dda97">~GameObject</a> ()</td></tr>
+<tr class="separator:ab82dfdb656f9051c0587e6593b2dda97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -148,7 +150,31 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The base class for all the visible objects in the game </p><dl class="section author"><dt>Author</dt><dd>Heiko van der Heijden </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab82dfdb656f9051c0587e6593b2dda97"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject::~GameObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a6c4e7df92b4fb75bad673d7dbf79c48d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +219,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_fruit.html#a09a7cad64d9d1ccd64a77bd37a0298be">Fruit</a>, <a class="el" href="class_background.html#a4476ce15b764e4015ab9e62c9920a88e">Background</a>, <a class="el" href="class_snake_body.html#a9ca28bae230bc79768b01c7751869d33">SnakeBody</a>, and <a class="el" href="class_snake_head.html#ad35a92c91e43c5b29aab32cabea1d042">SnakeHead</a>.</p>
+<p>Implemented in <a class="el" href="class_snake_head.html#ad35a92c91e43c5b29aab32cabea1d042">SnakeHead</a>, <a class="el" href="class_snake_body.html#a9ca28bae230bc79768b01c7751869d33">SnakeBody</a>, <a class="el" href="class_fruit.html#a09a7cad64d9d1ccd64a77bd37a0298be">Fruit</a>, and <a class="el" href="class_background.html#a4476ce15b764e4015ab9e62c9920a88e">Background</a>.</p>
 
 </div>
 </div>
@@ -272,7 +298,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_fruit.html#aba24feb3cc3c080a2fcbc20df2b84a03">Fruit</a>, and <a class="el" href="class_snake_head.html#a5f66d3b7fac5b956ae01f3a6a68a0552">SnakeHead</a>.</p>
+<p>Reimplemented in <a class="el" href="class_snake_head.html#a5f66d3b7fac5b956ae01f3a6a68a0552">SnakeHead</a>, and <a class="el" href="class_fruit.html#aba24feb3cc3c080a2fcbc20df2b84a03">Fruit</a>.</p>
 
 </div>
 </div>
@@ -298,7 +324,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>this is an optional method that not every <a class="el" href="class_game_object.html">GameObject</a> should use.. but it is used as an deconstructor like method </p>
 
-<p>Reimplemented in <a class="el" href="class_fruit.html#a3bfd45aa9c1e1be429a7fe7bb78fbb2d">Fruit</a>, <a class="el" href="class_snake_body.html#a5619b70e3e5d332dd69ccbfe46b20f16">SnakeBody</a>, and <a class="el" href="class_snake_head.html#a151f71b54f01aee63e34275bd6496c49">SnakeHead</a>.</p>
+<p>Reimplemented in <a class="el" href="class_snake_head.html#a151f71b54f01aee63e34275bd6496c49">SnakeHead</a>, <a class="el" href="class_snake_body.html#a5619b70e3e5d332dd69ccbfe46b20f16">SnakeBody</a>, and <a class="el" href="class_fruit.html#a3bfd45aa9c1e1be429a7fe7bb78fbb2d">Fruit</a>.</p>
 
 </div>
 </div>
@@ -362,7 +388,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_background.html#acae1bd9aa07a65238d79f7d9e9ae80c5">Background</a>, <a class="el" href="class_fruit.html#a2f4580417c4f0c7a85da3fcfadef8307">Fruit</a>, <a class="el" href="class_snake_body.html#a81b48b9bc4fea32fe176cb2ffd4d27c9">SnakeBody</a>, and <a class="el" href="class_snake_head.html#ac180b4e88a15101790a380c926ae9a5e">SnakeHead</a>.</p>
+<p>Implemented in <a class="el" href="class_snake_head.html#ac180b4e88a15101790a380c926ae9a5e">SnakeHead</a>, <a class="el" href="class_snake_body.html#a81b48b9bc4fea32fe176cb2ffd4d27c9">SnakeBody</a>, <a class="el" href="class_background.html#acae1bd9aa07a65238d79f7d9e9ae80c5">Background</a>, and <a class="el" href="class_fruit.html#a2f4580417c4f0c7a85da3fcfadef8307">Fruit</a>.</p>
 
 </div>
 </div>

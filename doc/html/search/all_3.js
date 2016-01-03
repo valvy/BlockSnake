@@ -2,7 +2,7 @@ var searchData=
 [
   ['datasize',['dataSize',['../class_primitive_form.html#a62bd8fce51c1bc55fd591658bce0a8d5',1,'PrimitiveForm']]],
   ['dead',['dead',['../class_snake_scene.html#a7c753857f76b8c48650ad5f8b671a957',1,'SnakeScene']]],
-  ['destroy',['destroy',['../class_asset_manager.html#a1ed3ed8b8696accc786e5a44c0d7f09b',1,'AssetManager::destroy()'],['../class_primitive_form.html#a2570ee90fb7189a875a6868bdcf1a619',1,'PrimitiveForm::destroy()'],['../class_program_asset.html#a22c5b2d9753b4a3c09d4bfa769f8b798',1,'ProgramAsset::destroy()'],['../class_resource.html#a0f1e28977f461ff35956d4d66579e1ea',1,'Resource::destroy()'],['../class_shader_asset.html#a9919e3ba7a0988aee4cd86bf008a220b',1,'ShaderAsset::destroy()'],['../class_texture_asset.html#a9c28c97402025e2b7afeda2de320a003',1,'TextureAsset::destroy()']]],
+  ['destroy',['destroy',['../class_asset_manager.html#a1ed3ed8b8696accc786e5a44c0d7f09b',1,'AssetManager']]],
   ['destroyallgameobjects',['destroyAllGameObjects',['../class_scene.html#ae31db41c4522546121e59676493b83d6',1,'Scene']]],
   ['destroyassets',['destroyAssets',['../class_asset_manager.html#a2f4268e09d28cf64b1e6757e7bc34a3e',1,'AssetManager']]],
   ['direction',['Direction',['../class_snake_head.html#a484dbbac08644b55a60814c48e38468c',1,'SnakeHead::Direction()'],['../class_snake_head.html#a228b745d7e7aaf340d435ecace4b6683',1,'SnakeHead::direction()']]],

@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['texture',['texture',['../class_background.html#a2b720376e981b2a3b40583a7013e1554',1,'Background::texture()'],['../class_fruit.html#a7b83e10e31ca0372b7b35777f6028908',1,'Fruit::texture()'],['../class_snake_body.html#a7bb8243f6803b03fb8df0bfcebc7d067',1,'SnakeBody::texture()']]],
-  ['textures',['textures',['../class_asset_manager.html#ab63142a3745bbb81a26d8bc279ec9ca8',1,'AssetManager']]],
-  ['timelastframe',['timeLastFrame',['../class_application.html#a3bf1ba8b4b0848a3877f8d7782137c08',1,'Application']]],
-  ['timer',['timer',['../class_snake_head.html#adbf1d50ec2561aa6967b569888d109df',1,'SnakeHead']]]
+  ['scale',['scale',['../class_game_object.html#a9b97208f113e0b0c8774df05a325aab5',1,'GameObject']]],
+  ['scene',['Scene',['../class_game_object.html#a3c412b59e6ae51ec3f340f05330f2fb7',1,'GameObject::Scene()'],['../class_snake_head.html#a6aa4b19c7726da2f969dfa74c8e2d9de',1,'SnakeHead::scene()']]],
+  ['shaders',['shaders',['../class_asset_manager.html#aae5d2233b0f384185f6a3084c64ec245',1,'AssetManager']]],
+  ['snake_5fscale',['SNAKE_SCALE',['../namespace_globals.html#aed9f9f9fccf26760fb92df6af7d416b0',1,'Globals']]],
+  ['snakebodyprogram',['snakeBodyProgram',['../class_snake_body.html#a120c9a1d6daf083baedbc94d1e848d79',1,'SnakeBody']]],
+  ['snakehead',['SnakeHead',['../class_snake_body.html#ae9abbd3b3e660defccd9cc548d642a34',1,'SnakeBody']]],
+  ['snakeheadprogram',['snakeHeadProgram',['../class_snake_head.html#a4d37b7a3f28483d6aef355be93484cc4',1,'SnakeHead']]]
 ];

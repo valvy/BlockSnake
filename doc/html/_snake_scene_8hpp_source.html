@@ -89,42 +89,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">SnakeScene.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_snake_scene_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SNAKE_SCENE_HPP</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SNAKE_SCENE_HPP</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_scene_8hpp.html">Scene.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_asset_manager_8hpp.html">AssetManager.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//class Application;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_snake_scene.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_snake_scene.html">SnakeScene</a> : <span class="keyword">public</span> <a class="code" href="class_scene.html">Scene</a>{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_snake_scene.html#a7c753857f76b8c48650ad5f8b671a957">   12</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_snake_scene.html#a7c753857f76b8c48650ad5f8b671a957">dead</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_snake_scene.html#ab5a4e0e17047a850eb81ee7086161bfe">update</a>(<span class="keywordtype">float</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_snake_scene.html#ae16de18a27fa944cd1c9566c65745db3">draw</a>(<span class="keywordtype">float</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_snake_scene.html#a11376eb687bd8cbeab7b62ce734077bf">keyDown</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_snake_scene.html#a5267ad826bd57724e2f72fc62ae9560c">onSceneClose</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_snake_scene.html#a34265f111f82ab86b57582e5d91d9c84">goToGameOver</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_snake_scene.html#a1e163dd517773f92ebf54cf9778b24b3">SnakeScene</a>(<a class="code" href="class_application.html">Application</a>* <a class="code" href="class_scene.html#a0d12b100b1d69eca65bab68cbea31549">app</a>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_snake_scene_html_a7c753857f76b8c48650ad5f8b671a957"><div class="ttname"><a href="class_snake_scene.html#a7c753857f76b8c48650ad5f8b671a957">SnakeScene::dead</a></div><div class="ttdeci">bool dead</div><div class="ttdef"><b>Definition:</b> SnakeScene.hpp:12</div></div>
-<div class="ttc" id="class_snake_scene_html_a34265f111f82ab86b57582e5d91d9c84"><div class="ttname"><a href="class_snake_scene.html#a34265f111f82ab86b57582e5d91d9c84">SnakeScene::goToGameOver</a></div><div class="ttdeci">void goToGameOver()</div><div class="ttdef"><b>Definition:</b> SnakeScene.cpp:34</div></div>
+<a href="_snake_scene_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2015, Heiko van der Heijden</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * All rights reserved.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * modification, are permitted provided that the following conditions are met:</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * * Redistributions of source code must retain the above copyright notice, this</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *   list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * * Redistributions in binary form must reproduce the above copyright notice,</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   this list of conditions and the following disclaimer in the documentation</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *   and/or other materials provided with the distribution.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef SNAKE_SCENE_HPP</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define SNAKE_SCENE_HPP</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_scene_8hpp.html">Scene.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_asset_manager_8hpp.html">AssetManager.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">class </span><a class="code" href="class_application.html">Application</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_snake_scene.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_snake_scene.html">SnakeScene</a> : <span class="keyword">public</span> <a class="code" href="class_scene.html">Scene</a>{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_snake_scene.html#a7c753857f76b8c48650ad5f8b671a957">   42</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_snake_scene.html#a7c753857f76b8c48650ad5f8b671a957">dead</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_snake_scene.html#ab5a4e0e17047a850eb81ee7086161bfe">update</a>(<span class="keywordtype">float</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_snake_scene.html#ae16de18a27fa944cd1c9566c65745db3">draw</a>(<span class="keywordtype">float</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_snake_scene.html#a11376eb687bd8cbeab7b62ce734077bf">keyDown</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_snake_scene.html#a5267ad826bd57724e2f72fc62ae9560c">onSceneClose</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_snake_scene.html#a34265f111f82ab86b57582e5d91d9c84">goToGameOver</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="class_snake_scene.html#a1e163dd517773f92ebf54cf9778b24b3">SnakeScene</a>(<a class="code" href="class_application.html">Application</a>* <a class="code" href="class_scene.html#a0d12b100b1d69eca65bab68cbea31549">app</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_snake_scene_html_a7c753857f76b8c48650ad5f8b671a957"><div class="ttname"><a href="class_snake_scene.html#a7c753857f76b8c48650ad5f8b671a957">SnakeScene::dead</a></div><div class="ttdeci">bool dead</div><div class="ttdef"><b>Definition:</b> SnakeScene.hpp:42</div></div>
+<div class="ttc" id="class_snake_scene_html_a34265f111f82ab86b57582e5d91d9c84"><div class="ttname"><a href="class_snake_scene.html#a34265f111f82ab86b57582e5d91d9c84">SnakeScene::goToGameOver</a></div><div class="ttdeci">void goToGameOver()</div><div class="ttdef"><b>Definition:</b> SnakeScene.cpp:35</div></div>
 <div class="ttc" id="_asset_manager_8hpp_html"><div class="ttname"><a href="_asset_manager_8hpp.html">AssetManager.hpp</a></div></div>
-<div class="ttc" id="class_snake_scene_html_ab5a4e0e17047a850eb81ee7086161bfe"><div class="ttname"><a href="class_snake_scene.html#ab5a4e0e17047a850eb81ee7086161bfe">SnakeScene::update</a></div><div class="ttdeci">virtual void update(float) override</div><div class="ttdef"><b>Definition:</b> SnakeScene.cpp:20</div></div>
-<div class="ttc" id="class_snake_scene_html_a5267ad826bd57724e2f72fc62ae9560c"><div class="ttname"><a href="class_snake_scene.html#a5267ad826bd57724e2f72fc62ae9560c">SnakeScene::onSceneClose</a></div><div class="ttdeci">virtual void onSceneClose() override</div><div class="ttdef"><b>Definition:</b> SnakeScene.cpp:49</div></div>
+<div class="ttc" id="class_snake_scene_html_ab5a4e0e17047a850eb81ee7086161bfe"><div class="ttname"><a href="class_snake_scene.html#ab5a4e0e17047a850eb81ee7086161bfe">SnakeScene::update</a></div><div class="ttdeci">virtual void update(float) override</div><div class="ttdef"><b>Definition:</b> SnakeScene.cpp:21</div></div>
+<div class="ttc" id="class_snake_scene_html_a5267ad826bd57724e2f72fc62ae9560c"><div class="ttname"><a href="class_snake_scene.html#a5267ad826bd57724e2f72fc62ae9560c">SnakeScene::onSceneClose</a></div><div class="ttdeci">virtual void onSceneClose() override</div><div class="ttdef"><b>Definition:</b> SnakeScene.cpp:51</div></div>
 <div class="ttc" id="class_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> Scene.hpp:37</div></div>
-<div class="ttc" id="class_scene_html_a0d12b100b1d69eca65bab68cbea31549"><div class="ttname"><a href="class_scene.html#a0d12b100b1d69eca65bab68cbea31549">Scene::app</a></div><div class="ttdeci">Application * app</div><div class="ttdef"><b>Definition:</b> Scene.hpp:46</div></div>
-<div class="ttc" id="class_snake_scene_html"><div class="ttname"><a href="class_snake_scene.html">SnakeScene</a></div><div class="ttdef"><b>Definition:</b> SnakeScene.hpp:10</div></div>
+<div class="ttc" id="class_scene_html_a0d12b100b1d69eca65bab68cbea31549"><div class="ttname"><a href="class_scene.html#a0d12b100b1d69eca65bab68cbea31549">Scene::app</a></div><div class="ttdeci">Application * app</div><div class="ttdef"><b>Definition:</b> Scene.hpp:48</div></div>
+<div class="ttc" id="class_snake_scene_html"><div class="ttname"><a href="class_snake_scene.html">SnakeScene</a></div><div class="ttdef"><b>Definition:</b> SnakeScene.hpp:38</div></div>
 <div class="ttc" id="class_snake_scene_html_a1e163dd517773f92ebf54cf9778b24b3"><div class="ttname"><a href="class_snake_scene.html#a1e163dd517773f92ebf54cf9778b24b3">SnakeScene::SnakeScene</a></div><div class="ttdeci">SnakeScene(Application *app)</div><div class="ttdef"><b>Definition:</b> SnakeScene.cpp:11</div></div>
 <div class="ttc" id="class_application_html"><div class="ttname"><a href="class_application.html">Application</a></div><div class="ttdef"><b>Definition:</b> Application.hpp:36</div></div>
 <div class="ttc" id="_scene_8hpp_html"><div class="ttname"><a href="_scene_8hpp.html">Scene.hpp</a></div></div>
-<div class="ttc" id="class_snake_scene_html_ae16de18a27fa944cd1c9566c65745db3"><div class="ttname"><a href="class_snake_scene.html#ae16de18a27fa944cd1c9566c65745db3">SnakeScene::draw</a></div><div class="ttdeci">virtual void draw(float) override</div><div class="ttdef"><b>Definition:</b> SnakeScene.cpp:28</div></div>
-<div class="ttc" id="class_snake_scene_html_a11376eb687bd8cbeab7b62ce734077bf"><div class="ttname"><a href="class_snake_scene.html#a11376eb687bd8cbeab7b62ce734077bf">SnakeScene::keyDown</a></div><div class="ttdeci">virtual void keyDown(unsigned short) override</div><div class="ttdef"><b>Definition:</b> SnakeScene.cpp:38</div></div>
+<div class="ttc" id="class_snake_scene_html_ae16de18a27fa944cd1c9566c65745db3"><div class="ttname"><a href="class_snake_scene.html#ae16de18a27fa944cd1c9566c65745db3">SnakeScene::draw</a></div><div class="ttdeci">virtual void draw(float) override</div><div class="ttdef"><b>Definition:</b> SnakeScene.cpp:29</div></div>
+<div class="ttc" id="class_snake_scene_html_a11376eb687bd8cbeab7b62ce734077bf"><div class="ttname"><a href="class_snake_scene.html#a11376eb687bd8cbeab7b62ce734077bf">SnakeScene::keyDown</a></div><div class="ttdeci">virtual void keyDown(unsigned short) override</div><div class="ttdef"><b>Definition:</b> SnakeScene.cpp:39</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

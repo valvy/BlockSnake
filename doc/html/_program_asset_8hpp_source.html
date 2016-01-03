@@ -119,17 +119,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_resource_8hpp.html">Resource.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_renderer_8hpp.html">Renderer.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_program_asset.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_program_asset.html">ProgramAsset</a> : <span class="keyword">public</span> <a class="code" href="class_resource.html">Resource</a>&lt;GLuint&gt;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_program_asset.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_program_asset.html">ProgramAsset</a> : <span class="keyword">public</span> <a class="code" href="class_resource.html">Resource</a>{</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_program_asset.html#afee3f48c53fbeeebe9e2bf672b9176c8">ProgramAsset</a>(std::string,GLuint, <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_program_asset.html#a22c5b2d9753b4a3c09d4bfa769f8b798">destroy</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_program_asset.html#ad5e21cf30bae788e038d14b7513f537d">~ProgramAsset</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_program_asset_html_a22c5b2d9753b4a3c09d4bfa769f8b798"><div class="ttname"><a href="class_program_asset.html#a22c5b2d9753b4a3c09d4bfa769f8b798">ProgramAsset::destroy</a></div><div class="ttdeci">virtual void destroy() override</div><div class="ttdef"><b>Definition:</b> ProgramAsset.cpp:8</div></div>
-<div class="ttc" id="class_resource_html"><div class="ttname"><a href="class_resource.html">Resource</a></div><div class="ttdef"><b>Definition:</b> Resource.hpp:36</div></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_program_asset_html_ad5e21cf30bae788e038d14b7513f537d"><div class="ttname"><a href="class_program_asset.html#ad5e21cf30bae788e038d14b7513f537d">ProgramAsset::~ProgramAsset</a></div><div class="ttdeci">virtual ~ProgramAsset()</div><div class="ttdef"><b>Definition:</b> ProgramAsset.cpp:8</div></div>
+<div class="ttc" id="class_resource_html"><div class="ttname"><a href="class_resource.html">Resource</a></div><div class="ttdef"><b>Definition:</b> Resource.hpp:35</div></div>
 <div class="ttc" id="_renderer_8hpp_html"><div class="ttname"><a href="_renderer_8hpp.html">Renderer.hpp</a></div></div>
 <div class="ttc" id="class_program_asset_html_afee3f48c53fbeeebe9e2bf672b9176c8"><div class="ttname"><a href="class_program_asset.html#afee3f48c53fbeeebe9e2bf672b9176c8">ProgramAsset::ProgramAsset</a></div><div class="ttdeci">ProgramAsset(std::string, GLuint, int)</div><div class="ttdef"><b>Definition:</b> ProgramAsset.cpp:4</div></div>
 <div class="ttc" id="class_program_asset_html"><div class="ttname"><a href="class_program_asset.html">ProgramAsset</a></div><div class="ttdef"><b>Definition:</b> ProgramAsset.hpp:34</div></div>

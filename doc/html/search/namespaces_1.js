@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['math',['Math',['../namespace_math.html',1,'']]]
+  ['keycodes',['KeyCodes',['../namespace_key_codes.html',1,'']]]
 ];
