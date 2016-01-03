@@ -53,8 +53,6 @@ void GnuApp::loop(){
 		
 		}
         //Render the program
-		XWindowAttributes       gwa;
-		XGetWindowAttributes(dpy, win, &gwa);
 		this->mainApp->gameLoop();		
 		glFlush();
 		glXSwapBuffers(dpy, win);
@@ -96,8 +94,6 @@ GnuApp::GnuApp(){
     win = XCreateWindow(dpy, root, 0, 0, xwa.width, xwa.height, 0, vi->depth, InputOutput, vi->visual,CWBackingStore | CWSaveUnder| CWBorderPixel | CWBackingStore | CWColormap | CWEventMask, &swa);
 
 
-	Atom prop = None;
-	prop = XInternAtom(dpy, "_MOTIF_WM_HINTS", True);
  	XMapRaised(dpy,root);
 
     XMapWindow(dpy, win);
