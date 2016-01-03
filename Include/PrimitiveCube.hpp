@@ -34,7 +34,10 @@ class PrimitiveCube : public PrimitiveForm{
 private:
 
 public:
-    PrimitiveCube(int);
+    /*! Initializes a cube
+     *  @param uniqueNumber the unique number that can used to reference this resource
+     */
+    PrimitiveCube(int uniqueNumber);
     
 };
 

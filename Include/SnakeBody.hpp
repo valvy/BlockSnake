@@ -44,8 +44,16 @@ private:
     /*! The assetManager
      */
   	AssetManager* assetManager;
+    /*! The opengl program reference
+     */
     int snakeBodyProgram;
+    
+    /*! the texture reference
+     */
     int texture;
+    
+    /*! the mesh reference
+     */
  	int primitive;
     GLint mv_location;
 protected:
@@ -61,18 +69,25 @@ protected:
 public:
     /*! Increases the body size
      */
-   void addBody();
+    void addBody();
+    
     /*! Checks if the body collides with the head
      *  @param pos  The position of the head
      *  @return collision   Is the body colliding?
      */
-   bool doesCollideWithBody(Vector3f pos) const;
+    bool doesCollideWithBody(Vector3f pos) const;
     
     /*! Moves the bodies
      *  @param pos  The new position
      */
-   void move(Vector3f pos);
-    SnakeBody(AssetManager*, unsigned short, Vector3f);
+    void move(Vector3f pos);
+    
+    /*! Initializes the body of a snake
+     *  @param assetManager The management of resources
+     *  @param next How many snakebodies are next
+     *  @param position the initializing position
+     */
+    SnakeBody(AssetManager* assetManager, unsigned short next, Vector3f position);
     
 };
 

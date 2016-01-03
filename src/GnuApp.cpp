@@ -52,6 +52,7 @@ void GnuApp::loop(){
         	}
 		
 		}
+        //Render the program
 		XWindowAttributes       gwa;
 		XGetWindowAttributes(dpy, win, &gwa);
 		this->mainApp->gameLoop();		
@@ -65,7 +66,7 @@ void GnuApp::loop(){
 
 GnuApp::GnuApp(){
 	shouldStop = false;
-	GLint                   att[] = { GLX_RGBA, GLX_DEPTH_SIZE, 24, GLX_DOUBLEBUFFER, None };
+	GLint att[] = { GLX_RGBA, GLX_DEPTH_SIZE, 24, GLX_DOUBLEBUFFER, None };
 
 	this->dpy = XOpenDisplay(nullptr);
     if(this->dpy == nullptr) {
@@ -106,7 +107,7 @@ GnuApp::GnuApp(){
     glc = glXCreateContext(dpy, vi, nullptr, GL_TRUE);
     glXMakeCurrent(dpy, win, glc); 
 
-
+    //initialize
 	GLenum err = glewInit();
 	if (GLEW_OK != err){
 		std::cout << "an error has occured : " << glewGetErrorString(err) << "\n";
@@ -140,7 +141,8 @@ GnuApp::~GnuApp(){
 	glXMakeCurrent(dpy, None, nullptr);
     glXDestroyContext(dpy, glc);
     XDestroyWindow(dpy, win);
-    XCloseDisplay(dpy); 
+    XCloseDisplay(dpy);
+    //When the the app doesnt't work properly the mainapp is a null
 	if(mainApp != nullptr){
 		delete this->mainApp;
 	}

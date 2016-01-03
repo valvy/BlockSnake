@@ -55,6 +55,8 @@ private:
     /*! The cube reference
      */
     int primitive;
+    
+    
     enum class Direction{
         Left,
         Right,
@@ -93,7 +95,12 @@ protected:
     /*! @inheritDoc
      */
    virtual void onCollision(GameObject* col) override;
-public:    
+public:
+    /*! initializes the snakehead
+     *  @param assetManager the assetmanager that manages the resources
+     *  @param startPos The starting position of this head
+     *  @param scene    The scene containing this head
+     */
     SnakeHead(AssetManager* assetManager, Vector3f startPos, SnakeScene* scene);
 };
 

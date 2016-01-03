@@ -25,12 +25,24 @@
  */
 #ifndef GLOBALS_HPP
 #define GLOBALS_HPP
-
+/*! Containing some global variables
+ *  @author Heiko van der Heijden
+ */
 namespace Globals {
+    /*! The size of the fruit and the snakehead/body
+     */
     constexpr float SNAKE_SCALE = 0.03f;
+    
+    /*! The position when the snake enters the other side of the map
+     */
     constexpr float BORDER = 0.72f;
     
+    /*! The amount of time passes when the snakes jumps one place
+     */
     constexpr float TIMER = 0.05f;
+    
+    /*! The amount to be jumped
+     */
     constexpr float JUMP_SPEED = 0.1f;
     
 }

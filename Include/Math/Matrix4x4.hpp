@@ -29,9 +29,8 @@
 #include "Vector3.hpp"
 #include <cmath>
 #include <vector>
+#include "Utilities.hpp"
 
-
-constexpr float PI = 3.1415926;
 
 enum class Axis{
     X,
@@ -165,10 +164,9 @@ struct Matrix4x4{
      *  Rotates the matrix around an given axis.
      *  @param angle, the degrees you want to rotate
      *  @param axis, The axis you wish to rotate around
-     *  @param around, The vector you wish to rotate
      */
     void rotate(T angle, Axis axis){
-        angle = angle * PI / 180; //convert degrees to radians
+        angle = angle * Math::PI / 180; //convert degrees to radians
         
         switch(axis){
             case Axis::X:

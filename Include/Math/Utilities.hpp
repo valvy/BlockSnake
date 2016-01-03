@@ -1,8 +1,13 @@
 #ifndef UTILITIES_HPP
 #define UTILITIES_HPP
-#include "Matrix4x4.hpp"
+template<typename T>
+struct Matrix4x4;
 
 namespace Math {
+    
+    constexpr float PI = 3.1415926f;
+
+    
     template<typename T>
     Matrix4x4<T> frustum(T right, T left, T top, T bottom, T near, T far){
    

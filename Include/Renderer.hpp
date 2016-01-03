@@ -32,12 +32,6 @@
 #include <OpenGL/gl3ext.h>
 #endif
 
-#ifdef _WIN32
-#include "GL/glew.h"
-#include <gl/glu.h>
-#include <gl/gl.h>
-#endif
-
 #ifdef __linux__
 #include <GL/glew.h>
 #include <GL/glx.h>

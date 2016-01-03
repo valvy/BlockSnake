@@ -37,11 +37,26 @@ class Application;
 
 class MainMenu : public Scene{
 public:
+    /*! Initializes the main menu
+     *  @param app  The application that contains this scene
+     */
     MainMenu(Application* app);
 protected:
+    
+    /*! @inheritDoc
+     */
     virtual void update(float) override;
+    
+    /*! @inheritDoc
+     */
     virtual void draw(float) override;
+    
+    /*! @inheritDoc
+     */
     virtual void keyDown(unsigned short) override;
+    
+    /*! @inheritDoc
+     */
     virtual void onSceneClose() override;
     
     

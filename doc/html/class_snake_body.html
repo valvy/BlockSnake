@@ -112,8 +112,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1fa232826f3a014fab34afa83e4398c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7261b0b0922c382cd81752ad7c55f764"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake_body.html#a7261b0b0922c382cd81752ad7c55f764">move</a> (<a class="el" href="_game_object_8hpp.html#af345ad77ba5e240c7ab72b4b2077e754">Vector3f</a> pos)</td></tr>
 <tr class="separator:a7261b0b0922c382cd81752ad7c55f764"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62eecfd882cb342d12938bc9c81d2e9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake_body.html#a62eecfd882cb342d12938bc9c81d2e9a">SnakeBody</a> (<a class="el" href="class_asset_manager.html">AssetManager</a> *, unsigned short, <a class="el" href="_game_object_8hpp.html#af345ad77ba5e240c7ab72b4b2077e754">Vector3f</a>)</td></tr>
-<tr class="separator:a62eecfd882cb342d12938bc9c81d2e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34eb53f703ff040928d9b79941645111"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_snake_body.html#a34eb53f703ff040928d9b79941645111">SnakeBody</a> (<a class="el" href="class_asset_manager.html">AssetManager</a> *<a class="el" href="class_snake_body.html#ae911bd7933647667ec346989c9f6061b">assetManager</a>, unsigned short next, <a class="el" href="_game_object_8hpp.html#af345ad77ba5e240c7ab72b4b2077e754">Vector3f</a> <a class="el" href="class_game_object.html#aa7f989d9c65e41878aa8d71b184039a1">position</a>)</td></tr>
+<tr class="separator:a34eb53f703ff040928d9b79941645111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:a4aeeeae09bc1ffcb338a26c643de1ff0 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_game_object_8hpp.html#af345ad77ba5e240c7ab72b4b2077e754">Vector3f</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a4aeeeae09bc1ffcb338a26c643de1ff0">getPosition</a> () const </td></tr>
 <tr class="separator:a4aeeeae09bc1ffcb338a26c643de1ff0 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,7 +170,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The body of the snake </p><dl class="section author"><dt>Author</dt><dd>Heiko van der Heijden </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a62eecfd882cb342d12938bc9c81d2e9a"></a>
+<a class="anchor" id="a34eb53f703ff040928d9b79941645111"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -199,6 +199,14 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initializes the body of a snake </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">assetManager</td><td>The management of resources </td></tr>
+    <tr><td class="paramname">next</td><td>How many snakebodies are next </td></tr>
+    <tr><td class="paramname">position</td><td>the initializing position </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -421,6 +429,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>the mesh reference </p>
 
 </div>
 </div>
@@ -441,6 +450,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The opengl program reference </p>
 
 </div>
 </div>
@@ -481,6 +491,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>the texture reference </p>
 
 </div>
 </div>

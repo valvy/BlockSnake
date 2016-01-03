@@ -89,23 +89,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">TextureAsset.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_texture_asset_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TEXTURE_ASSET_HPP</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TEXTURE_ASSET_HPP</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_resource_8hpp.html">Resource.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="class_texture_asset.html">    5</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_texture_asset.html">TextureAsset</a> : <span class="keyword">public</span> <a class="code" href="class_resource.html">Resource</a>{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="class_texture_asset.html#a9aeb52f4b4b479692db8b2cf40187856">TextureAsset</a>(std::string,<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_texture_asset.html#a115d65cc1ce33a8eb9cc1762497c4537">~TextureAsset</a>();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;};</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="_texture_asset_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (c) 2015, Heiko van der Heijden</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * All rights reserved.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * modification, are permitted provided that the following conditions are met:</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * * Redistributions of source code must retain the above copyright notice, this</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *   list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * * Redistributions in binary form must reproduce the above copyright notice,</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *   this list of conditions and the following disclaimer in the documentation</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *   and/or other materials provided with the distribution.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef TEXTURE_ASSET_HPP</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define TEXTURE_ASSET_HPP</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_resource_8hpp.html">Resource.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_texture_asset.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_texture_asset.html">TextureAsset</a> : <span class="keyword">public</span> <a class="code" href="class_resource.html">Resource</a>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_texture_asset.html#a73d514345ab3adf3a988093182562ee3">TextureAsset</a>(std::string <a class="code" href="class_resource.html#a9d2af35bfd103fdc3f82a1bb8733a09d">path</a>,<span class="keywordtype">int</span> <a class="code" href="class_resource.html#a470fc46bbb7b226acbd6fe2ea183bc77">uniqueNumber</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_texture_asset.html#a115d65cc1ce33a8eb9cc1762497c4537">~TextureAsset</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_texture_asset_html_a115d65cc1ce33a8eb9cc1762497c4537"><div class="ttname"><a href="class_texture_asset.html#a115d65cc1ce33a8eb9cc1762497c4537">TextureAsset::~TextureAsset</a></div><div class="ttdeci">virtual ~TextureAsset()</div><div class="ttdef"><b>Definition:</b> TextureAsset.cpp:68</div></div>
-<div class="ttc" id="class_texture_asset_html"><div class="ttname"><a href="class_texture_asset.html">TextureAsset</a></div><div class="ttdef"><b>Definition:</b> TextureAsset.hpp:5</div></div>
+<div class="ttc" id="class_texture_asset_html_a73d514345ab3adf3a988093182562ee3"><div class="ttname"><a href="class_texture_asset.html#a73d514345ab3adf3a988093182562ee3">TextureAsset::TextureAsset</a></div><div class="ttdeci">TextureAsset(std::string path, int uniqueNumber)</div><div class="ttdef"><b>Definition:</b> TextureAsset.cpp:5</div></div>
+<div class="ttc" id="class_texture_asset_html"><div class="ttname"><a href="class_texture_asset.html">TextureAsset</a></div><div class="ttdef"><b>Definition:</b> TextureAsset.hpp:33</div></div>
+<div class="ttc" id="class_resource_html_a470fc46bbb7b226acbd6fe2ea183bc77"><div class="ttname"><a href="class_resource.html#a470fc46bbb7b226acbd6fe2ea183bc77">Resource::uniqueNumber</a></div><div class="ttdeci">int uniqueNumber</div><div class="ttdef"><b>Definition:</b> Resource.hpp:48</div></div>
 <div class="ttc" id="class_resource_html"><div class="ttname"><a href="class_resource.html">Resource</a></div><div class="ttdef"><b>Definition:</b> Resource.hpp:35</div></div>
-<div class="ttc" id="class_texture_asset_html_a9aeb52f4b4b479692db8b2cf40187856"><div class="ttname"><a href="class_texture_asset.html#a9aeb52f4b4b479692db8b2cf40187856">TextureAsset::TextureAsset</a></div><div class="ttdeci">TextureAsset(std::string, int)</div><div class="ttdef"><b>Definition:</b> TextureAsset.cpp:5</div></div>
+<div class="ttc" id="class_resource_html_a9d2af35bfd103fdc3f82a1bb8733a09d"><div class="ttname"><a href="class_resource.html#a9d2af35bfd103fdc3f82a1bb8733a09d">Resource::path</a></div><div class="ttdeci">std::string path</div><div class="ttdef"><b>Definition:</b> Resource.hpp:41</div></div>
 <div class="ttc" id="_resource_8hpp_html"><div class="ttname"><a href="_resource_8hpp.html">Resource.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

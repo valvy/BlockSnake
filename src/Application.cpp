@@ -35,6 +35,8 @@ void Application::gameLoop(){
     glClearBufferfv(GL_COLOR, 0, background);
     glClearBufferfv(GL_DEPTH, 0, &depth);
     
+    
+    //Check for errors
     GLenum errors = GL_NO_ERROR;
     while((errors = glGetError()) != GL_NO_ERROR){
         switch(errors){
@@ -60,6 +62,7 @@ void Application::gameLoop(){
         
     }
     
+    //Draw the scene
     float aspect = 1 * this->width / this->height;
     this->currentScene->draw(aspect);
     this->timeLastFrame = 0.00001f * (clock() - timer);

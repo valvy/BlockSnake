@@ -32,7 +32,10 @@
  */
 class PrimitiveQuad : public PrimitiveForm{
 public:
-    PrimitiveQuad(int);
+    /*! Initializes an quad
+     *  @param uniqueNumber The number that can be used to reference this quad
+     */
+    PrimitiveQuad(int uniqueNumber);
 };
 
 #endif
