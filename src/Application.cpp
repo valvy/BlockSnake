@@ -17,8 +17,7 @@ Application::Application(unsigned short width, unsigned short height){
     this->height = height;
     this->currentScene = std::unique_ptr<Scene>(new MainMenu(this));
     this->timeLastFrame = 0;
-    
-    std::cout << glGetString(GL_VERSION) << "\n";
+   
 
 }
 

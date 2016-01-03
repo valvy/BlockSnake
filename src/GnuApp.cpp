@@ -101,9 +101,11 @@ GnuApp::GnuApp(){
 
     XMapWindow(dpy, win);
     XStoreName(dpy, win, "BlockSnake");
-	
+
+	//Setup opengl	
     glc = glXCreateContext(dpy, vi, nullptr, GL_TRUE);
     glXMakeCurrent(dpy, win, glc); 
+
 
 	GLenum err = glewInit();
 	if (GLEW_OK != err){
@@ -111,6 +113,15 @@ GnuApp::GnuApp(){
 		std::cout << "closing blocksnake\n";
 		return;
 	}
+
+
+	if (!GLEW_VERSION_4_1){
+		std::cout << "Blocksnake requires at least opengl 4.1. \n";
+		std::cout << "It is recommended to use the propieriatary versions of the video card drivers\nClosing the app\n";
+		return;
+
+	}
+	
 
 
 	this->mainApp = new Application(xwa.width,xwa.height);	
