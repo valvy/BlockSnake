@@ -41,18 +41,36 @@ private:
     /*! The body is recursive..
      */
     SnakeBody* nextBody;
+    /*! The assetManager
+     */
   	AssetManager* assetManager;
     int snakeBodyProgram;
     int texture;
  	int primitive;
     GLint mv_location;
 protected:
+    /*! @inheritDoc
+     */
     virtual void update(float) override;
+    /*! @inheritDoc
+     */
     virtual void onDestroy() override;
+    /*! @inheritDoc
+     */
     virtual void draw(float) override;
 public:
+    /*! Increases the body size
+     */
    void addBody();
+    /*! Checks if the body collides with the head
+     *  @param pos  The position of the head
+     *  @return collision   Is the body colliding?
+     */
    bool doesCollideWithBody(Vector3f pos) const;
+    
+    /*! Moves the bodies
+     *  @param pos  The new position
+     */
    void move(Vector3f pos);
     SnakeBody(AssetManager*, unsigned short, Vector3f);
     
