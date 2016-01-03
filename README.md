@@ -5,3 +5,4 @@ Instead of using a lot of third party libraries I decided to program everything 
 It's written in Opengl c++11 and for gnu/linux Xlib/glew and for apple cocoa.
 
 (this was not to make a fun game, but to learn the basics of game engine programming) 
+![alt tag](https://raw.github.com/valvy/BlockSnake/master/PrintScreen.png)
