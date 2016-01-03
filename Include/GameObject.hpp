@@ -93,6 +93,7 @@ public:
      *  @return collidable
      */
     bool canCollide() const;
+	virtual ~GameObject();
 };
 
 #endif

@@ -34,10 +34,7 @@ class AssetManager;
  */
 class Resource{
     friend AssetManager;
-private:
-    /*! the amount of times it is referenced
-     */
-   unsigned int amountReferences;
+
 protected:
     /*! The path the resource is in, to check if it already exists
      */
@@ -65,9 +62,6 @@ public:
         return this->uniqueNumber;
    	}
     
-    /*! Destroys the resource and clears the memory
-     */
-   virtual void destroy() = 0;
 };
 
 

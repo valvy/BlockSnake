@@ -46,3 +46,7 @@ Vector3f GameObject::getPosition() const{
 bool GameObject::canCollide() const{
     return this->doesCollide;
 }
+
+GameObject::~GameObject(){
+
+}

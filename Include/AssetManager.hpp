@@ -67,7 +67,6 @@ private:
     void destroyAssets(T& obj){
         for(auto it : obj){
             if(it != nullptr){
-                it->destroy();
 				delete it;
 
             }

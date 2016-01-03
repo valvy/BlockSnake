@@ -5,8 +5,7 @@
 class TextureAsset : public Resource{
 public:
     TextureAsset(std::string,int);
-    virtual void destroy() override;
-    ~TextureAsset();
+    virtual ~TextureAsset();
 };
 
 

@@ -37,7 +37,7 @@ void Fruit::findRandomPlace(){
 void Fruit::onCollision(GameObject* col){
   //  this->doesCollide = false;
     srand(time(nullptr));
-    const float range = 0.1f;
+    const float range = 0.03f;
     Vector3f oldPos = this->position;
 
     //Place it on a random place not to close near the snake

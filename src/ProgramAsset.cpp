@@ -1,10 +1,10 @@
 #include "ProgramAsset.hpp"
-
+#include <iostream>
 
 ProgramAsset::ProgramAsset(std::string files,GLuint data, int uniqueNumber) : Resource(files , uniqueNumber){
     this->resourceData = data;
 }
 
-void ProgramAsset::destroy(){
-      glDeleteProgram(this->resourceData);
+ProgramAsset::~ProgramAsset(){
+	glDeleteProgram(this->resourceData);
 }

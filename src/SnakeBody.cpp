@@ -37,7 +37,7 @@ void SnakeBody::move(Vector3f position){
 }
 
 bool SnakeBody::doesCollideWithBody(Vector3f pos) const{
-    const float range = 0.07f;
+    const float range = 0.03f;
     
     if(pos.x >= (this->position.x - range)
      && pos.x <= (this->position.x + range)

@@ -38,7 +38,7 @@ void PrimitiveForm::render() const{
     glBindVertexArray(0);
 }
 
-void PrimitiveForm::destroy(){
+PrimitiveForm::~PrimitiveForm(){
 
     glDeleteVertexArrays(1, &this->resourceData);
     glDeleteBuffers(1,&this->vboVertex);

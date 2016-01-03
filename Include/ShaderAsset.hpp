@@ -35,8 +35,7 @@ class ShaderAsset : public Resource{
     
 public:
     ShaderAsset(std::string, GLenum,int);
-    virtual void destroy() override;
-    ~ShaderAsset();
+    virtual ~ShaderAsset();
 };
 
 

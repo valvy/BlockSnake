@@ -65,11 +65,6 @@ TextureAsset::TextureAsset(std::string path, int uniqueNumber) : Resource(path,u
     
 }
 
-void TextureAsset::destroy(){
-    
-    glDeleteTextures(1, &this->resourceData);
-}
-
 TextureAsset::~TextureAsset(){
-    this->destroy();
+ 	glDeleteTextures(1, &this->resourceData);
 }

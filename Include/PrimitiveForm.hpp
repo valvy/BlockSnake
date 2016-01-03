@@ -64,8 +64,8 @@ protected:
     GLuint storeDataInVAO(int attributeNr,int size, std::vector<GLfloat> data);
 public:
     PrimitiveForm(int, std::string);
-    virtual void destroy();
     void render() const;
+	virtual ~PrimitiveForm();
 };
 
 

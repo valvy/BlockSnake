@@ -44,10 +44,7 @@ ShaderAsset::ShaderAsset(std::string path,GLenum shaderType, int uniqueNumber) :
     }
 }
 
-void ShaderAsset::destroy(){
-    glDeleteShader(this->resourceData);
-}
 
 ShaderAsset::~ShaderAsset(){
-    
+       glDeleteShader(this->resourceData);
 }

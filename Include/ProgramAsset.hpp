@@ -34,8 +34,7 @@
 class ProgramAsset : public Resource{
 public:
     ProgramAsset(std::string,GLuint, int);
-    virtual void destroy() override;
-    
+    virtual ~ProgramAsset();
 };
 
 
