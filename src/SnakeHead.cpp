@@ -15,7 +15,7 @@ SnakeHead::SnakeHead(AssetManager* assetManager, Vector3f startPosition, SnakeSc
     this->position = startPosition;
     this->timer = std::chrono::steady_clock::now();
     this->direction = Direction::Right;
-    this->scale = Vector3f(0.05f,0.05f,0.05f);
+    this->scale = Vector3f(0.03f,0.03f,0.03f);
     this->body = new SnakeBody(this->assetManager, 0, Vector3f( position.x + distance, 	position.y, position.z));
 }
 
@@ -33,7 +33,7 @@ void SnakeHead::update(float tpf){
         if(time_span.count() > 0.05f){
             
             this->timer = std::chrono::steady_clock::now();
-            auto jumpSpeed = 0.15f;
+            auto jumpSpeed = 0.1f;
             switch(direction){
                 case Direction::Right:
                     this->position.x -= jumpSpeed;

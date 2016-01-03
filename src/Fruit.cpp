@@ -9,7 +9,7 @@ Fruit::Fruit(AssetManager* assetManager, Vector3f position){
     this->texture = assetManager->loadTexture("./Assets/Textures/cube.bmp");
     this->fruitProgram = this->assetManager->loadProgram("./Assets/Shaders/FruitV.glsl", "./Assets/Shaders/FruitF.glsl");
     this->mv_location = this->assetManager->getUniformLocation(this->fruitProgram, "mv_matrix");
-    this->scale = Vector3f(0.05f,0.05f,0.05f);
+    this->scale = Vector3f(0.03f,0.03f,0.03f);
     this->position = position;
 }
 
@@ -30,8 +30,8 @@ void Fruit::draw(float aspect){
 
 void Fruit::findRandomPlace(){
     
-    this->position.x = ((rand() % 19) * 0.1f) - 0.9f;
-    this->position.y = ((rand() % 19) * 0.1f) - 0.9f;
+    this->position.x = ((rand() % 10) * 0.1f) - 0.5f;
+    this->position.y = ((rand() % 10) * 0.1f) - 0.5f;
 }
 
 void Fruit::onCollision(GameObject* col){

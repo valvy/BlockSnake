@@ -10,7 +10,7 @@ class SnakeScene;
 class SnakeHead : public GameObject{
 private:
     SnakeScene* scene;
-    float distance = 0.15f;
+    float distance = 0.1f;
     GLint mv_location;
     int snakeHeadProgram;
     int primitive;

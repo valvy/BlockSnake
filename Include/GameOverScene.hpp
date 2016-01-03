@@ -1,4 +1,4 @@
-/*#ifndef GAME_OVER_SCENE_HPP
+#ifndef GAME_OVER_SCENE_HPP
 #define GAME_OVER_SCENE_HPP
 #include "Scene.hpp"
 
@@ -13,4 +13,4 @@ protected:
     virtual void onSceneClose() override;
 };
 
-#endif*/
+#endif

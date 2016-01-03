@@ -1,12 +1,15 @@
 #ifdef __linux__	
-#include "Application.hpp"
-#include <X11/X.h>
-#include <X11/Xlib.h>
+
 #include <iostream>
 #include "Renderer.hpp"
 #include <unistd.h>
-void Application::quitApplication(){
+#include "GnuApp.hpp"
 
+GnuApp* app;
+bool shouldStop;
+void Application::quitApplication(){
+	shouldStop = true;
+	
 }
 
 #define GetCurrentDir getcwd
@@ -24,75 +27,102 @@ std::string Application::getAppPath() const{
     
 }
 
-int main(int argc, char** argv){
+
+void GnuApp::loop(){
+	XEvent	xev;
+	for(;;){
+		if(shouldStop){		
+			return;
+		}
+		while(XPending(dpy)){
+			XNextEvent(dpy, &xev);
 	
-	Display                 *dpy;
-	Window                  root;
+			if(xev.type == KeyPress) {
+            	char buf[128] = {0};
+            	KeySym keysym;
+            	int len = XLookupString(&xev.xkey, buf, sizeof buf, &keysym, NULL);
+	
+				this->mainApp->keyDown(xev.xkey.keycode);
+			
+			}	
+		
+		}
+		XWindowAttributes       gwa;
+		XGetWindowAttributes(dpy, win, &gwa);
+		this->mainApp->gameLoop();		
+		glFlush();
+		glXSwapBuffers(dpy, win);
+	}
+
+}
+
+
+
+GnuApp::GnuApp(){
+	shouldStop = false;
 	GLint                   att[] = { GLX_RGBA, GLX_DEPTH_SIZE, 24, GLX_DOUBLEBUFFER, None };
-	XVisualInfo             *vi;
-	Colormap                cmap;
-	XSetWindowAttributes    swa;
-	Window                  win;
-	GLXContext              glc;
-	XWindowAttributes       gwa;
-	XEvent                  xev;
 
-
-	dpy = XOpenDisplay(nullptr);
-    if(dpy == nullptr) {
+	this->dpy = XOpenDisplay(nullptr);
+    if(this->dpy == nullptr) {
     	std::cout << "could not connect to x server\n";	
-		return -1;
+		return;
     }
-    root = DefaultRootWindow(dpy);
+    this->root = DefaultRootWindow(this->dpy);
       
-    vi = glXChooseVisual(dpy, 0, att);
+	XVisualInfo	*vi;
+   	vi = glXChooseVisual(this->dpy, 0, att);
 
     if(vi == nullptr) {
 		std::cout << "no appropiate visual found\n";
-		return -1;
+		return;
     } 
-
-	cmap = XCreateColormap(dpy, root, vi->visual, AllocNone);
+	Colormap	cmap;
+	
+	cmap = XCreateColormap(this->dpy, this->root, vi->visual, AllocNone);
+	XSetWindowAttributes swa;
     swa.colormap = cmap;
     swa.event_mask = ExposureMask | KeyPressMask;
-    win = XCreateWindow(dpy, root, 0, 0,800, 600, 0, vi->depth, InputOutput, vi->visual, CWColormap | CWEventMask, &swa);
+
+	XWindowAttributes xwa;
+	XGetWindowAttributes(dpy, DefaultRootWindow(dpy), &xwa);
+
+
+    win = XCreateWindow(dpy, root, 0, 0, xwa.width, xwa.height, 0, vi->depth, InputOutput, vi->visual,CWBackingStore | CWSaveUnder| CWBorderPixel | CWBackingStore | CWColormap | CWEventMask, &swa);
+
+
+	Atom prop = None;
+	prop = XInternAtom(dpy, "_MOTIF_WM_HINTS", True);
+ 	XMapRaised(dpy,root);
+
     XMapWindow(dpy, win);
     XStoreName(dpy, win, "BackMaze");
+	
     glc = glXCreateContext(dpy, vi, nullptr, GL_TRUE);
-    glXMakeCurrent(dpy, win, glc);
+    glXMakeCurrent(dpy, win, glc); 
+
 	GLenum err = glewInit();
-	Application* app = new Application(800,600);	
+
+	this->mainApp = new Application(xwa.width,xwa.height);	
+
+
+	this->loop();
+
+
 	
-	for(;;){
-		XNextEvent(dpy, &xev);
-	
-		if(xev.type == KeyPress) {
-			std::cout << xev.xkey.keycode << "\n";
-            char buf[128] = {0};
-            KeySym keysym;
-            int len = XLookupString(&xev.xkey, buf, sizeof buf, &keysym, NULL);
-			if(xev.xkey.keycode == 9){            
-				break;   
-			}else{
-				app->keyDown(xev.xkey.keycode);
-			}
-		}	
-
-		XGetWindowAttributes(dpy, win, &gwa);
-		
-		app->gameLoop();		
-		glFlush();
-		glXSwapBuffers(dpy, win);
+}
 
 
-	}
-
-
-	delete app;
-	glXMakeCurrent(dpy, None, NULL);
+GnuApp::~GnuApp(){
+	glXMakeCurrent(dpy, None, nullptr);
     glXDestroyContext(dpy, glc);
     XDestroyWindow(dpy, win);
     XCloseDisplay(dpy); 
+	delete this->mainApp;
+}
+
+int main(int argc, char** argv){
+	app = new GnuApp();
+	delete app;
 }
 
 #endif

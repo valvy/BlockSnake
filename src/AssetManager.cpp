@@ -72,7 +72,6 @@ int AssetManager::loadProgram(std::string vertexShader, std::string fragmentShad
     }
     
     //Create some temporary storage
-	std::cout << vertexShader << " : " << fragmentShader << "\n";
 	ShaderAsset* vShader = nullptr;
 	ShaderAsset* fShader = nullptr;    
 	

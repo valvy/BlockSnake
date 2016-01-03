@@ -12,7 +12,7 @@ SnakeScene::SnakeScene(Application* app) : Scene(app){
  	
     this->addGameObject(new Background(this->app->getAssetManager(),"Clouds.bmp"));
 	this->addGameObject(new Fruit(this->app->getAssetManager(), Vector3f(-0.3f,0.5f,-1.5f)));
-   	this->addGameObject(new SnakeHead(this->app->getAssetManager(), Vector3f(1,0,-2),this));
+   	this->addGameObject(new SnakeHead(this->app->getAssetManager(), Vector3f(1,0,-1.5f),this));
    
    
     this->dead = false;
@@ -21,7 +21,7 @@ SnakeScene::SnakeScene(Application* app) : Scene(app){
 void SnakeScene::update(float tpf){
     this->updateGameObjects(tpf);
     if(this->dead){
-  //     this->app->loadScene(new GameOverScene(this->app));
+  	     this->app->loadScene(new GameOverScene(this->app));
     }
     this->checkCollision();
 }

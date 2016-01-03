@@ -7,7 +7,7 @@ SnakeBody::SnakeBody(AssetManager* assetManager, unsigned short next,Vector3f po
     this->snakeBodyProgram = this->assetManager->loadProgram("./Assets/Shaders/cubeV.glsl", "./Assets/Shaders/cubeF.glsl");
     this->mv_location = this->assetManager->getUniformLocation(this->snakeBodyProgram, "mv_matrix");
     
-    this->scale = Vector3f(0.05f,0.05f,0.05f);
+    this->scale = Vector3f(0.03f,0.03f,0.03f);
     this->rotation = Vector3f(90,0,0);
     this->position = position;
     if(next > 0){
@@ -37,7 +37,7 @@ void SnakeBody::move(Vector3f position){
 }
 
 bool SnakeBody::doesCollideWithBody(Vector3f pos) const{
-    const float range = 0.1f;
+    const float range = 0.07f;
     
     if(pos.x >= (this->position.x - range)
      && pos.x <= (this->position.x + range)
@@ -57,7 +57,6 @@ bool SnakeBody::doesCollideWithBody(Vector3f pos) const{
 
 void SnakeBody::draw(float aspect){
     
-    std::cout << "test\n";
     this->assetManager->useProgram(this->snakeBodyProgram);
     glUniformMatrix4fv(this->mv_location, 1, GL_FALSE, &this->getCurrentMat(aspect).getRawData()[0]);
     this->assetManager->renderPrimitive(this->primitive);

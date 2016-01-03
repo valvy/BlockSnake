@@ -90,6 +90,5 @@ Application::~Application(){
     this->currentScene.reset();
 	this->assetManager->destroy();
 	delete this->assetManager;
-    std::cout << "closing \n";
    
 }
