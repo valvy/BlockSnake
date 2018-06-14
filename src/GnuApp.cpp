@@ -5,6 +5,10 @@
 #include <unistd.h>
 #include "GnuApp.hpp"
 
+
+typedef GLXContext (*glXCreateContextAttribsARBProc)(Display*, GLXFBConfig, GLXContext, Bool, const int*);
+
+
 GnuApp* app;
 bool shouldStop;
 void Application::quitApplication(){
@@ -22,7 +26,6 @@ std::string Application::getAppPath() const{
     }
     
     cCurrentPath[sizeof(cCurrentPath) - 1] = '\0';
-    
     return cCurrentPath;
 }
 
@@ -47,7 +50,7 @@ void GnuApp::loop(){
                 this->mainApp->keyDown(xev.xkey.keycode);
             
             }else if (xev.xclient.message_type == wm_protocols &&
-                xev.xclient.data.l[0] == wm_delete_window)  {
+                xev.xclient.data.l[0] ==(unsigned int) wm_delete_window)  {
                 return;
             }
         
@@ -64,7 +67,21 @@ void GnuApp::loop(){
 
 GnuApp::GnuApp(){
     shouldStop = false;
-    GLint att[] = { GLX_RGBA, GLX_DEPTH_SIZE, 24, GLX_DOUBLEBUFFER, None };
+
+    static int visual_attribs[] ={
+        GLX_X_RENDERABLE    , True,
+        GLX_DRAWABLE_TYPE   , GLX_WINDOW_BIT,
+        GLX_RENDER_TYPE     , GLX_RGBA_BIT,
+        GLX_X_VISUAL_TYPE   , GLX_TRUE_COLOR,
+        GLX_RED_SIZE        , 8,
+        GLX_GREEN_SIZE      , 8,
+        GLX_BLUE_SIZE       , 8,
+        GLX_ALPHA_SIZE      , 8,
+        GLX_DEPTH_SIZE      , 24,
+        GLX_STENCIL_SIZE    , 8,
+        GLX_DOUBLEBUFFER    , True,
+        None
+    };
 
     this->dpy = XOpenDisplay(nullptr);
     if(this->dpy == nullptr) {
@@ -72,9 +89,15 @@ GnuApp::GnuApp(){
         return;
     }
     this->root = DefaultRootWindow(this->dpy);
-      
-    XVisualInfo *vi;
-    vi = glXChooseVisual(this->dpy, 0, att);
+  
+    int fbcount;
+    GLXFBConfig *fbc = glXChooseFBConfig( dpy, DefaultScreen( dpy ), 
+    visual_attribs, &fbcount );
+    const GLXFBConfig bestFbc = fbc[0];
+
+    XVisualInfo *vi = glXGetVisualFromFBConfig( dpy, bestFbc );
+    root = DefaultRootWindow(dpy);
+
 
     if(vi == nullptr) {
         std::cout << "no appropiate visual found\n";
@@ -91,18 +114,28 @@ GnuApp::GnuApp(){
     XGetWindowAttributes(dpy, DefaultRootWindow(dpy), &xwa);
 
 
-    win = XCreateWindow(dpy, root, 0, 0, xwa.width, xwa.height, 0, vi->depth, InputOutput, vi->visual,CWColormap | CWEventMask, &swa);
+    this->win = XCreateWindow(dpy, root, 0, 0, xwa.width, xwa.height, 0, vi->depth, InputOutput, vi->visual,CWColormap | CWEventMask, &swa);
 
 
-    XMapRaised(dpy,root);
-    XMapWindow(dpy, win);
-    XStoreName(dpy, win, "BlockSnake");
+    XMapRaised(this->dpy,this->root);
+    XMapWindow(this->dpy, this->win);
+    XStoreName(this->dpy, this->win, "BlockSnake");
+    int attribs[] = {
+        GLX_CONTEXT_MAJOR_VERSION_ARB, 4,
+        GLX_CONTEXT_MINOR_VERSION_ARB, 0,
+        0
+    };
 
-    //Setup opengl  
-    glc = glXCreateContext(dpy, vi, nullptr, GL_TRUE);
+    glXCreateContextAttribsARBProc glXCreateContextAttribsARB = 0;
+    glXCreateContextAttribsARB = (glXCreateContextAttribsARBProc) glXGetProcAddress((const GLubyte*)"glXCreateContextAttribsARB");
+
+   //Setup opengl  
+    this->glc = glXCreateContextAttribsARB(dpy, *fbc, nullptr, true, attribs);
+  //  glc = glXCreateContext(dpy, vi, nullptr, GL_TRUE);
     glXMakeCurrent(dpy, win, glc); 
 
     //initialize
+    glewExperimental = GL_TRUE; 
     GLenum err = glewInit();
     if (GLEW_OK != err){
         std::cout << "an error has occured : " << glewGetErrorString(err) << "\n";
@@ -110,6 +143,7 @@ GnuApp::GnuApp(){
         return;
     }
 
+    //std::cout << glewGetString(GLEW_VERSION)) << "\n";
 
     if (!GLEW_VERSION_4_1){
         std::cout << "Blocksnake requires at least opengl 4.1. \n";
