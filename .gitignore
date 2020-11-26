@@ -12,7 +12,7 @@ BlockSnake.dir
 #compiled c++ stuff
 *.o
 BlockSnake
-
+/build
 
 #apple specifics
 *.DS_STORE
