@@ -47,7 +47,7 @@
         [self setHidesOnDeactivate:YES];
         
         //Initialize the app..
-        self->app = new Application(contentRect.size.width, contentRect.size.height);
+        self->app = new Application(contentRect.size.width * 2, contentRect.size.height * 2);
         
         
     }
@@ -152,7 +152,7 @@ int main(int argc, char** argv){
     if(argc >= 2){
         std::string cmd = std::string(argv[1]);
         if(cmd == "win"){
-            app = [[MacApp alloc] initWithContentRect:NSMakeRect(0, 0, 600, 600) styleMask:NSTitledWindowMask | NSClosableWindowMask |  NSMiniaturizableWindowMask   backing:NSBackingStoreBuffered defer:YES];
+            app = [[MacApp alloc] initWithContentRect:NSMakeRect(0, 0, 600, 600) styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable |  NSWindowStyleMaskMiniaturizable   backing:NSBackingStoreBuffered defer:YES];
         }
         else{
             std::cout << "invalid commmand \n";
@@ -160,7 +160,7 @@ int main(int argc, char** argv){
         }
     }else{
         NSRect mainDisplayRect = [[NSScreen mainScreen] frame];
-        app =  [[MacApp alloc]initWithContentRect: mainDisplayRect styleMask:NSBorderlessWindowMask backing:
+        app =  [[MacApp alloc]initWithContentRect: mainDisplayRect styleMask:NSWindowStyleMaskBorderless backing:
                 NSBackingStoreBuffered defer:YES];
 
     }

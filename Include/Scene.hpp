@@ -98,6 +98,8 @@ public:
      *  @param app  the main class
      */
     Scene(Application* app) : app(app){}
+
+    virtual ~Scene() {}
 };
 
 
