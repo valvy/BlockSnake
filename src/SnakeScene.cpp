@@ -21,7 +21,8 @@ SnakeScene::SnakeScene(Application* app) : Scene(app){
 void SnakeScene::update(float tpf){
     this->updateGameObjects(tpf);
     if(this->dead){
-  	     this->app->loadScene(new GameOverScene(this->app));
+  	    this->app->loadScene(new GameOverScene(this->app));
+        return;
     }
     this->checkCollision();
 }
